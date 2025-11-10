@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useLanguage, Language } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import {
@@ -35,6 +35,7 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -93,7 +94,8 @@ const Header = () => {
               <NavigationMenuList>
                 <NavigationMenuItem>
                   <NavigationMenuTrigger 
-                    className={`text-sm font-medium nav-link-animated bg-transparent hover:bg-transparent data-[state=open]:bg-transparent data-[active]:bg-transparent focus:bg-transparent ${
+                    onClick={() => navigate('/services')}
+                    className={`text-sm font-medium nav-link-animated bg-transparent hover:bg-transparent data-[state=open]:bg-transparent data-[active]:bg-transparent focus:bg-transparent hover:text-foreground focus:text-foreground cursor-pointer ${
                       location.pathname.startsWith('/services')
                         ? 'text-primary active'
                         : 'text-foreground'
@@ -103,12 +105,12 @@ const Header = () => {
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="grid w-[200px] gap-1 p-2 bg-background border border-border rounded-md shadow-lg">
-                      {servicesLinks.map((link) => (
+                      {servicesLinks.slice(1).map((link) => (
                         <li key={link.to}>
                           <NavigationMenuLink asChild>
                             <Link
                               to={link.to}
-                              className="block select-none rounded-sm px-3 py-2 text-sm leading-none no-underline outline-none transition-colors hover:bg-muted hover:text-accent-foreground focus:bg-muted focus:text-accent-foreground"
+                              className="block select-none rounded-sm px-3 py-2 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent/10 text-foreground"
                             >
                               {link.label}
                             </Link>
@@ -198,9 +200,21 @@ const Header = () => {
               </Link>
             ))}
             
+            <Link
+              to="/services"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`block px-4 py-2 text-sm font-medium transition-colors nav-link-animated ${
+                location.pathname.startsWith('/services')
+                  ? 'text-primary active'
+                  : 'text-foreground'
+              }`}
+            >
+              {t('nav.services')}
+            </Link>
+            
             <div className="px-4 pt-2 border-t border-border">
               <p className="text-xs font-semibold text-muted-foreground mb-2">{t('nav.services')}</p>
-              {servicesLinks.map((link) => (
+              {servicesLinks.slice(1).map((link) => (
                 <Link
                   key={link.to}
                   to={link.to}
