@@ -13,7 +13,7 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 const translations: Record<Language, Record<string, string>> = {
   el: {
     // Navigation
-    'nav.home': 'Dr. Cheirakis',
+    'nav.home': 'Αρχική',
     'nav.about': 'Ο Γιατρός',
     'nav.services': 'Υπηρεσίες',
     'nav.contact': 'Επικοινωνία',
@@ -36,6 +36,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Services
     'services.title': 'Οι Υπηρεσίες μας',
     'services.subtitle': 'Προσφέρουμε ένα ολοκληρωμένο φάσμα γυναικολογικών υπηρεσιών',
+    'services.viewAll': 'Προβολή Όλων των Υπηρεσιών',
     
     'service.general.title': 'Γενική Γυναικολογία',
     'service.general.desc': 'Εξετάσεις ρουτίνας, τεστ Παπ, και προληπτική φροντίδα για τη γυναικεία υγεία.',
@@ -61,6 +62,10 @@ const translations: Record<Language, Record<string, string>> = {
     'carousel.surgery': 'ΕΝΔΟΣΚΟΠΙΚΗ ΧΕΙΡΟΥΡΓΙΚΗ',
     'carousel.pregnancy': 'ΕΓΚΥΜΟΣΥΝΗ',
     
+    // CTA
+    'cta.title': 'Έτοιμοι να Φροντίσετε την Υγεία σας;',
+    'cta.subtitle': 'Κλείστε το ραντεβού σας σήμερα και βιώστε εξατομικευμένη φροντίδα',
+    
     // Contact
     'contact.title': 'Επικοινωνήστε μαζί μας',
     'contact.subtitle': 'Είμαστε εδώ για να απαντήσουμε στις ερωτήσεις σας',
@@ -81,7 +86,7 @@ const translations: Record<Language, Record<string, string>> = {
   },
   en: {
     // Navigation
-    'nav.home': 'Dr. Cheirakis',
+    'nav.home': 'Home',
     'nav.about': 'The Doctor',
     'nav.services': 'Services',
     'nav.contact': 'Contact',
@@ -104,6 +109,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Services
     'services.title': 'Our Services',
     'services.subtitle': 'We offer a comprehensive range of gynecological services',
+    'services.viewAll': 'View All Services',
     
     'service.general.title': 'General Gynecology',
     'service.general.desc': 'Routine examinations, Pap tests, and preventive care for women\'s health.',
@@ -129,6 +135,10 @@ const translations: Record<Language, Record<string, string>> = {
     'carousel.surgery': 'ENDOSCOPIC SURGERY',
     'carousel.pregnancy': 'PREGNANCY',
     
+    // CTA
+    'cta.title': 'Ready to Take Care of Your Health?',
+    'cta.subtitle': 'Schedule your appointment today and experience personalized care',
+    
     // Contact
     'contact.title': 'Contact Us',
     'contact.subtitle': 'We are here to answer your questions',
@@ -149,7 +159,7 @@ const translations: Record<Language, Record<string, string>> = {
   },
   fr: {
     // Navigation
-    'nav.home': 'Dr. Cheirakis',
+    'nav.home': 'Accueil',
     'nav.about': 'Le Médecin',
     'nav.services': 'Services',
     'nav.contact': 'Contact',
@@ -172,6 +182,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Services
     'services.title': 'Nos Services',
     'services.subtitle': 'Nous offrons une gamme complète de services gynécologiques',
+    'services.viewAll': 'Voir Tous les Services',
     
     'service.general.title': 'Gynécologie Générale',
     'service.general.desc': 'Examens de routine, tests Pap et soins préventifs pour la santé des femmes.',
@@ -196,6 +207,10 @@ const translations: Record<Language, Record<string, string>> = {
     'carousel.reproduction': 'REPRODUCTION ASSISTÉE',
     'carousel.surgery': 'CHIRURGIE ENDOSCOPIQUE',
     'carousel.pregnancy': 'GROSSESSE',
+    
+    // CTA
+    'cta.title': 'Prêt à Prendre Soin de Votre Santé ?',
+    'cta.subtitle': 'Prenez rendez-vous dès aujourd\'hui et bénéficiez de soins personnalisés',
     
     // Contact
     'contact.title': 'Contactez-nous',

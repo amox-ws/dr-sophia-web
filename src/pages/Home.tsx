@@ -87,28 +87,40 @@ const Home = () => {
               className="w-full max-w-6xl mx-auto"
             >
               <CarouselContent>
-                {[
-                  { key: 'gynecology', alt: 'Gynecology services' },
-                  { key: 'reproduction', alt: 'Assisted reproduction services' },
-                  { key: 'surgery', alt: 'Endoscopic surgery services' },
-                  { key: 'pregnancy', alt: 'Pregnancy care services' },
+                 {[
+                  { 
+                    key: 'gynecology', 
+                    alt: 'Gynecology services - Υπηρεσίες γυναικολογίας - Services de gynécologie' 
+                  },
+                  { 
+                    key: 'reproduction', 
+                    alt: 'Assisted reproduction - Υποβοηθούμενη αναπαραγωγή - Reproduction assistée' 
+                  },
+                  { 
+                    key: 'surgery', 
+                    alt: 'Endoscopic surgery - Ενδοσκοπική χειρουργική - Chirurgie endoscopique' 
+                  },
+                  { 
+                    key: 'pregnancy', 
+                    alt: 'Pregnancy care - Φροντίδα εγκυμοσύνης - Suivi de grossesse' 
+                  },
                 ].map((service) => (
-                  <CarouselItem key={service.key} className="md:basis-1/2 lg:basis-1/3">
+                  <CarouselItem key={service.key} className="basis-full">
                     <div className="p-4">
-                      <Card className="border-none shadow-lg overflow-hidden">
-                        <div className="aspect-[4/3] bg-gradient-to-br from-[hsl(var(--medical-lightest))] to-[hsl(var(--medical-light))] flex items-center justify-center">
+                      <div className="max-w-md mx-auto">
+                        <div className="aspect-square rounded-full overflow-hidden bg-gradient-to-br from-[hsl(var(--medical-lightest))] to-[hsl(var(--medical-light))] flex items-center justify-center shadow-lg">
                           <img
                             src="/placeholder.svg"
                             alt={service.alt}
                             className="w-full h-full object-cover"
                           />
                         </div>
-                        <CardContent className="p-6 text-center">
-                          <h3 className="text-xl font-semibold text-foreground">
+                        <div className="mt-6 text-center">
+                          <h3 className="text-2xl font-bold text-foreground">
                             {t(`carousel.${service.key}`)}
                           </h3>
-                        </CardContent>
-                      </Card>
+                        </div>
+                      </div>
                     </div>
                   </CarouselItem>
                 ))}
@@ -118,44 +130,13 @@ const Home = () => {
             </Carousel>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            {[
-              {
-                title: t('service.general.title'),
-                description: t('service.general.desc'),
-              },
-              {
-                title: t('service.obstetrics.title'),
-                description: t('service.obstetrics.desc'),
-              },
-              {
-                title: t('service.fertility.title'),
-                description: t('service.fertility.desc'),
-              },
-            ].map((service, index) => (
-              <Card 
-                key={index} 
-                className="observe-animation border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-white to-[hsl(var(--medical-lightest))]"
-              >
-                <CardContent className="p-6">
-                  <h3 className="text-2xl font-semibold mb-3 text-foreground">
-                    {service.title}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {service.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
           <div className="text-center observe-animation">
             <Link to="/services">
               <Button 
                 size="lg" 
                 className="bg-gradient-to-r from-[hsl(var(--medical-medium))] to-[hsl(var(--medical-medium-dark))] text-white hover:opacity-90"
               >
-                View All Services
+                {t('services.viewAll')}
               </Button>
             </Link>
           </div>
@@ -167,10 +148,10 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center observe-animation">
             <h2 className="text-4xl font-bold mb-6">
-              Ready to Take Care of Your Health?
+              {t('cta.title')}
             </h2>
             <p className="text-xl mb-8 text-white/90">
-              Schedule your appointment today and experience personalized care
+              {t('cta.subtitle')}
             </p>
             <Link to="/contact">
               <Button 
