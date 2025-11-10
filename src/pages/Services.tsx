@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Button } from "@/components/ui/button";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
+import { ArrowUpRight } from "lucide-react";
 
 // 🖼️ Import your local images
 import birthImg from "@/assets/birth.jpeg";
@@ -15,26 +17,26 @@ const Services = () => {
     {
       key: "gynecology",
       route: "/services/gynecology",
-      imagePosition: "right",
       image: mitraImg,
+      description: "Ολοκληρωμένη φροντίδα για τη γυναικεία υγεία, από διάγνωση έως θεραπεία γυναικολογικών παθήσεων.",
     },
     {
       key: "assistedReproduction",
       route: "/services/assisted-reproduction",
-      imagePosition: "left",
       image: spermImg,
+      description: "Σύγχρονες μέθοδοι υποβοηθούμενης αναπαραγωγής για ζευγάρια που αντιμετωπίζουν δυσκολία σύλληψης.",
     },
     {
       key: "endoscopicSurgery",
       route: "/services/endoscopic-surgery",
-      imagePosition: "right",
       image: surgeryImg,
+      description: "Ελάχιστα επεμβατικές τεχνικές που προσφέρουν ακριβή διάγνωση και ταχεία ανάρρωση.",
     },
     {
       key: "pregnancy",
       route: "/services/pregnancy",
-      imagePosition: "left",
       image: birthImg,
+      description: "Εξειδικευμένη παρακολούθηση της εγκυμοσύνης με έμφαση στην ασφάλεια μητέρας και μωρού.",
     },
   ];
 
@@ -54,55 +56,48 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Service Categories Sections */}
+      {/* Service Categories Cards */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-7xl mx-auto space-y-24">
+          <div className="max-w-4xl mx-auto grid gap-8 md:grid-cols-2">
             {serviceCategories.map((category) => (
-              <div
-                key={category.key}
-                className="grid md:grid-cols-2 gap-8 items-center"
+              <Link 
+                key={category.key} 
+                to={category.route}
+                className="block group"
               >
-                {/* Text Box */}
-                <div
-                  className={`${
-                    category.imagePosition === "right"
-                      ? "md:order-1"
-                      : "md:order-2"
-                  } order-1`}
-                >
-                  <div className="bg-gradient-to-br from-[hsl(var(--medical-lightest))] to-background p-8 md:p-12 rounded-lg shadow-lg">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
-                      {t(`services.${category.key}.title`)}
-                    </h2>
-                    <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                      {t(`services.${category.key}.intro`)}
-                    </p>
-                    <Link to={category.route}>
-                      <Button size="lg" className="text-lg">
-                        {t("services.readMore")}
-                      </Button>
-                    </Link>
-                  </div>
-                </div>
-
-                {/* Image Box */}
-                <div
-                  className={`${
-                    category.imagePosition === "right"
-                      ? "md:order-2"
-                      : "md:order-1"
-                  } order-2`}
-                >
-                  <div className="aspect-square rounded-lg overflow-hidden shadow-xl">
-                    <img
-                      src={category.image}
-                      alt={t(`services.${category.key}.imageAlt`)}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
-              </div>
+                <Card className="overflow-hidden bg-card shadow-lg hover:shadow-xl transition-shadow duration-300 h-full">
+                  {/* Top Section - Text Content */}
+                  <CardHeader className="relative p-6 md:p-8">
+                    <div className="flex items-start justify-between gap-4">
+                      <div className="flex-1">
+                        <CardTitle className="text-xl md:text-2xl font-heading font-medium mb-4 text-foreground group-hover:text-primary transition-colors">
+                          {t(`services.${category.key}.title`)}
+                        </CardTitle>
+                        <p className="text-base text-muted-foreground leading-relaxed">
+                          {category.description}
+                        </p>
+                      </div>
+                      {/* Arrow Icon */}
+                      <ArrowUpRight className="w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0" />
+                    </div>
+                  </CardHeader>
+                  
+                  {/* Divider */}
+                  <Separator />
+                  
+                  {/* Bottom Section - Image */}
+                  <CardContent className="p-0">
+                    <div className="aspect-video overflow-hidden">
+                      <img 
+                        src={category.image} 
+                        alt={t(`services.${category.key}.imageAlt`)}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>
