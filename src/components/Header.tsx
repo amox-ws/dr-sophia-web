@@ -8,7 +8,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { Globe, Menu, X, ChevronRight } from 'lucide-react';
+import { Globe, Menu, X, ChevronRight, ChevronDown } from 'lucide-react';
 
 const languageFlags: Record<Language, string> = {
   el: '🇬🇷',
@@ -83,26 +83,26 @@ const Header = () => {
             {/* Services Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button
-                  variant="ghost"
-                  className={`text-sm font-medium transition-colors nav-link-animated ${
+                <button
+                  className={`text-sm font-medium transition-colors nav-link-animated flex items-center gap-1 bg-transparent border-none cursor-pointer ${
                     location.pathname.startsWith('/services')
                       ? 'text-primary active'
                       : 'text-foreground'
                   }`}
                 >
                   {t('nav.services')}
-                </Button>
+                  <ChevronDown className="h-3 w-3" />
+                </button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="center" className="bg-background z-50">
+              <DropdownMenuContent align="center" className="bg-background z-50 border border-border">
                 {servicesLinks.map((link) => (
                   <DropdownMenuItem key={link.to} asChild>
                     <Link
                       to={link.to}
-                      className="cursor-pointer flex items-center justify-between gap-2"
+                      className="cursor-pointer flex items-center justify-between gap-2 hover:bg-muted transition-colors"
                     >
                       <span>{link.label}</span>
-                      <ChevronRight className="h-4 w-4 text-muted-foreground" />
+                      <ChevronRight className="h-3.5 w-3.5 text-muted-foreground" />
                     </Link>
                   </DropdownMenuItem>
                 ))}
