@@ -3,7 +3,13 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Heart, Shield, Users, Award } from 'lucide-react';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel';
 
 const Home = () => {
   const { t } = useLanguage();
@@ -59,55 +65,6 @@ const Home = () => {
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent"></div>
       </section>
 
-      {/* Values Section */}
-      <section className="py-20 bg-gradient-to-b from-background to-[hsl(var(--medical-lightest))]">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                icon: Heart,
-                title: 'Compassionate Care',
-                description: 'Patient-centered approach with empathy and understanding',
-              },
-              {
-                icon: Shield,
-                title: 'Modern Medicine',
-                description: 'Latest medical technologies and treatment methods',
-              },
-              {
-                icon: Users,
-                title: 'Personalized Attention',
-                description: 'Individualized care plans for every patient',
-              },
-              {
-                icon: Award,
-                title: 'Excellence',
-                description: 'Over 15 years of expertise in women\'s health',
-              },
-            ].map((value, index) => (
-              <Card 
-                key={index} 
-                className="observe-animation border-none shadow-lg hover:shadow-xl transition-shadow duration-300 bg-white"
-              >
-                <CardContent className="p-6 text-center">
-                  <div className="mb-4 flex justify-center">
-                    <div className="p-3 rounded-full bg-gradient-to-br from-[hsl(var(--medical-medium))] to-[hsl(var(--medical-medium-dark))]">
-                      <value.icon className="h-8 w-8 text-white" />
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2 text-foreground">
-                    {value.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm">
-                    {value.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Services Preview */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
@@ -118,6 +75,47 @@ const Home = () => {
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               {t('services.subtitle')}
             </p>
+          </div>
+
+          {/* Services Carousel */}
+          <div className="mb-16 observe-animation">
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full max-w-6xl mx-auto"
+            >
+              <CarouselContent>
+                {[
+                  { key: 'gynecology', alt: 'Gynecology services' },
+                  { key: 'reproduction', alt: 'Assisted reproduction services' },
+                  { key: 'surgery', alt: 'Endoscopic surgery services' },
+                  { key: 'pregnancy', alt: 'Pregnancy care services' },
+                ].map((service) => (
+                  <CarouselItem key={service.key} className="md:basis-1/2 lg:basis-1/3">
+                    <div className="p-4">
+                      <Card className="border-none shadow-lg overflow-hidden">
+                        <div className="aspect-[4/3] bg-gradient-to-br from-[hsl(var(--medical-lightest))] to-[hsl(var(--medical-light))] flex items-center justify-center">
+                          <img
+                            src="/placeholder.svg"
+                            alt={service.alt}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <CardContent className="p-6 text-center">
+                          <h3 className="text-xl font-semibold text-foreground">
+                            {t(`carousel.${service.key}`)}
+                          </h3>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-0 -translate-x-1/2" />
+              <CarouselNext className="right-0 translate-x-1/2" />
+            </Carousel>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">

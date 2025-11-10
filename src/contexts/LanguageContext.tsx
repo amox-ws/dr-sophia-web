@@ -13,8 +13,8 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 const translations: Record<Language, Record<string, string>> = {
   el: {
     // Navigation
-    'nav.home': 'Αρχική',
-    'nav.about': 'Σχετικά',
+    'nav.home': 'Dr. Cheirakis',
+    'nav.about': 'Ο Γιατρός',
     'nav.services': 'Υπηρεσίες',
     'nav.contact': 'Επικοινωνία',
     
@@ -55,6 +55,12 @@ const translations: Record<Language, Record<string, string>> = {
     'service.menopause.title': 'Διαχείριση Εμμηνόπαυσης',
     'service.menopause.desc': 'Υποστήριξη και θεραπείες για τα συμπτώματα της εμμηνόπαυσης.',
     
+    // Carousel Services
+    'carousel.gynecology': 'ΓΥΝΑΙΚΟΛΟΓΙΑ',
+    'carousel.reproduction': 'ΥΠΟΒΟΗΘΟΥΜΕΝΗ ΑΝΑΠΑΡΑΓΩΓΗ',
+    'carousel.surgery': 'ΕΝΔΟΣΚΟΠΙΚΗ ΧΕΙΡΟΥΡΓΙΚΗ',
+    'carousel.pregnancy': 'ΕΓΚΥΜΟΣΥΝΗ',
+    
     // Contact
     'contact.title': 'Επικοινωνήστε μαζί μας',
     'contact.subtitle': 'Είμαστε εδώ για να απαντήσουμε στις ερωτήσεις σας',
@@ -75,8 +81,8 @@ const translations: Record<Language, Record<string, string>> = {
   },
   en: {
     // Navigation
-    'nav.home': 'Home',
-    'nav.about': 'About',
+    'nav.home': 'Dr. Cheirakis',
+    'nav.about': 'The Doctor',
     'nav.services': 'Services',
     'nav.contact': 'Contact',
     
@@ -117,6 +123,12 @@ const translations: Record<Language, Record<string, string>> = {
     'service.menopause.title': 'Menopause Management',
     'service.menopause.desc': 'Support and treatments for menopause symptoms.',
     
+    // Carousel Services
+    'carousel.gynecology': 'GYNECOLOGY',
+    'carousel.reproduction': 'ASSISTED REPRODUCTION',
+    'carousel.surgery': 'ENDOSCOPIC SURGERY',
+    'carousel.pregnancy': 'PREGNANCY',
+    
     // Contact
     'contact.title': 'Contact Us',
     'contact.subtitle': 'We are here to answer your questions',
@@ -137,8 +149,8 @@ const translations: Record<Language, Record<string, string>> = {
   },
   fr: {
     // Navigation
-    'nav.home': 'Accueil',
-    'nav.about': 'À Propos',
+    'nav.home': 'Dr. Cheirakis',
+    'nav.about': 'Le Médecin',
     'nav.services': 'Services',
     'nav.contact': 'Contact',
     
@@ -178,6 +190,12 @@ const translations: Record<Language, Record<string, string>> = {
     
     'service.menopause.title': 'Gestion de la Ménopause',
     'service.menopause.desc': 'Soutien et traitements pour les symptômes de la ménopause.',
+    
+    // Carousel Services
+    'carousel.gynecology': 'GYNÉCOLOGIE',
+    'carousel.reproduction': 'REPRODUCTION ASSISTÉE',
+    'carousel.surgery': 'CHIRURGIE ENDOSCOPIQUE',
+    'carousel.pregnancy': 'GROSSESSE',
     
     // Contact
     'contact.title': 'Contactez-nous',
