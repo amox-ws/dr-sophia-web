@@ -9,6 +9,10 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
+import Gynecology from "./pages/Gynecology";
+import AssistedReproduction from "./pages/AssistedReproduction";
+import EndoscopicSurgery from "./pages/EndoscopicSurgery";
+import Pregnancy from "./pages/Pregnancy";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
@@ -26,6 +30,10 @@ const App = () => (
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/services/gynecology" element={<Gynecology />} />
+            <Route path="/services/assisted-reproduction" element={<AssistedReproduction />} />
+            <Route path="/services/endoscopic-surgery" element={<EndoscopicSurgery />} />
+            <Route path="/services/pregnancy" element={<Pregnancy />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

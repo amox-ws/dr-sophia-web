@@ -40,8 +40,15 @@ const Header = () => {
   const navLinks = [
     { to: '/', label: t('nav.home') },
     { to: '/about', label: t('nav.about') },
-    { to: '/services', label: t('nav.services') },
     { to: '/contact', label: t('nav.contact') },
+  ];
+
+  const servicesLinks = [
+    { to: '/services', label: t('nav.services') },
+    { to: '/services/gynecology', label: t('services.gynecology.title') },
+    { to: '/services/assisted-reproduction', label: t('services.assistedReproduction.title') },
+    { to: '/services/endoscopic-surgery', label: t('services.endoscopicSurgery.title') },
+    { to: '/services/pregnancy', label: t('services.pregnancy.title') },
   ];
 
   return (
@@ -78,6 +85,36 @@ const Header = () => {
                 {link.label}
               </Link>
             ))}
+
+            {/* Services Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button
+                  variant="ghost"
+                  className={`text-sm font-medium transition-colors hover:text-primary ${
+                    location.pathname.startsWith('/services')
+                      ? 'text-primary'
+                      : isScrolled
+                      ? 'text-foreground'
+                      : 'text-foreground'
+                  }`}
+                >
+                  {t('nav.services')}
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="center" className="bg-background z-50">
+                {servicesLinks.map((link) => (
+                  <DropdownMenuItem key={link.to} asChild>
+                    <Link
+                      to={link.to}
+                      className="cursor-pointer"
+                    >
+                      {link.label}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
 
             {/* Language Switcher */}
             <DropdownMenu>
@@ -155,6 +192,24 @@ const Header = () => {
                 {link.label}
               </Link>
             ))}
+            
+            <div className="px-4 pt-2 border-t border-border">
+              <p className="text-xs font-semibold text-muted-foreground mb-2">{t('nav.services')}</p>
+              {servicesLinks.map((link) => (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`block px-2 py-2 text-sm transition-colors hover:text-primary ${
+                    location.pathname === link.to
+                      ? 'text-primary'
+                      : 'text-foreground'
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
           </div>
         )}
       </nav>
