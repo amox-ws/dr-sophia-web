@@ -11,6 +11,12 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 
+// 🩺 Import service images
+import gynecology_img from '@/assets/gynecology.jpeg';
+import assisted_reproduction_img from '@/assets/assisted-reproduction.jpeg';
+import endoscopic_surgery_img from '@/assets/endoscopic_surgery.jpeg';
+import pregnancy_img from '@/assets/pregnancy.jpeg';
+
 const Home = () => {
   const { t } = useLanguage();
   const observerRef = useRef<IntersectionObserver | null>(null);
@@ -61,7 +67,6 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Decorative circles */}
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent"></div>
       </section>
 
@@ -87,30 +92,34 @@ const Home = () => {
               className="w-full max-w-6xl mx-auto"
             >
               <CarouselContent>
-                 {[
+                {[
                   { 
                     key: 'gynecology', 
+                    img: gynecology_img,
                     alt: 'Gynecology services - Υπηρεσίες γυναικολογίας - Services de gynécologie' 
                   },
                   { 
                     key: 'reproduction', 
+                    img: assisted_reproduction_img,
                     alt: 'Assisted reproduction - Υποβοηθούμενη αναπαραγωγή - Reproduction assistée' 
                   },
                   { 
                     key: 'surgery', 
+                    img: endoscopic_surgery_img,
                     alt: 'Endoscopic surgery - Ενδοσκοπική χειρουργική - Chirurgie endoscopique' 
                   },
                   { 
                     key: 'pregnancy', 
+                    img: pregnancy_img,
                     alt: 'Pregnancy care - Φροντίδα εγκυμοσύνης - Suivi de grossesse' 
                   },
-                 ].map((service) => (
+                ].map((service) => (
                   <CarouselItem key={service.key} className="md:basis-1/2 lg:basis-1/3">
                     <div className="p-4">
                       <div className="max-w-sm mx-auto">
                         <div className="aspect-square rounded-full overflow-hidden bg-gradient-to-br from-[hsl(var(--medical-lightest))] to-[hsl(var(--medical-light))] flex items-center justify-center shadow-lg">
                           <img
-                            src="/placeholder.svg"
+                            src={service.img}
                             alt={service.alt}
                             className="w-full h-full object-cover"
                           />
@@ -148,7 +157,6 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto observe-animation">
             <div className="grid md:grid-cols-2 gap-12 items-center">
-              {/* Doctor Image - Left on Desktop, Top on Mobile */}
               <div className="order-1 md:order-1">
                 <div className="max-w-md mx-auto">
                   <div className="aspect-square rounded-full overflow-hidden bg-gradient-to-br from-[hsl(var(--medical-medium))] to-[hsl(var(--medical-medium-dark))] shadow-2xl">
@@ -161,7 +169,6 @@ const Home = () => {
                 </div>
               </div>
               
-              {/* Doctor Text - Right on Desktop, Bottom on Mobile */}
               <div className="order-2 md:order-2">
                 <h2 className="text-4xl font-bold mb-6 text-foreground">
                   {t('doctor.title')}
