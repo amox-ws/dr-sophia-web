@@ -1,30 +1,40 @@
-import { Link } from 'react-router-dom';
-import { useLanguage } from '@/contexts/LanguageContext';
-import { Button } from '@/components/ui/button';
+import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { Button } from "@/components/ui/button";
+
+// 🖼️ Import your local images
+import birthImg from "@/assets/birth.jpeg";
+import mitraImg from "@/assets/mitra.jpeg";
+import spermImg from "@/assets/sperm.jpeg";
+import surgeryImg from "@/assets/surgery.jpeg";
 
 const Services = () => {
   const { t } = useLanguage();
 
   const serviceCategories = [
     {
-      key: 'gynecology',
-      route: '/services/gynecology',
-      imagePosition: 'right',
+      key: "gynecology",
+      route: "/services/gynecology",
+      imagePosition: "right",
+      image: mitraImg,
     },
     {
-      key: 'assistedReproduction',
-      route: '/services/assisted-reproduction',
-      imagePosition: 'left',
+      key: "assistedReproduction",
+      route: "/services/assisted-reproduction",
+      imagePosition: "left",
+      image: spermImg,
     },
     {
-      key: 'endoscopicSurgery',
-      route: '/services/endoscopic-surgery',
-      imagePosition: 'right',
+      key: "endoscopicSurgery",
+      route: "/services/endoscopic-surgery",
+      imagePosition: "right",
+      image: surgeryImg,
     },
     {
-      key: 'pregnancy',
-      route: '/services/pregnancy',
-      imagePosition: 'left',
+      key: "pregnancy",
+      route: "/services/pregnancy",
+      imagePosition: "left",
+      image: birthImg,
     },
   ];
 
@@ -35,10 +45,10 @@ const Services = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-              {t('services.page.title')}
+              {t("services.page.title")}
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground">
-              {t('services.page.subtitle')}
+              {t("services.page.subtitle")}
             </p>
           </div>
         </div>
@@ -48,10 +58,19 @@ const Services = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto space-y-24">
-            {serviceCategories.map((category, index) => (
-              <div key={category.key} className="grid md:grid-cols-2 gap-8 items-center">
+            {serviceCategories.map((category) => (
+              <div
+                key={category.key}
+                className="grid md:grid-cols-2 gap-8 items-center"
+              >
                 {/* Text Box */}
-                <div className={`${category.imagePosition === 'right' ? 'md:order-1' : 'md:order-2'} order-2`}>
+                <div
+                  className={`${
+                    category.imagePosition === "right"
+                      ? "md:order-1"
+                      : "md:order-2"
+                  } order-2`}
+                >
                   <div className="bg-gradient-to-br from-[hsl(var(--medical-lightest))] to-background p-8 md:p-12 rounded-lg shadow-lg">
                     <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
                       {t(`services.${category.key}.title`)}
@@ -61,17 +80,23 @@ const Services = () => {
                     </p>
                     <Link to={category.route}>
                       <Button size="lg" className="text-lg">
-                        {t('services.readMore')}
+                        {t("services.readMore")}
                       </Button>
                     </Link>
                   </div>
                 </div>
 
                 {/* Image Box */}
-                <div className={`${category.imagePosition === 'right' ? 'md:order-2' : 'md:order-1'} order-1`}>
-                  <div className="aspect-square rounded-lg overflow-hidden bg-gradient-to-br from-[hsl(var(--medical-light))] to-[hsl(var(--medical-medium))] shadow-xl">
+                <div
+                  className={`${
+                    category.imagePosition === "right"
+                      ? "md:order-2"
+                      : "md:order-1"
+                  } order-1`}
+                >
+                  <div className="aspect-square rounded-lg overflow-hidden shadow-xl">
                     <img
-                      src="/placeholder.svg"
+                      src={category.image}
                       alt={t(`services.${category.key}.imageAlt`)}
                       className="w-full h-full object-cover"
                     />
