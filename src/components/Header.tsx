@@ -44,7 +44,7 @@ const Header = () => {
   ];
 
   const servicesLinks = [
-    { to: '/services', label: t('nav.services') },
+    { to: '/services', label: t('nav.allServices') },
     { to: '/services/gynecology', label: t('services.gynecology.title') },
     { to: '/services/assisted-reproduction', label: t('services.assistedReproduction.title') },
     { to: '/services/endoscopic-surgery', label: t('services.endoscopicSurgery.title') },
