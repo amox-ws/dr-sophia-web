@@ -9,18 +9,22 @@ const Services = () => {
     {
       key: 'gynecology',
       route: '/services/gynecology',
+      imagePosition: 'right',
     },
     {
       key: 'assistedReproduction',
       route: '/services/assisted-reproduction',
+      imagePosition: 'left',
     },
     {
       key: 'endoscopicSurgery',
       route: '/services/endoscopic-surgery',
+      imagePosition: 'right',
     },
     {
       key: 'pregnancy',
       route: '/services/pregnancy',
+      imagePosition: 'left',
     },
   ];
 
@@ -43,21 +47,12 @@ const Services = () => {
       {/* Service Categories Sections */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto space-y-12">
-            {serviceCategories.map((category) => (
-              <div key={category.key} className="bg-gradient-to-br from-[hsl(var(--medical-lightest))] to-background rounded-lg shadow-lg overflow-hidden">
-                <div className="grid md:grid-cols-2 gap-0">
-                  {/* Image */}
-                  <div className="aspect-square md:aspect-auto">
-                    <img
-                      src="/placeholder.svg"
-                      alt={t(`services.${category.key}.imageAlt`)}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  
-                  {/* Text Content */}
-                  <div className="p-8 md:p-12 flex flex-col justify-center">
+          <div className="max-w-7xl mx-auto space-y-24">
+            {serviceCategories.map((category, index) => (
+              <div key={category.key} className="grid md:grid-cols-2 gap-8 items-center">
+                {/* Text Box */}
+                <div className={`${category.imagePosition === 'right' ? 'md:order-1' : 'md:order-2'} order-2`}>
+                  <div className="bg-gradient-to-br from-[hsl(var(--medical-lightest))] to-background p-8 md:p-12 rounded-lg shadow-lg">
                     <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
                       {t(`services.${category.key}.title`)}
                     </h2>
@@ -69,6 +64,17 @@ const Services = () => {
                         {t('services.readMore')}
                       </Button>
                     </Link>
+                  </div>
+                </div>
+
+                {/* Image Box */}
+                <div className={`${category.imagePosition === 'right' ? 'md:order-2' : 'md:order-1'} order-1`}>
+                  <div className="aspect-square rounded-lg overflow-hidden bg-gradient-to-br from-[hsl(var(--medical-light))] to-[hsl(var(--medical-medium))] shadow-xl">
+                    <img
+                      src="/placeholder.svg"
+                      alt={t(`services.${category.key}.imageAlt`)}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 </div>
               </div>
