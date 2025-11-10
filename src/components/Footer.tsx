@@ -23,18 +23,23 @@ const Footer = () => {
             <h3 className="text-xl font-semibold mb-4">{t('nav.services')}</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/services" className="text-white/80 hover:text-white transition-colors text-sm">
-                  {t('service.general.title')}
+                <Link to="/services/gynecology" className="text-white/80 hover:text-white transition-colors text-sm">
+                  {t('services.gynecology.title')}
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-white/80 hover:text-white transition-colors text-sm">
-                  {t('service.obstetrics.title')}
+                <Link to="/services/assisted-reproduction" className="text-white/80 hover:text-white transition-colors text-sm">
+                  {t('services.assistedReproduction.title')}
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-white/80 hover:text-white transition-colors text-sm">
-                  {t('service.fertility.title')}
+                <Link to="/services/endoscopic-surgery" className="text-white/80 hover:text-white transition-colors text-sm">
+                  {t('services.endoscopicSurgery.title')}
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/pregnancy" className="text-white/80 hover:text-white transition-colors text-sm">
+                  {t('services.pregnancy.title')}
                 </Link>
               </li>
             </ul>

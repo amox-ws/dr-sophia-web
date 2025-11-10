@@ -4,6 +4,13 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { ArrowUpRight } from "lucide-react";
 
+const formatTitleWithLineBreak = (title: string, key: string, language: string): string => {
+  if (language !== 'el') return title;
+  if (key === 'gynecology') return title.replace('ΓΥΝΑΙΚΟΛΟΓΙΑ', 'ΓΥΝΑΙΚΟ\nΛΟΓΙΑ');
+  if (key === 'pregnancy') return title.replace('ΕΓΚΥΜΟΣΥΝΗ', 'ΕΓΚΥΜΟ\nΣΥΝΗ');
+  return title;
+};
+
 // 🖼️ Import your local images
 import birthImg from "@/assets/birth.jpeg";
 import mitraImg from "@/assets/mitra.jpeg";
@@ -11,7 +18,7 @@ import spermImg from "@/assets/sperm.jpeg";
 import surgeryImg from "@/assets/surgery.jpeg";
 
 const Services = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const serviceCategories = [
     {
@@ -71,8 +78,8 @@ const Services = () => {
                   <CardHeader className="relative p-6 md:p-8">
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1">
-                        <CardTitle className="text-xl md:text-2xl font-heading font-medium mb-4 text-foreground group-hover:text-primary transition-colors">
-                          {t(`services.${category.key}.title`)}
+                        <CardTitle className="text-xl md:text-2xl font-heading font-medium mb-4 text-foreground group-hover:text-primary transition-colors whitespace-pre-line">
+                          {formatTitleWithLineBreak(t(`services.${category.key}.title`), category.key, language)}
                         </CardTitle>
                         <p className="text-base text-muted-foreground leading-relaxed">
                           {category.description}

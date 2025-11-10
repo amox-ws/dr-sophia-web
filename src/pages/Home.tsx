@@ -132,7 +132,7 @@ const Home = () => {
                     alt: 'Pregnancy care - Φροντίδα εγκυμοσύνης - Suivi de grossesse',
                   },
                 ].map((service) => (
-                  <CarouselItem key={service.key} className="md:basis-1/2 lg:basis-1/3">
+                  <CarouselItem key={service.key} className="md:basis-1/2 lg:basis-1/4">
                     <div className="p-4">
                       <div className="max-w-sm mx-auto">
                         <div className="aspect-square rounded-full overflow-hidden bg-gradient-to-br from-[hsl(var(--medical-lightest))] to-[hsl(var(--medical-light))] flex items-center justify-center shadow-lg">
@@ -152,8 +152,8 @@ const Home = () => {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="left-0 -translate-x-1/2" />
-              <CarouselNext className="right-0 translate-x-1/2" />
+              <CarouselPrevious className="left-0 -translate-x-1/2 lg:hidden" />
+              <CarouselNext className="right-0 translate-x-1/2 lg:hidden" />
             </Carousel>
           </div>
 
