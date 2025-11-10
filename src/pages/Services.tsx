@@ -69,7 +69,7 @@ const Services = () => {
                     category.imagePosition === "right"
                       ? "md:order-1"
                       : "md:order-2"
-                  } order-2`}
+                  } order-1`}
                 >
                   <div className="bg-gradient-to-br from-[hsl(var(--medical-lightest))] to-background p-8 md:p-12 rounded-lg shadow-lg">
                     <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
@@ -92,7 +92,7 @@ const Services = () => {
                     category.imagePosition === "right"
                       ? "md:order-2"
                       : "md:order-1"
-                  } order-1`}
+                  } order-2`}
                 >
                   <div className="aspect-square rounded-lg overflow-hidden shadow-xl">
                     <img
