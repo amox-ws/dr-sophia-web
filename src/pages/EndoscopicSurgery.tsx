@@ -1,14 +1,13 @@
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import endoscopicSurgeryImage from '@/assets/endoscopic_surgery.jpeg';
 
 const EndoscopicSurgery = () => {
   const { t } = useLanguage();
 
   const subServices = [
-    'hysteroscopy',
-    'laparoscopy',
-    'roboticSurgery'
+    { key: 'hysteroscopy', title: 'Υστεροσκόπηση', content: 'Ελάχιστα επεμβατική διαδικασία που επιτρέπει την άμεση ενδοσκοπική εξέταση της ενδομητρικής κοιλότητας για διάγνωση και θεραπεία πολυπόδων, συμφύσεων και άλλων ανωμαλιών.' },
+    { key: 'laparoscopy', title: 'Λαπαροσκόπηση', content: 'Χειρουργική τεχνική με μικρές τομές, μέσω κάμερας, για τη διάγνωση ή θεραπεία παθήσεων όπως ενδομητρίωση, κύστεις ωοθηκών, ινομυώματα και προβλήματα σαλπίγγων.' },
+    { key: 'roboticSurgery', title: 'Ρομποτική Χειρουργική', content: 'Προηγμένη λαπαροσκοπική μέθοδος που επιτρέπει μεγαλύτερη ακρίβεια, λιγότερη απώλεια αίματος και ταχύτερη ανάρρωση.' }
   ];
 
   return (
@@ -37,30 +36,20 @@ const EndoscopicSurgery = () => {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Content Section */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <Accordion type="single" collapsible className="space-y-4">
-              {subServices.map((service) => (
-                <AccordionItem 
-                  key={service} 
-                  value={service}
-                  className="bg-gradient-to-br from-[hsl(var(--medical-lightest))] to-background rounded-lg border border-border shadow-sm overflow-hidden"
-                >
-                  <AccordionTrigger className="px-6 py-4 hover:no-underline hover:bg-white/50 transition-colors">
-                    <h3 className="text-xl md:text-2xl font-semibold text-foreground text-left">
-                      {t(`services.endoscopicSurgery.${service}.title`)}
-                    </h3>
-                  </AccordionTrigger>
-                  <AccordionContent className="px-6 pb-6">
-                    <p className="text-muted-foreground leading-relaxed">
-                      {t(`services.endoscopicSurgery.${service}.description`)}
-                    </p>
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
+          <div className="max-w-4xl mx-auto space-y-12">
+            {subServices.map((service) => (
+              <article key={service.key} className="space-y-4">
+                <h3 className="text-2xl md:text-3xl font-heading font-medium text-foreground">
+                  {service.title}
+                </h3>
+                <p className="text-foreground/80 leading-relaxed">
+                  {service.content}
+                </p>
+              </article>
+            ))}
           </div>
         </div>
       </section>

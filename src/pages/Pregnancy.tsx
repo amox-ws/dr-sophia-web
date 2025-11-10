@@ -1,17 +1,16 @@
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import pregnancyImage from '@/assets/pregnancy.jpeg';
 
 const Pregnancy = () => {
   const { t } = useLanguage();
 
   const subServices = [
-    'prenatalScreening',
-    'nipt',
-    'ultrasound3d4d',
-    'delivery',
-    'vbac',
-    'twinPregnancy'
+    { key: 'prenatalScreening', title: 'Προγεννητικός Έλεγχος', content: 'Περιλαμβάνει εξετάσεις που αξιολογούν την υγεία του εμβρύου και εντοπίζουν πιθανές ανωμαλίες.' },
+    { key: 'nipt', title: 'Μη Επεμβατικός Προγεννητικός Έλεγχος (NIPT)', content: 'Ανάλυση εμβρυικού DNA από το αίμα της μητέρας. Προσφέρει υψηλή ακρίβεια για ανευπλοειδίες χωρίς κίνδυνο για την εγκυμοσύνη.' },
+    { key: 'ultrasound3d4d', title: 'Υπερηχογράφημα 3D-4D', content: 'Τρισδιάστατη και τετραδιάστατη απεικόνιση του εμβρύου, προσφέροντας αναλυτική εικόνα της μορφολογίας και των κινήσεων του.' },
+    { key: 'delivery', title: 'Τοκετός', content: 'Παρακολούθηση και υποστήριξη της γυναίκας στη διαδικασία του φυσιολογικού τοκετού ή της καισαρικής, ανάλογα με τις ιατρικές ανάγκες.' },
+    { key: 'vbac', title: 'Φυσιολογικός τοκετός μετά από καισαρική (VBAC)', content: 'Προσεκτικά επιλεγμένες γυναίκες μπορούν να επιχειρήσουν φυσιολογικό τοκετό μετά από προηγούμενη καισαρική.' },
+    { key: 'twinPregnancy', title: 'Δίδυμη κύηση', content: 'Εξειδικευμένη παρακολούθηση για πολύδυμες κυήσεις, με έμφαση στην πρόληψη και αντιμετώπιση επιπλοκών.' }
   ];
 
   return (
@@ -40,30 +39,20 @@ const Pregnancy = () => {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Content Section */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <Accordion type="single" collapsible className="space-y-4">
-              {subServices.map((service) => (
-                <AccordionItem 
-                  key={service} 
-                  value={service}
-                  className="bg-gradient-to-br from-[hsl(var(--medical-lightest))] to-background rounded-lg border border-border shadow-sm overflow-hidden"
-                >
-                  <AccordionTrigger className="px-6 py-4 hover:no-underline hover:bg-white/50 transition-colors">
-                    <h3 className="text-xl md:text-2xl font-semibold text-foreground text-left">
-                      {t(`services.pregnancy.${service}.title`)}
-                    </h3>
-                  </AccordionTrigger>
-                  <AccordionContent className="px-6 pb-6">
-                    <p className="text-muted-foreground leading-relaxed">
-                      {t(`services.pregnancy.${service}.description`)}
-                    </p>
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
+          <div className="max-w-4xl mx-auto space-y-12">
+            {subServices.map((service) => (
+              <article key={service.key} className="space-y-4">
+                <h3 className="text-2xl md:text-3xl font-heading font-medium text-foreground">
+                  {service.title}
+                </h3>
+                <p className="text-foreground/80 leading-relaxed">
+                  {service.content}
+                </p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
