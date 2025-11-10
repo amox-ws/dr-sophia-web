@@ -3,12 +3,20 @@ import { Link, useLocation } from 'react-router-dom';
 import { useLanguage, Language } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from '@/components/ui/navigation-menu';
+import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { Globe, Menu, X, ChevronRight, ChevronDown } from 'lucide-react';
+import { Globe, Menu, X } from 'lucide-react';
 
 const languageFlags: Record<Language, string> = {
   el: '🇬🇷',
@@ -80,34 +88,38 @@ const Header = () => {
               </Link>
             ))}
 
-            {/* Services Dropdown */}
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <button
-                  className={`text-sm font-medium transition-colors nav-link-animated flex items-center gap-1 bg-transparent border-none cursor-pointer ${
-                    location.pathname.startsWith('/services')
-                      ? 'text-primary active'
-                      : 'text-foreground'
-                  }`}
-                >
-                  {t('nav.services')}
-                  <ChevronDown className="h-3 w-3" />
-                </button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="center" className="bg-background z-50 border border-border">
-                {servicesLinks.map((link) => (
-                  <DropdownMenuItem key={link.to} asChild>
-                    <Link
-                      to={link.to}
-                      className="cursor-pointer flex items-center justify-between gap-2 hover:bg-muted transition-colors"
-                    >
-                      <span>{link.label}</span>
-                      <ChevronRight className="h-3.5 w-3.5 text-muted-foreground" />
-                    </Link>
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
+            {/* Services Navigation Menu */}
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger 
+                    className={`text-sm font-medium nav-link-animated bg-transparent hover:bg-transparent data-[state=open]:bg-transparent data-[active]:bg-transparent focus:bg-transparent ${
+                      location.pathname.startsWith('/services')
+                        ? 'text-primary active'
+                        : 'text-foreground'
+                    }`}
+                  >
+                    {t('nav.services')}
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[200px] gap-1 p-2 bg-background border border-border rounded-md shadow-lg">
+                      {servicesLinks.map((link) => (
+                        <li key={link.to}>
+                          <NavigationMenuLink asChild>
+                            <Link
+                              to={link.to}
+                              className="block select-none rounded-sm px-3 py-2 text-sm leading-none no-underline outline-none transition-colors hover:bg-muted hover:text-accent-foreground focus:bg-muted focus:text-accent-foreground"
+                            >
+                              {link.label}
+                            </Link>
+                          </NavigationMenuLink>
+                        </li>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
 
             {/* Language Switcher */}
             <DropdownMenu>
@@ -192,14 +204,13 @@ const Header = () => {
                   key={link.to}
                   to={link.to}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`flex items-center justify-between px-2 py-2 text-sm transition-colors ${
+                  className={`block px-2 py-2 text-sm transition-colors ${
                     location.pathname === link.to
                       ? 'text-primary'
                       : 'text-foreground'
                   }`}
                 >
-                  <span>{link.label}</span>
-                  <ChevronRight className="h-4 w-4 text-muted-foreground" />
+                  {link.label}
                 </Link>
               ))}
             </div>
