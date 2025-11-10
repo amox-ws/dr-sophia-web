@@ -1,5 +1,6 @@
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Card } from '@/components/ui/card';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import pregnancyImage from '@/assets/pregnancy.jpeg';
 
 const Pregnancy = () => {
   const { t } = useLanguage();
@@ -16,12 +17,25 @@ const Pregnancy = () => {
   return (
     <main className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-[hsl(var(--medical-lightest))] to-background">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-              {t('services.pregnancy.title')}
-            </h1>
+      <section className="relative pt-32 pb-16 overflow-hidden" style={{ backgroundColor: '#4D6471' }}>
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#4D6471]/80" />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8">
+            {/* Circular Image */}
+            <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden flex-shrink-0 border-4 border-white/20 shadow-2xl">
+              <img 
+                src={pregnancyImage} 
+                alt={t('services.pregnancy.imageAlt')}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            
+            {/* Title */}
+            <div className="flex-1 text-center md:text-left">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
+                {t('services.pregnancy.title')}
+              </h1>
+            </div>
           </div>
         </div>
       </section>
@@ -30,19 +44,26 @@ const Pregnancy = () => {
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            
-            <div className="space-y-6">
+            <Accordion type="single" collapsible className="space-y-4">
               {subServices.map((service) => (
-                <Card key={service} className="p-6 hover:shadow-lg transition-shadow">
-                  <h2 className="text-2xl font-semibold mb-4 text-foreground">
-                    {t(`services.pregnancy.${service}.title`)}
-                  </h2>
-                  <div className="min-h-[100px] text-muted-foreground">
-                    {t(`services.pregnancy.${service}.description`)}
-                  </div>
-                </Card>
+                <AccordionItem 
+                  key={service} 
+                  value={service}
+                  className="bg-gradient-to-br from-[hsl(var(--medical-lightest))] to-background rounded-lg border border-border shadow-sm overflow-hidden"
+                >
+                  <AccordionTrigger className="px-6 py-4 hover:no-underline hover:bg-white/50 transition-colors">
+                    <h3 className="text-xl md:text-2xl font-semibold text-foreground text-left">
+                      {t(`services.pregnancy.${service}.title`)}
+                    </h3>
+                  </AccordionTrigger>
+                  <AccordionContent className="px-6 pb-6">
+                    <p className="text-muted-foreground leading-relaxed">
+                      {t(`services.pregnancy.${service}.description`)}
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
               ))}
-            </div>
+            </Accordion>
           </div>
         </div>
       </section>
