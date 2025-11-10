@@ -62,6 +62,12 @@ const translations: Record<Language, Record<string, string>> = {
     'carousel.surgery': 'ΕΝΔΟΣΚΟΠΙΚΗ ΧΕΙΡΟΥΡΓΙΚΗ',
     'carousel.pregnancy': 'ΕΓΚΥΜΟΣΥΝΗ',
     
+    // Doctor Section
+    'doctor.title': 'Ο Γιατρός',
+    'doctor.intro': 'Με πάνω από 15 χρόνια εμπειρίας στη γυναικολογία και μαιευτική, αφιερώνομαι στην παροχή της υψηλότερης ποιότητας φροντίδας για κάθε ασθενή. Η προσέγγισή μου συνδυάζει την ιατρική αριστεία με την εξατομικευμένη φροντίδα.',
+    'doctor.readMore': 'Περισσότερα',
+    'doctor.imageAlt': 'Δρ. Λευτέρης Χειράκης - Γυναικολόγος Αθήνα',
+    
     // CTA
     'cta.title': 'Έτοιμοι να Φροντίσετε την Υγεία σας;',
     'cta.subtitle': 'Κλείστε το ραντεβού σας σήμερα και βιώστε εξατομικευμένη φροντίδα',
@@ -135,6 +141,12 @@ const translations: Record<Language, Record<string, string>> = {
     'carousel.surgery': 'ENDOSCOPIC SURGERY',
     'carousel.pregnancy': 'PREGNANCY',
     
+    // Doctor Section
+    'doctor.title': 'The Doctor',
+    'doctor.intro': 'With over 15 years of experience in gynecology and obstetrics, I am dedicated to providing the highest quality care for every patient. My approach combines medical excellence with personalized care.',
+    'doctor.readMore': 'Read More',
+    'doctor.imageAlt': 'Dr. Lefteris Cheirakis - Gynecologist Athens',
+    
     // CTA
     'cta.title': 'Ready to Take Care of Your Health?',
     'cta.subtitle': 'Schedule your appointment today and experience personalized care',
@@ -207,6 +219,12 @@ const translations: Record<Language, Record<string, string>> = {
     'carousel.reproduction': 'REPRODUCTION ASSISTÉE',
     'carousel.surgery': 'CHIRURGIE ENDOSCOPIQUE',
     'carousel.pregnancy': 'GROSSESSE',
+    
+    // Doctor Section
+    'doctor.title': 'Le Médecin',
+    'doctor.intro': 'Avec plus de 15 ans d\'expérience en gynécologie et obstétrique, je me consacre à fournir des soins de la plus haute qualité à chaque patiente. Mon approche combine l\'excellence médicale avec des soins personnalisés.',
+    'doctor.readMore': 'En savoir plus',
+    'doctor.imageAlt': 'Dr Lefteris Cheirakis - Gynécologue Athènes',
     
     // CTA
     'cta.title': 'Prêt à Prendre Soin de Votre Santé ?',

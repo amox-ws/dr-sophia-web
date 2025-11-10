@@ -104,10 +104,10 @@ const Home = () => {
                     key: 'pregnancy', 
                     alt: 'Pregnancy care - Φροντίδα εγκυμοσύνης - Suivi de grossesse' 
                   },
-                ].map((service) => (
-                  <CarouselItem key={service.key} className="basis-full">
+                 ].map((service) => (
+                  <CarouselItem key={service.key} className="md:basis-1/2 lg:basis-1/3">
                     <div className="p-4">
-                      <div className="max-w-md mx-auto">
+                      <div className="max-w-sm mx-auto">
                         <div className="aspect-square rounded-full overflow-hidden bg-gradient-to-br from-[hsl(var(--medical-lightest))] to-[hsl(var(--medical-light))] flex items-center justify-center shadow-lg">
                           <img
                             src="/placeholder.svg"
@@ -139,6 +139,46 @@ const Home = () => {
                 {t('services.viewAll')}
               </Button>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Doctor Section */}
+      <section className="py-20 bg-gradient-to-br from-[hsl(var(--medical-light))] to-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto observe-animation">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              {/* Doctor Image - Left on Desktop, Top on Mobile */}
+              <div className="order-1 md:order-1">
+                <div className="max-w-md mx-auto">
+                  <div className="aspect-square rounded-full overflow-hidden bg-gradient-to-br from-[hsl(var(--medical-medium))] to-[hsl(var(--medical-medium-dark))] shadow-2xl">
+                    <img
+                      src="/placeholder.svg"
+                      alt={t('doctor.imageAlt')}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+              
+              {/* Doctor Text - Right on Desktop, Bottom on Mobile */}
+              <div className="order-2 md:order-2">
+                <h2 className="text-4xl font-bold mb-6 text-foreground">
+                  {t('doctor.title')}
+                </h2>
+                <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                  {t('doctor.intro')}
+                </p>
+                <Link to="/about">
+                  <Button 
+                    size="lg" 
+                    className="bg-gradient-to-r from-[hsl(var(--medical-medium))] to-[hsl(var(--medical-medium-dark))] text-white hover:opacity-90"
+                  >
+                    {t('doctor.readMore')}
+                  </Button>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
