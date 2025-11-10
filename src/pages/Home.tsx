@@ -2,7 +2,6 @@ import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
 import {
   Carousel,
   CarouselContent,
@@ -16,6 +15,9 @@ import gynecology_img from '@/assets/gynecology.jpeg';
 import assisted_reproduction_img from '@/assets/assisted-reproduction.jpeg';
 import endoscopic_surgery_img from '@/assets/endoscopic_surgery.jpeg';
 import pregnancy_img from '@/assets/pregnancy.jpeg';
+
+// 🎬 Import background video
+import homebgVideo from '@/assets/homebg.mp4';
 
 const Home = () => {
   const { t } = useLanguage();
@@ -41,13 +43,28 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center justify-center bg-gradient-to-br from-[hsl(var(--medical-darkest))] via-[hsl(var(--medical-dark))] to-[hsl(var(--medical-medium-dark))] text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
+      {/* 🌟 Hero Section with Background Video */}
+      <section className="relative min-h-[90vh] flex items-center justify-center text-white overflow-hidden">
+        {/* 🎥 Background Video */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          src={homebgVideo}
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
+
+        {/* Gradient overlay for readability */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--medical-darkest)/0.8)] via-[hsl(var(--medical-dark)/0.7)] to-[hsl(var(--medical-medium-dark)/0.6)]"></div>
+
+        {/* Decorative glowing elements */}
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute top-20 right-20 w-72 h-72 bg-white rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 left-20 w-96 h-96 bg-white rounded-full blur-3xl"></div>
         </div>
-        
+
+        {/* Hero Content */}
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-in-up leading-tight">
@@ -67,10 +84,11 @@ const Home = () => {
           </div>
         </div>
 
+        {/* Fade to page background */}
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent"></div>
       </section>
 
-      {/* Services Preview */}
+      {/* 🩺 Services Preview */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 observe-animation">
@@ -86,32 +104,32 @@ const Home = () => {
           <div className="mb-16 observe-animation">
             <Carousel
               opts={{
-                align: "start",
+                align: 'start',
                 loop: true,
               }}
               className="w-full max-w-6xl mx-auto"
             >
               <CarouselContent>
                 {[
-                  { 
-                    key: 'gynecology', 
+                  {
+                    key: 'gynecology',
                     img: gynecology_img,
-                    alt: 'Gynecology services - Υπηρεσίες γυναικολογίας - Services de gynécologie' 
+                    alt: 'Gynecology services - Υπηρεσίες γυναικολογίας - Services de gynécologie',
                   },
-                  { 
-                    key: 'reproduction', 
+                  {
+                    key: 'reproduction',
                     img: assisted_reproduction_img,
-                    alt: 'Assisted reproduction - Υποβοηθούμενη αναπαραγωγή - Reproduction assistée' 
+                    alt: 'Assisted reproduction - Υποβοηθούμενη αναπαραγωγή - Reproduction assistée',
                   },
-                  { 
-                    key: 'surgery', 
+                  {
+                    key: 'surgery',
                     img: endoscopic_surgery_img,
-                    alt: 'Endoscopic surgery - Ενδοσκοπική χειρουργική - Chirurgie endoscopique' 
+                    alt: 'Endoscopic surgery - Ενδοσκοπική χειρουργική - Chirurgie endoscopique',
                   },
-                  { 
-                    key: 'pregnancy', 
+                  {
+                    key: 'pregnancy',
                     img: pregnancy_img,
-                    alt: 'Pregnancy care - Φροντίδα εγκυμοσύνης - Suivi de grossesse' 
+                    alt: 'Pregnancy care - Φροντίδα εγκυμοσύνης - Suivi de grossesse',
                   },
                 ].map((service) => (
                   <CarouselItem key={service.key} className="md:basis-1/2 lg:basis-1/3">
@@ -141,8 +159,8 @@ const Home = () => {
 
           <div className="text-center observe-animation">
             <Link to="/services">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="bg-gradient-to-r from-[hsl(var(--medical-medium))] to-[hsl(var(--medical-medium-dark))] text-white hover:opacity-90"
               >
                 {t('services.viewAll')}
@@ -152,7 +170,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Doctor Section */}
+      {/* 👩‍⚕️ Doctor Section */}
       <section className="py-20 bg-gradient-to-br from-[hsl(var(--medical-light))] to-background">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto observe-animation">
@@ -168,7 +186,7 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-              
+
               <div className="order-2 md:order-2">
                 <h2 className="text-4xl font-bold mb-6 text-foreground">
                   {t('doctor.title')}
@@ -177,8 +195,8 @@ const Home = () => {
                   {t('doctor.intro')}
                 </p>
                 <Link to="/about">
-                  <Button 
-                    size="lg" 
+                  <Button
+                    size="lg"
                     className="bg-gradient-to-r from-[hsl(var(--medical-medium))] to-[hsl(var(--medical-medium-dark))] text-white hover:opacity-90"
                   >
                     {t('doctor.readMore')}
@@ -190,19 +208,15 @@ const Home = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* 📞 CTA Section */}
       <section className="py-20 bg-gradient-to-br from-[hsl(var(--medical-medium))] to-[hsl(var(--medical-medium-dark))] text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center observe-animation">
-            <h2 className="text-4xl font-bold mb-6">
-              {t('cta.title')}
-            </h2>
-            <p className="text-xl mb-8 text-white/90">
-              {t('cta.subtitle')}
-            </p>
+            <h2 className="text-4xl font-bold mb-6">{t('cta.title')}</h2>
+            <p className="text-xl mb-8 text-white/90">{t('cta.subtitle')}</p>
             <Link to="/contact">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="bg-white text-[hsl(var(--medical-darkest))] hover:bg-white/90 text-lg px-8 py-6"
               >
                 {t('hero.cta')}
