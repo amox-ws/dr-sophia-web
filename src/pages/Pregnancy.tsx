@@ -1,5 +1,8 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import pregnancyImage from '@/assets/pregnancy.jpeg';
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
+import { Separator } from '@/components/ui/separator';
+import { ArrowUpRight } from 'lucide-react';
 
 const Pregnancy = () => {
   const { t } = useLanguage();
@@ -42,15 +45,35 @@ const Pregnancy = () => {
       {/* Content Section */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto space-y-12">
+          <div className="max-w-4xl mx-auto space-y-8">
             {subServices.map((service) => (
-              <article key={service.key} className="space-y-4">
-                <h3 className="text-2xl md:text-3xl font-heading font-medium text-foreground">
-                  {service.title}
-                </h3>
-                <p className="text-foreground/80 leading-relaxed">
-                  {service.content}
-                </p>
+              <article key={service.key}>
+                <Card className="overflow-hidden bg-card shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  {/* Top Section - Text Content */}
+                  <CardHeader className="relative p-6 md:p-8">
+                    <div className="flex items-start justify-between gap-4">
+                      <div className="flex-1">
+                        <CardTitle className="text-xl md:text-2xl font-heading font-medium mb-4 text-foreground">
+                          {service.title}
+                        </CardTitle>
+                        <p className="text-base text-foreground/80 leading-relaxed">
+                          {service.content}
+                        </p>
+                      </div>
+                      <ArrowUpRight className="w-6 h-6 text-muted-foreground flex-shrink-0" />
+                    </div>
+                  </CardHeader>
+                  
+                  {/* Divider */}
+                  <Separator />
+                  
+                  {/* Bottom Section - Image Placeholder */}
+                  <CardContent className="p-0">
+                    <div className="aspect-video bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center">
+                      <span className="text-muted-foreground text-sm">Εικόνα</span>
+                    </div>
+                  </CardContent>
+                </Card>
               </article>
             ))}
           </div>
