@@ -10,6 +10,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel';
+import Autoplay from 'embla-carousel-autoplay';
 
 // 🩺 Import service images
 import gynecology_img from '@/assets/gynecology.jpeg';
@@ -90,6 +91,13 @@ const Home = () => {
                 loop: true,
                 slidesToScroll: 1,
               }}
+              plugins={[
+                Autoplay({
+                  delay: 3000,
+                  stopOnInteraction: false,
+                  stopOnMouseEnter: true,
+                })
+              ]}
               className="w-full max-w-6xl mx-auto"
             >
               <CarouselContent>
