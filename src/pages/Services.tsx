@@ -6,8 +6,8 @@ import { ArrowUpRight } from "lucide-react";
 
 const formatTitleWithLineBreak = (title: string, key: string, language: string): string => {
   if (language !== 'el') return title;
-  if (key === 'gynecology') return title.replace('ΓΥΝΑΙΚΟΛΟΓΙΑ', 'ΓΥΝΑΙΚΟ\nΛΟΓΙΑ');
-  if (key === 'pregnancy') return title.replace('ΕΓΚΥΜΟΣΥΝΗ', 'ΕΓΚΥΜΟ\nΣΥΝΗ');
+  if (key === 'gynecology') return title.replace('ΓΥΝΑΙΚΟΛΟΓΙΑ', 'ΓΥΝΑΙΚΟΛΟΓΙΑ\n.');
+  if (key === 'pregnancy') return title.replace('ΕΓΚΥΜΟΣΥΝΗ', 'ΕΓΚΥΜΟΣΥΝΗ\n.');
   return title;
 };
 
