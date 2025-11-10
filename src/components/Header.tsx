@@ -8,7 +8,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { Globe, Menu, X } from 'lucide-react';
+import { Globe, Menu, X, ChevronRight } from 'lucide-react';
 
 const languageFlags: Record<Language, string> = {
   el: '🇬🇷',
@@ -70,11 +70,9 @@ const Header = () => {
               <Link
                 key={link.to}
                 to={link.to}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
+                className={`text-sm font-medium transition-colors nav-link-animated ${
                   location.pathname === link.to
-                    ? 'text-primary'
-                    : isScrolled
-                    ? 'text-foreground'
+                    ? 'text-primary active'
                     : 'text-foreground'
                 }`}
               >
@@ -87,11 +85,9 @@ const Header = () => {
               <DropdownMenuTrigger asChild>
                 <Button
                   variant="ghost"
-                  className={`text-sm font-medium transition-colors hover:text-primary ${
+                  className={`text-sm font-medium transition-colors nav-link-animated ${
                     location.pathname.startsWith('/services')
-                      ? 'text-primary'
-                      : isScrolled
-                      ? 'text-foreground'
+                      ? 'text-primary active'
                       : 'text-foreground'
                   }`}
                 >
@@ -103,9 +99,10 @@ const Header = () => {
                   <DropdownMenuItem key={link.to} asChild>
                     <Link
                       to={link.to}
-                      className="cursor-pointer"
+                      className="cursor-pointer flex items-center justify-between gap-2"
                     >
-                      {link.label}
+                      <span>{link.label}</span>
+                      <ChevronRight className="h-4 w-4 text-muted-foreground" />
                     </Link>
                   </DropdownMenuItem>
                 ))}
@@ -178,9 +175,9 @@ const Header = () => {
                 key={link.to}
                 to={link.to}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`block px-4 py-2 text-sm font-medium transition-colors hover:text-primary ${
+                className={`block px-4 py-2 text-sm font-medium transition-colors nav-link-animated ${
                   location.pathname === link.to
-                    ? 'text-primary'
+                    ? 'text-primary active'
                     : 'text-foreground'
                 }`}
               >
@@ -195,13 +192,14 @@ const Header = () => {
                   key={link.to}
                   to={link.to}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`block px-2 py-2 text-sm transition-colors hover:text-primary ${
+                  className={`flex items-center justify-between px-2 py-2 text-sm transition-colors ${
                     location.pathname === link.to
                       ? 'text-primary'
                       : 'text-foreground'
                   }`}
                 >
-                  {link.label}
+                  <span>{link.label}</span>
+                  <ChevronRight className="h-4 w-4 text-muted-foreground" />
                 </Link>
               ))}
             </div>
