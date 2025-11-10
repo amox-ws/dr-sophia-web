@@ -16,6 +16,7 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.home': 'Αρχική',
     'nav.about': 'Ο Γιατρός',
     'nav.services': 'Υπηρεσίες',
+    'nav.allServices': 'Όλες οι Υπηρεσίες',
     'nav.contact': 'Επικοινωνία',
     
     // Hero
@@ -49,6 +50,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Gynecology Page
     'services.gynecology.title': 'ΓΥΝΑΙΚΟΛΟΓΙΑ',
+    'services.gynecology.hero.title': 'ΓΥΝΑΙΚΟΛΟΓΙΑ',
     'services.gynecology.intro': 'Προσφέρουμε εξειδικευμένες υπηρεσίες γυναικολογίας με σύγχρονες μεθόδους διάγνωσης και θεραπείας.',
     'services.gynecology.imageAlt': 'Υπηρεσίες Γυναικολογίας',
     'services.gynecology.endometriosis.title': 'Ενδομητρίωση',
@@ -70,6 +72,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Assisted Reproduction Page
     'services.assistedReproduction.title': 'ΥΠΟΒΟΗΘΟΥΜΕΝΗ ΑΝΑΠΑΡΑΓΩΓΗ',
+    'services.assistedReproduction.hero.title': 'ΥΠΟΒΟΗΘΟΥΜΕΝΗ ΑΝΑΠΑΡΑΓΩΓΗ',
     'services.assistedReproduction.intro': 'Παρέχουμε ολοκληρωμένες υπηρεσίες υποβοηθούμενης αναπαραγωγής με προηγμένες τεχνολογίες.',
     'services.assistedReproduction.imageAlt': 'Υπηρεσίες Υποβοηθούμενης Αναπαραγωγής',
     'services.assistedReproduction.fertilityInvestigation.title': 'Διερεύνηση γονιμότητας',
@@ -95,6 +98,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Endoscopic Surgery Page
     'services.endoscopicSurgery.title': 'ΕΝΔΟΣΚΟΠΙΚΗ ΧΕΙΡΟΥΡΓΙΚΗ',
+    'services.endoscopicSurgery.hero.title': 'ΕΝΔΟΣΚΟΠΙΚΗ ΧΕΙΡΟΥΡΓΙΚΗ',
     'services.endoscopicSurgery.intro': 'Εξειδικευμένες ενδοσκοπικές χειρουργικές επεμβάσεις με ελάχιστα επεμβατικές τεχνικές.',
     'services.endoscopicSurgery.imageAlt': 'Υπηρεσίες Ενδοσκοπικής Χειρουργικής',
     'services.endoscopicSurgery.hysteroscopy.title': 'Υστεροσκόπηση',
@@ -106,6 +110,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Pregnancy Page
     'services.pregnancy.title': 'ΕΓΚΥΜΟΣΥΝΗ',
+    'services.pregnancy.hero.title': 'ΕΓΚΥΜΟΣΥΝΗ',
     'services.pregnancy.intro': 'Πλήρης υποστήριξη και παρακολούθηση εγκυμοσύνης με σύγχρονες μεθόδους.',
     'services.pregnancy.imageAlt': 'Υπηρεσίες Εγκυμοσύνης',
     'services.pregnancy.prenatalScreening.title': 'Προγεννητικός Έλεγχος',
@@ -240,6 +245,7 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.home': 'Home',
     'nav.about': 'The Doctor',
     'nav.services': 'Services',
+    'nav.allServices': 'All Services',
     'nav.contact': 'Contact',
     
     // Hero
@@ -273,6 +279,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Gynecology Page
     'services.gynecology.title': 'GYNECOLOGY',
+    'services.gynecology.hero.title': 'Gynecology',
     'services.gynecology.intro': 'We offer specialized gynecological services with modern diagnostic and treatment methods.',
     'services.gynecology.imageAlt': 'Gynecology Services',
     'services.gynecology.endometriosis.title': 'Endometriosis',
@@ -294,6 +301,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Assisted Reproduction Page
     'services.assistedReproduction.title': 'ASSISTED REPRODUCTION',
+    'services.assistedReproduction.hero.title': 'Assisted Reproduction',
     'services.assistedReproduction.intro': 'We provide comprehensive assisted reproduction services with advanced technologies.',
     'services.assistedReproduction.imageAlt': 'Assisted Reproduction Services',
     'services.assistedReproduction.fertilityInvestigation.title': 'Fertility Investigation',
@@ -319,6 +327,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Endoscopic Surgery Page
     'services.endoscopicSurgery.title': 'ENDOSCOPIC SURGERY',
+    'services.endoscopicSurgery.hero.title': 'Endoscopic Surgery',
     'services.endoscopicSurgery.intro': 'Specialized endoscopic surgical procedures with minimally invasive techniques.',
     'services.endoscopicSurgery.imageAlt': 'Endoscopic Surgery Services',
     'services.endoscopicSurgery.hysteroscopy.title': 'Hysteroscopy',
@@ -330,6 +339,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Pregnancy Page
     'services.pregnancy.title': 'PREGNANCY',
+    'services.pregnancy.hero.title': 'Pregnancy',
     'services.pregnancy.intro': 'Complete pregnancy support and monitoring with modern methods.',
     'services.pregnancy.imageAlt': 'Pregnancy Services',
     'services.pregnancy.prenatalScreening.title': 'Prenatal Screening',
@@ -464,6 +474,7 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.home': 'Accueil',
     'nav.about': 'Le Médecin',
     'nav.services': 'Services',
+    'nav.allServices': 'Tous les Services',
     'nav.contact': 'Contact',
     
     // Hero
@@ -497,6 +508,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Gynecology Page
     'services.gynecology.title': 'GYNÉCOLOGIE',
+    'services.gynecology.hero.title': 'Gynécologie',
     'services.gynecology.intro': 'Nous offrons des services gynécologiques spécialisés avec des méthodes modernes de diagnostic et de traitement.',
     'services.gynecology.imageAlt': 'Services de Gynécologie',
     'services.gynecology.endometriosis.title': 'Endométriose',
@@ -518,6 +530,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Assisted Reproduction Page
     'services.assistedReproduction.title': 'REPRODUCTION ASSISTÉE',
+    'services.assistedReproduction.hero.title': 'Reproduction Assistée',
     'services.assistedReproduction.intro': 'Nous fournissons des services complets de reproduction assistée avec des technologies avancées.',
     'services.assistedReproduction.imageAlt': 'Services de Reproduction Assistée',
     'services.assistedReproduction.fertilityInvestigation.title': 'Bilan de fertilité',
@@ -543,6 +556,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Endoscopic Surgery Page
     'services.endoscopicSurgery.title': 'CHIRURGIE ENDOSCOPIQUE',
+    'services.endoscopicSurgery.hero.title': 'Chirurgie Endoscopique',
     'services.endoscopicSurgery.intro': 'Procédures chirurgicales endoscopiques spécialisées avec des techniques minimalement invasives.',
     'services.endoscopicSurgery.imageAlt': 'Services de Chirurgie Endoscopique',
     'services.endoscopicSurgery.hysteroscopy.title': 'Hystéroscopie',
@@ -554,6 +568,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Pregnancy Page
     'services.pregnancy.title': 'GROSSESSE',
+    'services.pregnancy.hero.title': 'Grossesse',
     'services.pregnancy.intro': 'Soutien et suivi complets de la grossesse avec des méthodes modernes.',
     'services.pregnancy.imageAlt': 'Services de Grossesse',
     'services.pregnancy.prenatalScreening.title': 'Dépistage prénatal',

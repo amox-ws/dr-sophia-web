@@ -15,12 +15,21 @@ const Pregnancy = () => {
 
   return (
     <main className="min-h-screen bg-background">
-      <section className="pt-32 pb-16">
+      {/* Hero Section */}
+      <section className="pt-32 pb-16 bg-gradient-to-br from-[hsl(var(--medical-lightest))] to-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
+              {t('services.pregnancy.hero.title')}
+            </h1>
+          </div>
+        </div>
+      </section>
+
+      {/* Sub-Services Section */}
+      <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center text-foreground">
-              {t('services.pregnancy.title')}
-            </h1>
             
             <div className="space-y-6">
               {subServices.map((service) => (
