@@ -3,11 +3,12 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { ArrowUpRight } from "lucide-react";
+import { servicesData, type Language } from "@/data/servicesData";
 
 const formatTitleWithLineBreak = (title: string, key: string, language: string): string => {
   if (language !== 'el') return title;
-  if (key === 'gynecology') return title.replace('ΓΥΝΑΙΚΟΛΟΓΙΑ', 'ΓΥΝΑΙΚΟΛΟΓΙΑ\n.');
-  if (key === 'pregnancy') return title.replace('ΕΓΚΥΜΟΣΥΝΗ', 'ΕΓΚΥΜΟΣΥΝΗ\n.');
+  if (key === 'gynecology') return 'Γυναικο-\nλογία';
+  if (key === 'pregnancy') return 'Εγκυμο-\nσύνη';
   return title;
 };
 
@@ -20,32 +21,27 @@ import surgeryImg from "@/assets/surgery.jpeg";
 const Services = () => {
   const { t, language } = useLanguage();
 
-  const serviceCategories = [
-    {
-      key: "gynecology",
-      route: "/services/gynecology",
-      image: mitraImg,
-      description: "Ολοκληρωμένη φροντίδα για τη γυναικεία υγεία, από διάγνωση έως θεραπεία γυναικολογικών παθήσεων.",
-    },
-    {
-      key: "assistedReproduction",
-      route: "/services/assisted-reproduction",
-      image: spermImg,
-      description: "Σύγχρονες μέθοδοι υποβοηθούμενης αναπαραγωγής για ζευγάρια που αντιμετωπίζουν δυσκολία σύλληψης.",
-    },
-    {
-      key: "endoscopicSurgery",
-      route: "/services/endoscopic-surgery",
-      image: surgeryImg,
-      description: "Ελάχιστα επεμβατικές τεχνικές που προσφέρουν ακριβή διάγνωση και ταχεία ανάρρωση.",
-    },
-    {
-      key: "pregnancy",
-      route: "/services/pregnancy",
-      image: birthImg,
-      description: "Εξειδικευμένη παρακολούθηση της εγκυμοσύνης με έμφαση στην ασφάλεια μητέρας και μωρού.",
-    },
-  ];
+  const serviceImages: Record<string, string> = {
+    'gynecology': mitraImg,
+    'assisted-reproduction': spermImg,
+    'endoscopic-surgery': surgeryImg,
+    'pregnancy': birthImg
+  };
+
+  const serviceRoutes: Record<string, string> = {
+    'gynecology': '/services/gynecology',
+    'assisted-reproduction': '/services/assisted-reproduction',
+    'endoscopic-surgery': '/services/endoscopic-surgery',
+    'pregnancy': '/services/pregnancy'
+  };
+
+  const serviceCategories = servicesData.map(service => ({
+    key: service.id,
+    route: serviceRoutes[service.id],
+    image: serviceImages[service.id],
+    title: service.title[language as Language],
+    description: service.intro?.[language as Language] || service.title[language as Language]
+  }));
 
   return (
     <main className="min-h-screen bg-background">
@@ -79,7 +75,7 @@ const Services = () => {
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1">
                         <CardTitle className="text-xl md:text-2xl font-heading font-medium mb-4 text-foreground group-hover:text-primary transition-colors whitespace-pre-line">
-                          {formatTitleWithLineBreak(t(`services.${category.key}.title`), category.key, language)}
+                          {formatTitleWithLineBreak(category.title, category.key, language)}
                         </CardTitle>
                         <p className="text-base text-muted-foreground leading-relaxed">
                           {category.description}
@@ -98,7 +94,7 @@ const Services = () => {
                     <div className="aspect-video overflow-hidden">
                       <img 
                         src={category.image} 
-                        alt={t(`services.${category.key}.imageAlt`)}
+                        alt={`${category.title} services`}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
