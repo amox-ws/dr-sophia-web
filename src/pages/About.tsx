@@ -1,7 +1,8 @@
 import { useEffect, useRef } from 'react';
+import { Helmet } from 'react-helmet';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
-import { GraduationCap, Award, Heart } from 'lucide-react';
+import { GraduationCap, Award, Heart, Languages, Briefcase } from 'lucide-react';
 
 const About = () => {
   const { t } = useLanguage();
@@ -27,6 +28,15 @@ const About = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>{t('about.seo.title')}</title>
+        <meta name="description" content={t('about.seo.description')} />
+        <meta property="og:title" content={t('about.seo.title')} />
+        <meta property="og:description" content={t('about.seo.description')} />
+        <meta property="og:type" content="profile" />
+        <link rel="canonical" href="https://yourdomain.com/about" />
+      </Helmet>
+
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-gradient-to-br from-[hsl(var(--medical-lightest))] to-background">
         <div className="container mx-auto px-4">
@@ -35,7 +45,7 @@ const About = () => {
               {t('about.title')}
             </h1>
             <p className="text-xl text-muted-foreground animate-fade-in-up animation-delay-200 leading-relaxed">
-              {t('about.intro')}
+              {t('about.subtitle')}
             </p>
           </div>
         </div>
@@ -45,14 +55,21 @@ const About = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
-            {/* Image Placeholder */}
+            {/* Profile Card */}
             <div className="observe-animation">
-              <div className="aspect-[4/5] rounded-2xl bg-gradient-to-br from-[hsl(var(--medical-medium-light))] to-[hsl(var(--medical-medium))] shadow-2xl"></div>
+              <Card className="aspect-[4/5] rounded-2xl border-none shadow-2xl bg-gradient-to-br from-[hsl(var(--medical-medium-light))] to-[hsl(var(--medical-medium))] p-8 flex flex-col justify-end text-white">
+                <CardContent className="p-0">
+                  <h2 className="text-3xl font-bold mb-3">{t('about.profile.name')}</h2>
+                  <p className="text-xl mb-2 opacity-90">{t('about.profile.title')}</p>
+                  <p className="text-sm opacity-80 leading-relaxed">{t('about.profile.specialties')}</p>
+                </CardContent>
+              </Card>
             </div>
 
             {/* Content */}
-            <div className="flex flex-col justify-center">
-              <div className="observe-animation mb-8">
+            <div className="flex flex-col justify-center space-y-8">
+              {/* Education */}
+              <div className="observe-animation">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="p-2 rounded-full bg-gradient-to-br from-[hsl(var(--medical-medium))] to-[hsl(var(--medical-medium-dark))]">
                     <GraduationCap className="h-6 w-6 text-white" />
@@ -68,15 +85,64 @@ const About = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-[hsl(var(--medical-medium))] mt-1">•</span>
-                    <span>{t('about.education.specialty')}</span>
+                    <span>{t('about.education.msc')}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-[hsl(var(--medical-medium))] mt-1">•</span>
-                    <span>{t('about.education.fellowship')}</span>
+                    <span>{t('about.education.endoscopy')}</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-[hsl(var(--medical-medium))] mt-1">•</span>
+                    <span>{t('about.education.certificates')}</span>
                   </li>
                 </ul>
               </div>
 
+              {/* Experience */}
+              <div className="observe-animation">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-2 rounded-full bg-gradient-to-br from-[hsl(var(--medical-medium))] to-[hsl(var(--medical-medium-dark))]">
+                    <Briefcase className="h-6 w-6 text-white" />
+                  </div>
+                  <h2 className="text-3xl font-bold text-foreground">
+                    {t('about.experience.title')}
+                  </h2>
+                </div>
+                <div className="space-y-3 text-muted-foreground">
+                  <p className="font-semibold text-foreground">{t('about.experience.current')}</p>
+                  <p>{t('about.experience.greece')}</p>
+                  <p className="text-sm">{t('about.experience.france')}</p>
+                  <p className="italic text-sm">{t('about.experience.focus')}</p>
+                </div>
+              </div>
+
+              {/* Languages */}
+              <div className="observe-animation">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-2 rounded-full bg-gradient-to-br from-[hsl(var(--medical-medium))] to-[hsl(var(--medical-medium-dark))]">
+                    <Languages className="h-6 w-6 text-white" />
+                  </div>
+                  <h2 className="text-3xl font-bold text-foreground">
+                    {t('about.languages.title')}
+                  </h2>
+                </div>
+                <div className="flex flex-wrap gap-3">
+                  <span className="px-4 py-2 rounded-full bg-[hsl(var(--medical-lightest))] text-[hsl(var(--medical-medium-dark))] text-sm font-medium">
+                    {t('about.languages.greek')}
+                  </span>
+                  <span className="px-4 py-2 rounded-full bg-[hsl(var(--medical-lightest))] text-[hsl(var(--medical-medium-dark))] text-sm font-medium">
+                    {t('about.languages.english')}
+                  </span>
+                  <span className="px-4 py-2 rounded-full bg-[hsl(var(--medical-lightest))] text-[hsl(var(--medical-medium-dark))] text-sm font-medium">
+                    {t('about.languages.french')}
+                  </span>
+                  <span className="px-4 py-2 rounded-full bg-[hsl(var(--medical-lightest))] text-[hsl(var(--medical-medium-dark))] text-sm font-medium">
+                    {t('about.languages.romanian')}
+                  </span>
+                </div>
+              </div>
+
+              {/* Approach */}
               <div className="observe-animation">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="p-2 rounded-full bg-gradient-to-br from-[hsl(var(--medical-medium))] to-[hsl(var(--medical-medium-dark))]">
@@ -95,42 +161,53 @@ const About = () => {
 
           {/* Expertise Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Award,
-                title: 'Board Certified',
-                description: 'Certified by the Hellenic Society of Obstetrics and Gynecology',
-              },
-              {
-                icon: Heart,
-                title: '15+ Years Experience',
-                description: 'Extensive experience in all aspects of women\'s health',
-              },
-              {
-                icon: GraduationCap,
-                title: 'Continuous Learning',
-                description: 'Regular participation in international medical conferences',
-              },
-            ].map((item, index) => (
-              <Card 
-                key={index} 
-                className="observe-animation border-none shadow-lg bg-gradient-to-br from-white to-[hsl(var(--medical-lightest))]"
-              >
-                <CardContent className="p-6 text-center">
-                  <div className="mb-4 flex justify-center">
-                    <div className="p-3 rounded-full bg-gradient-to-br from-[hsl(var(--medical-medium))] to-[hsl(var(--medical-medium-dark))]">
-                      <item.icon className="h-8 w-8 text-white" />
-                    </div>
+            <Card className="observe-animation border-none shadow-lg bg-gradient-to-br from-white to-[hsl(var(--medical-lightest))]">
+              <CardContent className="p-6 text-center">
+                <div className="mb-4 flex justify-center">
+                  <div className="p-3 rounded-full bg-gradient-to-br from-[hsl(var(--medical-medium))] to-[hsl(var(--medical-medium-dark))]">
+                    <Award className="h-8 w-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-2 text-foreground">
-                    {item.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm">
-                    {item.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
+                </div>
+                <h3 className="text-xl font-semibold mb-2 text-foreground">
+                  {t('about.certification.title')}
+                </h3>
+                <p className="text-muted-foreground text-sm">
+                  {t('about.certification.text')}
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="observe-animation border-none shadow-lg bg-gradient-to-br from-white to-[hsl(var(--medical-lightest))]">
+              <CardContent className="p-6 text-center">
+                <div className="mb-4 flex justify-center">
+                  <div className="p-3 rounded-full bg-gradient-to-br from-[hsl(var(--medical-medium))] to-[hsl(var(--medical-medium-dark))]">
+                    <Heart className="h-8 w-8 text-white" />
+                  </div>
+                </div>
+                <h3 className="text-xl font-semibold mb-2 text-foreground">
+                  {t('about.experience.years')}
+                </h3>
+                <p className="text-muted-foreground text-sm">
+                  {t('about.experience.years.text')}
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="observe-animation border-none shadow-lg bg-gradient-to-br from-white to-[hsl(var(--medical-lightest))]">
+              <CardContent className="p-6 text-center">
+                <div className="mb-4 flex justify-center">
+                  <div className="p-3 rounded-full bg-gradient-to-br from-[hsl(var(--medical-medium))] to-[hsl(var(--medical-medium-dark))]">
+                    <GraduationCap className="h-8 w-8 text-white" />
+                  </div>
+                </div>
+                <h3 className="text-xl font-semibold mb-2 text-foreground">
+                  {t('about.learning.title')}
+                </h3>
+                <p className="text-muted-foreground text-sm">
+                  {t('about.learning.text')}
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
