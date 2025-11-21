@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
 import { GraduationCap, Award, Heart, Languages, Briefcase } from 'lucide-react';
