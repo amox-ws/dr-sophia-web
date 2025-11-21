@@ -57,26 +57,26 @@ const translations: Record<Language, Record<string, string>> = {
     "services.gynecology.imageAlt": "Υπηρεσίες Γυναικολογίας",
     "services.gynecology.endometriosis.title": "Ενδομητρίωση",
     "services.gynecology.endometriosis.description":
-      "Κατάσταση όπου ιστός παρόμοιος με το ενδομήτριο αναπτύσσεται εκτός μήτρας, προκαλώντας πόνο και πιθανή υπογονιμότητα.",
+      "Κατάσταση όπου ιστός παρόμοιος με το ενδομήτριο αναπτύσσεται εκτός μήτρας, προκαλώντας πόνο και υπογονιμότητα.",
     "services.gynecology.adenomyosis.title": "Αδενομύωση",
     "services.gynecology.adenomyosis.description":
-      "Ο ενδομητρικός ιστός εισχωρεί στο μυϊκό τοίχωμα της μήτρας, προκαλώντας έντονη εμμηνορρυσία και κράμπες.",
+      "Ο ενδομητρικός ιστός εισχωρεί στο μυϊκό τοίχωμα της μήτρας, προκαλώντας έντονη περίοδο και πόνο.",
     "services.gynecology.deepEndometriosis.title": "Εν τω βάθει ενδομητρίωση",
     "services.gynecology.deepEndometriosis.description":
-      "Πιο σοβαρή μορφή ενδομητρίωσης με διείσδυση βαθύτερα στους ιστούς της πυέλου, που απαιτεί εξειδικευμένη αντιμετώπιση.",
+      "Πιο σοβαρή μορφή που επηρεάζει βαθύτερους ιστούς και μπορεί να επηρεάσει έντερα, ουροδόχο κύστη και πυελικό πόνο.",
     "services.gynecology.endometrioma.title": "Ενδομητρίωμα – Κύστες Ενδομητρίωσης",
-    "services.gynecology.endometrioma.description":
-      "Κύστες στις ωοθήκες που προκαλούνται από ενδομητρίωση, συχνά συνδεδεμένες με πόνο ή δυσκολία σύλληψης.",
+    "services.gynecology.endometrioma.description": "Κύστεις που σχηματίζονται στις ωοθήκες από ενδομητριωσικό ιστό.",
     "services.gynecology.uterineFibroids.title": "Ινομυώματα μήτρας",
     "services.gynecology.uterineFibroids.description":
-      "Εδώ θα προστεθεί λεπτομερής περιγραφή για τα ινομυώματα μήτρας.",
+      "Καλοήθεις όγκοι της μήτρας που μπορεί να προκαλέσουν βαριά περίοδο, πόνο ή δυσκολία σύλληψης.",
     "services.gynecology.polycysticOvaries.title": "Πολυκυστικές ωοθήκες",
     "services.gynecology.polycysticOvaries.description":
-      "Εδώ θα προστεθεί λεπτομερής περιγραφή για τις πολυκυστικές ωοθήκες.",
+      "Ορμονική διαταραχή που σχετίζεται με ακανόνιστο κύκλο, τριχοφυΐα και δυσκολία στη σύλληψη.",
     "services.gynecology.dysmenorrhea.title": "Δυσμηνόρροια",
-    "services.gynecology.dysmenorrhea.description": "Εδώ θα προστεθεί λεπτομερής περιγραφή για τη δυσμηνόρροια.",
+    "services.gynecology.dysmenorrhea.description": "Επώδυνη περίοδος που μπορεί να επηρεάζει την καθημερινότητα.",
     "services.gynecology.menopause.title": "Εμμηνόπαυση",
-    "services.gynecology.menopause.description": "Εδώ θα προστεθεί λεπτομερής περιγραφή για την εμμηνόπαυση.",
+    "services.gynecology.menopause.description":
+      "Φάση κατά την οποία σταματά η περίοδος, συνοδευόμενη από ορμονικές αλλαγές και συμπτώματα όπως εξάψεις.",
 
     // Assisted Reproduction Page
     "services.assistedReproduction.title": "ΥΠΟΒΟΗΘΟΥΜΕΝΗ ΑΝΑΠΑΡΑΓΩΓΗ",
