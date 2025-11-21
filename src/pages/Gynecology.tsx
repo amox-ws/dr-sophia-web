@@ -61,10 +61,9 @@ const Gynecology = () => {
                   <h2 className="text-2xl font-semibold">{item.title[language as Language]}</h2>
                   <span className="text-2xl">{expanded === String(index) ? '-' : '+'}</span>
                 </div>
-                <p className="mt-2 text-foreground/80">{item.desc[language as Language]}</p>
                 {expanded === String(index) && (
                   <div className="mt-4 space-y-3">
-                    <p className="text-foreground/70 leading-relaxed">
+                    <p className="text-foreground/80 leading-relaxed">
                       {item.desc[language as Language]}
                     </p>
                   </div>

@@ -25,65 +25,65 @@ export const servicesData: Service[] = [
       {
         title: { el: "Ενδομητρίωση", en: "Endometriosis", fr: "Endométriose" },
         desc: {
-          el: "Ιστός παρόμοιος με το ενδομήτριο αναπτύσσεται εκτός μήτρας, προκαλώντας πόνο και υπογονιμότητα.",
-          en: "Tissue similar to the endometrium grows outside the uterus, causing pain and infertility.",
-          fr: "Tissu semblable à l'endomètre se développe en dehors de l'utérus, provoquant douleur et infertilité."
+          el: "Κατάσταση όπου ιστός παρόμοιος με το ενδομήτριο αναπτύσσεται εκτός μήτρας, προκαλώντας πόνο και υπογονιμότητα.",
+          en: "A condition in which tissue similar to the endometrium grows outside the uterus, causing pain and infertility.",
+          fr: "État où un tissu semblable à l'endomètre se développe en dehors de l'utérus, provoquant douleur et infertilité."
         }
       },
       {
         title: { el: "Αδενομύωση", en: "Adenomyosis", fr: "Adénomyose" },
         desc: {
-          el: "Ενδομητρικός ιστός εισχωρεί στο μυϊκό τοίχωμα της μήτρας, με βαριές περιόδους και πόνο.",
-          en: "Endometrial tissue grows into the uterine muscle wall, causing heavy periods and pain.",
-          fr: "Le tissu endométrial pénètre la paroi musculaire de l'utérus, entraînant règles abondantes et douleurs."
+          el: "Ο ενδομητρικός ιστός εισχωρεί στο μυϊκό τοίχωμα της μήτρας, προκαλώντας έντονη περίοδο και πόνο.",
+          en: "Endometrial tissue grows into the muscular wall of the uterus, causing heavy periods and pain.",
+          fr: "Le tissu endométrial pénètre dans la paroi musculaire de l'utérus, entraînant des règles abondantes et douloureuses."
         }
       },
       {
         title: { el: "Εν τω βάθει Ενδομητρίωση", en: "Deep Infiltrating Endometriosis", fr: "Endométriose Profonde" },
         desc: {
-          el: "Πιο σοβαρή μορφή που επηρεάζει βαθύτερους ιστούς, έντερα και ουροδόχο κύστη, με πυελικό πόνο.",
-          en: "A more severe form affecting deeper tissues, potentially bowel and bladder, causing pelvic pain.",
-          fr: "Forme plus sévère atteignant les tissus profonds (intestin, vessie) avec douleurs pelviennes."
+          el: "Πιο σοβαρή μορφή που επηρεάζει βαθύτερους ιστούς και μπορεί να επηρεάσει έντερα, ουροδόχο κύστη και πυελικό πόνο.",
+          en: "A more severe form affecting deeper tissues, potentially involving the bowel, bladder, and causing pelvic pain.",
+          fr: "Forme plus sévère atteignant les tissus profonds, pouvant toucher les intestins, la vessie et provoquer des douleurs pelviennes."
         }
       },
       {
         title: { el: "Ενδομητρίωμα – Κύστεις Ενδομητρίωσης", en: "Endometrioma – Endometriotic Cysts", fr: "Endométriome – Kystes d'Endométriose" },
         desc: {
-          el: "Κύστεις στις ωοθήκες από ενδομητριωσικό ιστό.",
-          en: "Cysts on the ovaries due to endometriotic tissue.",
-          fr: "Kystes ovariens dus à un tissu endométriosique."
+          el: "Κύστεις που σχηματίζονται στις ωοθήκες από ενδομητριωσικό ιστό.",
+          en: "Cysts that form on the ovaries due to endometriotic tissue.",
+          fr: "Kystes qui se forment sur les ovaires à partir de tissu endométriosique."
         }
       },
       {
         title: { el: "Ινομυώματα Μήτρας", en: "Uterine Fibroids", fr: "Fibromes Utérins" },
         desc: {
-          el: "Καλοήθεις όγκοι που μπορεί να προκαλέσουν βαριά περίοδο, πόνο ή δυσκολία σύλληψης.",
-          en: "Benign uterine tumors that may cause heavy bleeding, pain, or difficulty conceiving.",
-          fr: "Tumeurs bénignes pouvant entraîner saignements abondants, douleurs ou difficultés de conception."
+          el: "Καλοήθεις όγκοι της μήτρας που μπορεί να προκαλέσουν βαριά περίοδο, πόνο ή δυσκολία σύλληψης.",
+          en: "Benign tumors of the uterus that may cause heavy bleeding, pain, or difficulty conceiving.",
+          fr: "Tumeurs bénignes pouvant entraîner des règles abondantes, des douleurs ou difficultés de conception."
         }
       },
       {
         title: { el: "Πολυκυστικές Ωοθήκες (PCOS)", en: "Polycystic Ovary Syndrome (PCOS)", fr: "Syndrome des Ovaires Polykystiques (SOPK)" },
         desc: {
-          el: "Ορμονική διαταραχή με ακανόνιστο κύκλο, τριχοφυΐα και δυσκολία σύλληψης.",
-          en: "Hormonal disorder with irregular cycles, hirsutism, and fertility challenges.",
-          fr: "Trouble hormonal avec cycles irréguliers, pilosité accrue et difficultés de fertilité."
+          el: "Ορμονική διαταραχή που σχετίζεται με ακανόνιστο κύκλο, τριχοφυΐα και δυσκολία στη σύλληψη.",
+          en: "A hormonal disorder linked to irregular cycles, increased facial/body hair, and fertility challenges.",
+          fr: "Trouble hormonal associé à des cycles irréguliers, une pilosité accrue et des difficultés de fertilité."
         }
       },
       {
         title: { el: "Δυσμηνόρροια", en: "Dysmenorrhea", fr: "Dysménorrhée" },
         desc: {
-          el: "Επώδυνη περίοδος που επηρεάζει την καθημερινότητα.",
+          el: "Επώδυνη περίοδος που μπορεί να επηρεάζει την καθημερινότητα.",
           en: "Painful menstruation that can affect daily activities.",
-          fr: "Règles douloureuses affectant la vie quotidienne."
+          fr: "Règles douloureuses pouvant perturber la vie quotidienne."
         }
       },
       {
         title: { el: "Εμμηνόπαυση", en: "Menopause", fr: "Ménopause" },
         desc: {
-          el: "Διακοπή περιόδου με ορμονικές αλλαγές και συμπτώματα όπως εξάψεις.",
-          en: "Cessation of menstruation with hormonal changes and symptoms such as hot flashes.",
-          fr: "Arrêt des règles avec changements hormonaux et symptômes tels que bouffées de chaleur."
+          el: "Φάση κατά την οποία σταματά η περίοδος, συνοδευόμενη από ορμονικές αλλαγές και συμπτώματα όπως εξάψεις.",
+          en: "A phase when menstruation stops, accompanied by hormonal changes and symptoms such as hot flashes.",
+          fr: "Période où les règles cessent, accompagnée de changements hormonaux et de symptômes tels que les bouffées de chaleur."
         }
       }
     ]
