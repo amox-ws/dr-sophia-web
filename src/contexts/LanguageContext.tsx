@@ -249,7 +249,7 @@ const translations: Record<Language, Record<string, string>> = {
     "contact.send": "Αποστολή Μηνύματος",
     "contact.info.title": "Πληροφορίες Επικοινωνίας",
     "contact.address": "Διεύθυνση",
-    "contact.address.value": "Λεωφ. Κηφισίας 123, Αθήνα 115 26",
+    "contact.address.value": "Αθήνα: Leof. Vasileos Georgiou B 4, Pireas 185 34\nΑίγινα: Νοσοκομείου 5, 180 10 Αίγινα",
     "contact.hours": "Ωράριο",
     "contact.hours.value": "Δευτ-Παρ: 09:00 - 20:00",
 
@@ -489,7 +489,7 @@ const translations: Record<Language, Record<string, string>> = {
     "contact.send": "Send Message",
     "contact.info.title": "Contact Information",
     "contact.address": "Address",
-    "contact.address.value": "Kifisias Avenue 123, Athens 115 26",
+    "contact.address.value": "Athens: Leof. Vasileos Georgiou B 4, Pireas 185 34\nAegina: Nosokomeiou 5, 180 10 Aegina",
     "contact.hours": "Hours",
     "contact.hours.value": "Mon-Fri: 09:00 - 20:00",
 
@@ -737,7 +737,7 @@ const translations: Record<Language, Record<string, string>> = {
     "contact.send": "Envoyer le Message",
     "contact.info.title": "Informations de Contact",
     "contact.address": "Adresse",
-    "contact.address.value": "Avenue Kifisias 123, Athènes 115 26",
+    "contact.address.value": "Athènes : Leof. Vasileos Georgiou B 4, Pireas 185 34\nÉgine : Nosokomeiou 5, 180 10 Égine",
     "contact.hours": "Horaires",
     "contact.hours.value": "Lun-Ven: 09:00 - 20:00",
 
