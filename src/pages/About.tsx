@@ -159,56 +159,6 @@ const About = () => {
             </div>
           </div>
 
-          {/* Expertise Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="observe-animation border-none shadow-lg bg-gradient-to-br from-white to-[hsl(var(--medical-lightest))]">
-              <CardContent className="p-6 text-center">
-                <div className="mb-4 flex justify-center">
-                  <div className="p-3 rounded-full bg-gradient-to-br from-[hsl(var(--medical-medium))] to-[hsl(var(--medical-medium-dark))]">
-                    <Award className="h-8 w-8 text-white" />
-                  </div>
-                </div>
-                <h3 className="text-xl font-semibold mb-2 text-foreground">
-                  {t('about.certification.title')}
-                </h3>
-                <p className="text-muted-foreground text-sm">
-                  {t('about.certification.text')}
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="observe-animation border-none shadow-lg bg-gradient-to-br from-white to-[hsl(var(--medical-lightest))]">
-              <CardContent className="p-6 text-center">
-                <div className="mb-4 flex justify-center">
-                  <div className="p-3 rounded-full bg-gradient-to-br from-[hsl(var(--medical-medium))] to-[hsl(var(--medical-medium-dark))]">
-                    <Heart className="h-8 w-8 text-white" />
-                  </div>
-                </div>
-                <h3 className="text-xl font-semibold mb-2 text-foreground">
-                  {t('about.experience.years')}
-                </h3>
-                <p className="text-muted-foreground text-sm">
-                  {t('about.experience.years.text')}
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="observe-animation border-none shadow-lg bg-gradient-to-br from-white to-[hsl(var(--medical-lightest))]">
-              <CardContent className="p-6 text-center">
-                <div className="mb-4 flex justify-center">
-                  <div className="p-3 rounded-full bg-gradient-to-br from-[hsl(var(--medical-medium))] to-[hsl(var(--medical-medium-dark))]">
-                    <GraduationCap className="h-8 w-8 text-white" />
-                  </div>
-                </div>
-                <h3 className="text-xl font-semibold mb-2 text-foreground">
-                  {t('about.learning.title')}
-                </h3>
-                <p className="text-muted-foreground text-sm">
-                  {t('about.learning.text')}
-                </p>
-              </CardContent>
-            </Card>
-          </div>
         </div>
       </section>
     </div>
