@@ -1,22 +1,22 @@
-import { useEffect, useRef, useState } from 'react';
-import { useLanguage } from '@/contexts/LanguageContext';
-import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
-import { useToast } from '@/hooks/use-toast';
+import { useEffect, useRef, useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
   const { t } = useLanguage();
   const { toast } = useToast();
   const observerRef = useRef<IntersectionObserver | null>(null);
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
   });
 
   useEffect(() => {
@@ -24,14 +24,14 @@ const Contact = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fade-in-up');
+            entry.target.classList.add("animate-fade-in-up");
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
-    const elements = document.querySelectorAll('.observe-animation');
+    const elements = document.querySelectorAll(".observe-animation");
     elements.forEach((el) => observerRef.current?.observe(el));
 
     return () => observerRef.current?.disconnect();
@@ -43,13 +43,13 @@ const Contact = () => {
       title: "Message Sent!",
       description: "We will get back to you as soon as possible.",
     });
-    setFormData({ name: '', email: '', phone: '', message: '' });
+    setFormData({ name: "", email: "", phone: "", message: "" });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     }));
   };
 
@@ -59,11 +59,9 @@ const Contact = () => {
       <section className="pt-32 pb-20 bg-gradient-to-br from-[hsl(var(--medical-lightest))] to-background">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl font-bold mb-6 text-foreground animate-fade-in-up">
-              {t('contact.title')}
-            </h1>
+            <h1 className="text-5xl font-bold mb-6 text-foreground animate-fade-in-up">{t("contact.title")}</h1>
             <p className="text-xl text-muted-foreground animate-fade-in-up animation-delay-200">
-              {t('contact.subtitle')}
+              {t("contact.subtitle")}
             </p>
           </div>
         </div>
@@ -79,7 +77,7 @@ const Contact = () => {
                 <CardContent className="p-8">
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
-                      <Label htmlFor="name">{t('contact.name')}</Label>
+                      <Label htmlFor="name">{t("contact.name")}</Label>
                       <Input
                         id="name"
                         name="name"
@@ -91,7 +89,7 @@ const Contact = () => {
                     </div>
 
                     <div>
-                      <Label htmlFor="email">{t('contact.email')}</Label>
+                      <Label htmlFor="email">{t("contact.email")}</Label>
                       <Input
                         id="email"
                         name="email"
@@ -104,7 +102,7 @@ const Contact = () => {
                     </div>
 
                     <div>
-                      <Label htmlFor="phone">{t('contact.phone')}</Label>
+                      <Label htmlFor="phone">{t("contact.phone")}</Label>
                       <Input
                         id="phone"
                         name="phone"
@@ -116,7 +114,7 @@ const Contact = () => {
                     </div>
 
                     <div>
-                      <Label htmlFor="message">{t('contact.message')}</Label>
+                      <Label htmlFor="message">{t("contact.message")}</Label>
                       <Textarea
                         id="message"
                         name="message"
@@ -128,12 +126,12 @@ const Contact = () => {
                       />
                     </div>
 
-                    <Button 
-                      type="submit" 
+                    <Button
+                      type="submit"
                       className="w-full bg-gradient-to-r from-[hsl(var(--medical-medium))] to-[hsl(var(--medical-medium-dark))] text-white hover:opacity-90"
                       size="lg"
                     >
-                      {t('contact.send')}
+                      {t("contact.send")}
                     </Button>
                   </form>
                 </CardContent>
@@ -144,22 +142,16 @@ const Contact = () => {
             <div className="observe-animation space-y-6">
               <Card className="border-none shadow-xl bg-gradient-to-br from-white to-[hsl(var(--medical-lightest))]">
                 <CardContent className="p-8">
-                  <h2 className="text-2xl font-bold mb-6 text-foreground">
-                    {t('contact.info.title')}
-                  </h2>
-                  
+                  <h2 className="text-2xl font-bold mb-6 text-foreground">{t("contact.info.title")}</h2>
+
                   <div className="space-y-6">
                     <div className="flex items-start gap-4">
                       <div className="p-3 rounded-full bg-gradient-to-br from-[hsl(var(--medical-medium))] to-[hsl(var(--medical-medium-dark))]">
                         <MapPin className="h-6 w-6 text-white" />
                       </div>
                       <div>
-                        <h3 className="font-semibold mb-1 text-foreground">
-                          {t('contact.address')}
-                        </h3>
-                        <p className="text-muted-foreground">
-                          {t('contact.address.value')}
-                        </p>
+                        <h3 className="font-semibold mb-1 text-foreground">{t("contact.address")}</h3>
+                        <p className="text-muted-foreground">{t("contact.address.value")}</p>
                       </div>
                     </div>
 
@@ -168,11 +160,9 @@ const Contact = () => {
                         <Phone className="h-6 w-6 text-white" />
                       </div>
                       <div>
-                        <h3 className="font-semibold mb-1 text-foreground">
-                          {t('contact.phone')}
-                        </h3>
-                        <a 
-                          href="tel:+302106771540" 
+                        <h3 className="font-semibold mb-1 text-foreground">{t("contact.phone")}</h3>
+                        <a
+                          href="tel:+302104117958"
                           className="text-muted-foreground hover:text-[hsl(var(--medical-medium))] transition-colors"
                         >
                           +30 210 677 1540
@@ -185,11 +175,9 @@ const Contact = () => {
                         <Mail className="h-6 w-6 text-white" />
                       </div>
                       <div>
-                        <h3 className="font-semibold mb-1 text-foreground">
-                          {t('contact.email')}
-                        </h3>
-                        <a 
-                          href="mailto:info@gynecology.gr" 
+                        <h3 className="font-semibold mb-1 text-foreground">{t("contact.email")}</h3>
+                        <a
+                          href="mailto:info@gynecology.gr"
                           className="text-muted-foreground hover:text-[hsl(var(--medical-medium))] transition-colors"
                         >
                           info@gynecology.gr
@@ -202,12 +190,8 @@ const Contact = () => {
                         <Clock className="h-6 w-6 text-white" />
                       </div>
                       <div>
-                        <h3 className="font-semibold mb-1 text-foreground">
-                          {t('contact.hours')}
-                        </h3>
-                        <p className="text-muted-foreground">
-                          {t('contact.hours.value')}
-                        </p>
+                        <h3 className="font-semibold mb-1 text-foreground">{t("contact.hours")}</h3>
+                        <p className="text-muted-foreground">{t("contact.hours.value")}</p>
                       </div>
                     </div>
                   </div>
