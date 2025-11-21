@@ -85,7 +85,7 @@ const translations: Record<Language, Record<string, string>> = {
     "services.assistedReproduction.imageAlt": "Υπηρεσίες Υποβοηθούμενης Αναπαραγωγής",
     "services.assistedReproduction.fertilityInvestigation.title": "Διερεύνηση γονιμότητας",
     "services.assistedReproduction.fertilityInvestigation.description":
-      "Εδώ θα προστεθεί λεπτομερής περιγραφή για τη διερεύνηση γονιμότητας.",
+      "Έλεγχος ζευγαριού ή ατόμων για τους πιθανούς λόγους υπογονιμότητας.",
     "services.assistedReproduction.maleInfertility.title": "Α. Ανδρικός παράγοντας υπογονιμότητας",
     "services.assistedReproduction.maleInfertility.description":
       "Εδώ θα προστεθεί λεπτομερής περιγραφή για τον ανδρικό παράγοντα.",
@@ -93,25 +93,22 @@ const translations: Record<Language, Record<string, string>> = {
     "services.assistedReproduction.femaleInfertility.description":
       "Εδώ θα προστεθεί λεπτομερής περιγραφή για τον γυναικείο παράγοντα.",
     "services.assistedReproduction.eggFreezing.title": "Κρυοσυντήρηση ωαρίων",
-    "services.assistedReproduction.eggFreezing.description":
-      "Εδώ θα προστεθεί λεπτομερής περιγραφή για την κρυοσυντήρηση ωαρίων.",
+    "services.assistedReproduction.eggFreezing.description": "Διατήρηση γονιμότητας για μελλοντική χρήση.",
     "services.assistedReproduction.ivf.title": "Εξωσωματική γονιμοποίηση",
     "services.assistedReproduction.ivf.description":
-      "Εδώ θα προστεθεί λεπτομερής περιγραφή για την εξωσωματική γονιμοποίηση.",
+      "Ένωση ωαρίου και σπέρματος στο εργαστήριο και μεταφορά εμβρύου στη μήτρα.",
     "services.assistedReproduction.miniIvf.title": "Mini IVF",
-    "services.assistedReproduction.miniIvf.description": "Εδώ θα προστεθεί λεπτομερής περιγραφή για το Mini IVF.",
+    "services.assistedReproduction.miniIvf.description": "Ηπιότερη μορφή εξωσωματικής με λιγότερη φαρμακευτική αγωγή.",
     "services.assistedReproduction.iui.title": "Ενδομητρική σπερματέγχυση",
     "services.assistedReproduction.iui.description":
-      "Εδώ θα προστεθεί λεπτομερής περιγραφή για την ενδομητρική σπερματέγχυση.",
+      "Τοποθέτηση επεξεργασμένου σπέρματος στη μήτρα για ενίσχυση της σύλληψης.",
     "services.assistedReproduction.pgt.title": "Προεμφυτευτικός έλεγχος",
-    "services.assistedReproduction.pgt.description":
-      "Εδώ θα προστεθεί λεπτομερής περιγραφή για τον προεμφυτευτικό έλεγχο.",
+    "services.assistedReproduction.pgt.description": "Γενετικός έλεγχος εμβρύων πριν τη μεταφορά.",
     "services.assistedReproduction.donorEggsSperm.title": "Δωρεά ωαρίων και σπέρματος",
     "services.assistedReproduction.donorEggsSperm.description":
-      "Εδώ θα προστεθεί λεπτομερής περιγραφή για τη δωρεά γαμετών.",
+      "Επιλογή για γυναίκες/ζευγάρια που δεν μπορούν να χρησιμοποιήσουν δικά τους γαμετά.",
     "services.assistedReproduction.surrogacy.title": "Παρένθετη μητρότητα",
-    "services.assistedReproduction.surrogacy.description":
-      "Εδώ θα προστεθεί λεπτομερής περιγραφή για την παρένθετη μητρότητα.",
+    "services.assistedReproduction.surrogacy.description": "Επιλογή για γυναίκες που δεν μπορούν να κυοφορήσουν.",
 
     // Endoscopic Surgery Page
     "services.endoscopicSurgery.title": "ΕΝΔΟΣΚΟΠΙΚΗ ΧΕΙΡΟΥΡΓΙΚΗ",
@@ -120,12 +117,12 @@ const translations: Record<Language, Record<string, string>> = {
     "services.endoscopicSurgery.imageAlt": "Υπηρεσίες Ενδοσκοπικής Χειρουργικής",
     "services.endoscopicSurgery.hysteroscopy.title": "Υστεροσκόπηση",
     "services.endoscopicSurgery.hysteroscopy.description":
-      "Εδώ θα προστεθεί λεπτομερής περιγραφή για την υστεροσκόπηση.",
+      "Ενδοσκοπικός έλεγχος της μήτρας για διάγνωση και θεραπεία προβλημάτων.",
     "services.endoscopicSurgery.laparoscopy.title": "Λαπαροσκόπηση",
-    "services.endoscopicSurgery.laparoscopy.description": "Εδώ θα προστεθεί λεπτομερής περιγραφή για τη λαπαροσκόπηση.",
+    "services.endoscopicSurgery.laparoscopy.description": "Ελάχιστα επεμβατική χειρουργική στην κοιλιά και τη λεκάνη.",
     "services.endoscopicSurgery.roboticSurgery.title": "Ρομποτική Χειρουργική",
     "services.endoscopicSurgery.roboticSurgery.description":
-      "Εδώ θα προστεθεί λεπτομερής περιγραφή για τη ρομποτική χειρουργική.",
+      "Πιο ακριβής χειρουργική με σύστημα ρομποτικής καθοδήγησης.",
 
     // Pregnancy Page
     "services.pregnancy.title": "ΕΓΚΥΜΟΣΥΝΗ",
@@ -133,14 +130,13 @@ const translations: Record<Language, Record<string, string>> = {
     "services.pregnancy.imageAlt": "Υπηρεσίες Εγκυμοσύνης",
     "services.pregnancy.prenatalScreening.title": "Προγεννητικός Έλεγχος",
     "services.pregnancy.prenatalScreening.description":
-      "Εδώ θα προστεθεί λεπτομερής περιγραφή για τον προγεννητικό έλεγχο.",
+      "Έλεγχος υγείας μητέρας και εμβρύου κατά τη διάρκεια της εγκυμοσύνης.",
     "services.pregnancy.nipt.title": "Μη Επεμβατικός Προγεννητικός Έλεγχος (NIPT)",
-    "services.pregnancy.nipt.description": "Εδώ θα προστεθεί λεπτομερής περιγραφή για το NIPT.",
+    "services.pregnancy.nipt.description": "Μη επεμβατικός έλεγχος για χρωμοσωμικές ανωμαλίες.",
     "services.pregnancy.ultrasound3d4d.title": "Υπερηχογράφημα 3D-4D",
-    "services.pregnancy.ultrasound3d4d.description":
-      "Εδώ θα προστεθεί λεπτομερής περιγραφή για το υπερηχογράφημα 3D-4D.",
+    "services.pregnancy.ultrasound3d4d.description": "Τρισδιάστατες απεικονίσεις του μωρού.",
     "services.pregnancy.delivery.title": "Τοκετός",
-    "services.pregnancy.delivery.description": "Εδώ θα προστεθεί λεπτομερής περιγραφή για τον τοκετό.",
+    "services.pregnancy.delivery.description": "Φυσιολογικός τοκετός ή καισαρική ανάλογα με τις ανάγκες.",
     "services.pregnancy.vbac.title": "Φυσιολογικός τοκετός μετά από καισαρική",
     "services.pregnancy.vbac.description":
       "Εδώ θα προστεθεί λεπτομερής περιγραφή για τον φυσιολογικό τοκετό μετά από καισαρική.",
