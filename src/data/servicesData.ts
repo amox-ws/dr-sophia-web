@@ -170,15 +170,15 @@ export const servicesData: Service[] = [
       {
         title: { el: "Υστεροσκόπηση", en: "Hysteroscopy", fr: "Hystéroscopie" },
         desc: {
-          el: "Ενδοσκοπικός έλεγχος μήτρας για διάγνωση και θεραπεία.",
+          el: "Ενδοσκοπικός έλεγχος της μήτρας για διάγνωση και θεραπεία προβλημάτων.",
           en: "Endoscopic evaluation of the uterus for diagnosis and treatment.",
-          fr: "Exploration endoscopique de l'utérus à visée diagnostique et thérapeutique."
+          fr: "Exploration endoscopique de l'utérus à des fins diagnostiques et thérapeutiques."
         }
       },
       {
         title: { el: "Λαπαροσκόπηση", en: "Laparoscopy", fr: "Laparoscopie" },
         desc: {
-          el: "Ελάχιστα επεμβατική χειρουργική κοιλίας και λεκάνης.",
+          el: "Ελάχιστα επεμβατική χειρουργική στην κοιλιά και τη λεκάνη.",
           en: "Minimally invasive surgery of the abdomen and pelvis.",
           fr: "Chirurgie mini-invasive de l'abdomen et du pelvis."
         }
@@ -186,9 +186,9 @@ export const servicesData: Service[] = [
       {
         title: { el: "Ρομποτική Χειρουργική", en: "Robotic Surgery", fr: "Chirurgie Robotique" },
         desc: {
-          el: "Ακριβέστερη χειρουργική με ρομποτική υποβοήθηση.",
-          en: "Highly precise robotic-assisted surgery.",
-          fr: "Chirurgie de haute précision assistée par robot."
+          el: "Πιο ακριβής χειρουργική με σύστημα ρομποτικής καθοδήγησης.",
+          en: "Highly precise surgery performed with robotic-assisted technology.",
+          fr: "Chirurgie de haute précision grâce à une assistance robotisée."
         }
       }
     ]
