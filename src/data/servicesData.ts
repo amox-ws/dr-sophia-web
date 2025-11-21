@@ -200,17 +200,17 @@ export const servicesData: Service[] = [
       {
         title: { el: "Προγεννητικός Έλεγχος", en: "Prenatal Screening", fr: "Dépistage Prénatal" },
         desc: {
-          el: "Παρακολούθηση υγείας μητέρας και εμβρύου.",
-          en: "Monitoring the health of the mother and baby.",
-          fr: "Suivi de la santé de la mère et du bébé."
+          el: "Έλεγχος υγείας μητέρας και εμβρύου κατά τη διάρκεια της εγκυμοσύνης.",
+          en: "Monitoring the health of the mother and baby during pregnancy.",
+          fr: "Suivi de la santé de la mère et du bébé pendant la grossesse."
         }
       },
       {
         title: { el: "NIPT", en: "NIPT", fr: "NIPT" },
         desc: {
           el: "Μη επεμβατικός έλεγχος για χρωμοσωμικές ανωμαλίες.",
-          en: "Non-invasive test for chromosomal abnormalities.",
-          fr: "Test sanguin non invasif pour anomalies chromosomiques."
+          en: "Non-invasive blood test to detect chromosomal abnormalities.",
+          fr: "Test sanguin non invasif pour détecter les anomalies chromosomiques."
         }
       },
       {
@@ -224,9 +224,9 @@ export const servicesData: Service[] = [
       {
         title: { el: "Τοκετός", en: "Childbirth", fr: "Accouchement" },
         desc: {
-          el: "Φυσιολογικός ή καισαρική, ανάλογα με τις ανάγκες.",
-          en: "Vaginal birth or caesarean section, as clinically indicated.",
-          fr: "Voie basse ou césarienne selon les besoins médicaux."
+          el: "Φυσιολογικός τοκετός ή καισαρική ανάλογα με τις ανάγκες.",
+          en: "Vaginal birth or caesarean section, depending on medical needs.",
+          fr: "Accouchement par voie basse ou césarienne, selon les besoins médicaux."
         }
       },
       {
@@ -240,17 +240,17 @@ export const servicesData: Service[] = [
       {
         title: { el: "VBAC – Κολπικός Τοκετός μετά από Καισαρική", en: "VBAC – Vaginal Birth After Cesarean", fr: "AVAC – Accouchement Vaginal Après Césarienne" },
         desc: {
-          el: "Επιβλεπόμενος και ασφαλής κολπικός τοκετός μετά από καισαρική.",
-          en: "Supervised, safe vaginal delivery after a previous caesarean.",
-          fr: "Accompagnement spécialisé pour un accouchement vaginal après césarienne."
+          el: "Επίβλεψη και υποστήριξη για ασφαλή κολπικό τοκετό.",
+          en: "Supervised and supported vaginal delivery after a previous caesarean.",
+          fr: "Suivi spécialisé pour un accouchement vaginal après une césarienne précédente."
         }
       },
       {
         title: { el: "Δίδυμη Κύηση", en: "Twin Pregnancy", fr: "Grossesse Gémellaire" },
         desc: {
-          el: "Εξειδικευμένη παρακολούθηση δίδυμων κυήσεων.",
+          el: "Εξειδικευμένη παρακολούθηση για δίδυμες εγκυμοσύνες.",
           en: "Specialized monitoring of twin gestations.",
-          fr: "Suivi spécialisé des grossesses gémellaires."
+          fr: "Suivi particulier des grossesses gémellaires."
         }
       }
     ]
