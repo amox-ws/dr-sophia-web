@@ -100,41 +100,41 @@ export const servicesData: Service[] = [
       {
         title: { el: "Διερεύνηση Γονιμότητας", en: "Fertility Evaluation", fr: "Bilan de Fertilité" },
         desc: {
-          el: "Έλεγχος για πιθανούς λόγους υπογονιμότητας (ανδρικός/γυναικείος παράγοντας).",
-          en: "Assessment to identify causes of infertility (male factor / female factor).",
-          fr: "Évaluation des causes d'infertilité (facteur masculin / féminin)."
+          el: "Έλεγχος ζευγαριού ή ατόμων για τους πιθανούς λόγους υπογονιμότητας (ανδρικός και γυναικείος παράγοντας).",
+          en: "Assessment of individuals or couples to identify possible causes of infertility (male factor and female factor).",
+          fr: "Évaluation des couples ou individus pour identifier les causes possibles d'infertilité (facteur masculin et facteur féminin)."
         }
       },
       {
         title: { el: "Κρυοσυντήρηση Ωαρίων", en: "Egg Cryopreservation", fr: "Cryopréservation des Ovocytes" },
         desc: {
           el: "Διατήρηση γονιμότητας για μελλοντική χρήση.",
-          en: "Preserving fertility for future use.",
-          fr: "Conservation de la fertilité pour une utilisation ultérieure."
+          en: "Preservation of fertility for future use.",
+          fr: "Conservation de la fertilité pour une utilisation future."
         }
       },
       {
         title: { el: "Εξωσωματική Γονιμοποίηση (IVF)", en: "In Vitro Fertilization (IVF)", fr: "Fécondation In Vitro (FIV)" },
         desc: {
-          el: "Γονιμοποίηση στο εργαστήριο και μεταφορά εμβρύου στη μήτρα.",
-          en: "Fertilisation in the lab and embryo transfer into the uterus.",
-          fr: "Fécondation en laboratoire puis transfert embryonnaire dans l'utérus."
+          el: "Ένωση ωαρίου και σπέρματος στο εργαστήριο και μεταφορά εμβρύου στη μήτρα.",
+          en: "Fertilisation of an egg and sperm in the laboratory and transfer of the embryo into the uterus.",
+          fr: "Fécondation de l'ovocyte et du spermatozoïde en laboratoire, puis transfert de l'embryon dans l'utérus."
         }
       },
       {
         title: { el: "Mini IVF", en: "Mini IVF", fr: "Mini FIV" },
         desc: {
-          el: "Ηπιότερο πρωτόκολλο με χαμηλότερες δόσεις φαρμάκων.",
-          en: "Gentler protocol with lower medication doses.",
-          fr: "Protocole plus doux avec moins de médicaments."
+          el: "Ηπιότερη μορφή εξωσωματικής με λιγότερη φαρμακευτική αγωγή.",
+          en: "A gentler IVF protocol requiring lower medication doses.",
+          fr: "Version plus douce de la FIV avec moins de médicaments."
         }
       },
       {
         title: { el: "Ενδομήτρια Σπερματέγχυση (IUI)", en: "Intrauterine Insemination (IUI)", fr: "Insémination Intra-Utérine (IIU)" },
         desc: {
-          el: "Τοποθέτηση επεξεργασμένου σπέρματος στη μήτρα για ενίσχυση σύλληψης.",
-          en: "Placement of processed sperm into the uterus to improve conception.",
-          fr: "Dépôt de sperme préparé directement dans l'utérus pour favoriser la conception."
+          el: "Τοποθέτηση επεξεργασμένου σπέρματος στη μήτρα για ενίσχυση της σύλληψης.",
+          en: "Placement of processed sperm directly into the uterus to improve the chances of conception.",
+          fr: "Dépôt de spermatozoïdes préparés directement dans l'utérus pour favoriser la conception."
         }
       },
       {
@@ -142,22 +142,22 @@ export const servicesData: Service[] = [
         desc: {
           el: "Γενετικός έλεγχος εμβρύων πριν τη μεταφορά.",
           en: "Genetic testing of embryos before transfer.",
-          fr: "Analyse génétique des embryons avant transfert."
+          fr: "Analyse génétique des embryons avant le transfert."
         }
       },
       {
         title: { el: "Δωρεά Ωαρίων & Σπέρματος", en: "Egg & Sperm Donation", fr: "Don d'Ovocytes et de Spermatozoïdes" },
         desc: {
-          el: "Επιλογή για όσους δεν μπορούν να χρησιμοποιήσουν δικά τους γαμετά.",
-          en: "Option for those unable to use their own gametes.",
-          fr: "Option pour ceux qui ne peuvent utiliser leurs propres gamètes."
+          el: "Επιλογή για γυναίκες ή ζευγάρια που δεν μπορούν να χρησιμοποιήσουν δικά τους γαμετά.",
+          en: "An option for individuals or couples unable to use their own gametes.",
+          fr: "Option pour les couples ou individus ne pouvant pas utiliser leurs propres gamètes."
         }
       },
       {
         title: { el: "Παρένθετη Μητρότητα", en: "Surrogacy", fr: "Gestation pour Autrui (GPA)" },
         desc: {
-          el: "Λύση για γυναίκες που δεν μπορούν να κυοφορήσουν.",
-          en: "Option for women unable to carry a pregnancy.",
+          el: "Επιλογή για γυναίκες που δεν μπορούν να κυοφορήσουν.",
+          en: "An option for women who are unable to carry a pregnancy.",
           fr: "Option pour les femmes incapables de mener une grossesse."
         }
       }
