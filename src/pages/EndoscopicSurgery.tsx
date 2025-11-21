@@ -1,10 +1,16 @@
+import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { getServiceById, type Language } from '@/data/servicesData';
 import endoscopicSurgeryImage from '@/assets/endoscopic_surgery.jpeg';
 
 const EndoscopicSurgery = () => {
   const { language } = useLanguage();
+  const [expanded, setExpanded] = useState<string | null>(null);
   const serviceData = getServiceById('endoscopic-surgery');
+
+  const toggleExpand = (index: number) => {
+    setExpanded(prev => (prev === String(index) ? null : String(index)));
+  };
 
   if (!serviceData) return null;
 
@@ -36,17 +42,28 @@ const EndoscopicSurgery = () => {
       </section>
 
       {/* Content Section */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto space-y-12">
+      <section className="py-20 bg-background/90">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="grid gap-8 md:grid-cols-2">
             {serviceData.items.map((item, index) => (
-              <article key={index} className="space-y-4">
-                <h2 className="text-2xl md:text-3xl font-heading font-medium text-foreground">
-                  {item.title[language as Language]}
-                </h2>
-                <p className="text-foreground/80 leading-relaxed">
-                  {item.desc[language as Language]}
-                </p>
+              <article 
+                key={index} 
+                className="border border-muted-foreground/20 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-shadow bg-background"
+              >
+                <div 
+                  className="flex justify-between items-center cursor-pointer" 
+                  onClick={() => toggleExpand(index)}
+                >
+                  <h2 className="text-2xl font-semibold">{item.title[language as Language]}</h2>
+                  <span className="text-2xl">{expanded === String(index) ? '-' : '+'}</span>
+                </div>
+                {expanded === String(index) && (
+                  <div className="mt-4 space-y-3">
+                    <p className="text-foreground/80 leading-relaxed">
+                      {item.desc[language as Language]}
+                    </p>
+                  </div>
+                )}
               </article>
             ))}
           </div>
