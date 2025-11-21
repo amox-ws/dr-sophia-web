@@ -151,7 +151,7 @@ const Contact = () => {
                       </div>
                       <div>
                         <h3 className="font-semibold mb-1 text-foreground">{t("contact.address")}</h3>
-                        <p className="text-muted-foreground">{t("contact.address.value")}</p>
+                        <p className="text-muted-foreground whitespace-pre-line">{t("contact.address.value")}</p>
                       </div>
                     </div>
 
