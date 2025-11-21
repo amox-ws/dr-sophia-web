@@ -56,8 +56,7 @@ const translations: Record<Language, Record<string, string>> = {
       "Προσφέρουμε εξειδικευμένες υπηρεσίες γυναικολογίας με σύγχρονες μεθόδους διάγνωσης και θεραπείας.",
     "services.gynecology.imageAlt": "Υπηρεσίες Γυναικολογίας",
     "services.gynecology.endometriosis.title": "Ενδομητρίωση",
-    "services.gynecology.endometriosis.description":
-      "Κατάσταση όπου ιστός παρόμοιος με το ενδομήτριο αναπτύσσεται εκτός μήτρας, προκαλώντας πόνο και υπογονιμότητα.",
+
     "services.gynecology.adenomyosis.title": "Αδενομύωση",
     "services.gynecology.adenomyosis.description":
       "Ο ενδομητρικός ιστός εισχωρεί στο μυϊκό τοίχωμα της μήτρας, προκαλώντας έντονη περίοδο και πόνο.",
