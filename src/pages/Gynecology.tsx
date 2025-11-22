@@ -77,7 +77,7 @@ const Gynecology = () => {
               href="/contact" 
               className="inline-block px-8 py-4 bg-primary text-primary-foreground rounded-xl font-semibold hover:bg-primary/90 transition"
             >
-              {language === 'el' ? 'Κλείστε Ραντεβού Τώρα' : language === 'en' ? 'Book Appointment Now' : 'Prendre Rendez-vous'}
+              {language === 'el' ? 'Επικοινωνήστε' : language === 'en' ? 'Contact Us' : 'Contactez-nous'}
             </a>
           </div>
         </div>

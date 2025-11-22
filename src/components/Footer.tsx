@@ -12,7 +12,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* About */}
           <div>
-            <h3 className="text-xl font-semibold mb-4">Dr. Gynecology</h3>
+            <h3 className="text-xl font-semibold mb-4">Dr. Cheirakis</h3>
             <p className="text-white/80 text-sm leading-relaxed">{t("footer.description")}</p>
           </div>
 
@@ -66,10 +66,10 @@ const Footer = () => {
               <li className="flex items-center gap-2">
                 <Mail className="h-5 w-5 flex-shrink-0" />
                 <a
-                  href="mailto:info@gynecology.gr"
+                  href="mailto:info@cheirakisgyn.gr"
                   className="text-white/80 hover:text-white transition-colors text-sm"
                 >
-                  info@gynecology.gr
+                  info@cheirakisgyn.gr
                 </a>
               </li>
             </ul>
@@ -78,7 +78,7 @@ const Footer = () => {
 
         <div className="border-t border-white/20 mt-8 pt-8 text-center">
           <p className="text-white/60 text-sm">
-            © {currentYear} Dr. Gynecology. {t("footer.rights")}
+            © {currentYear} {t("footer.rights")}
           </p>
         </div>
       </div>
