@@ -324,9 +324,10 @@ const translations: Record<Language, Record<string, string>> = {
     "doctor.readMore": "Περισσότερα",
     "doctor.imageAlt": "Δρ. Λευτέρης Χειράκης - Γυναικολόγος Αθήνα",
 
-    // CTA
-    "cta.title": "Έτοιμοι να Φροντίσετε την Υγεία σας;",
-    "cta.subtitle": "Κλείστε το ραντεβού σας σήμερα και βιώστε εξατομικευμένη φροντίδα",
+    // Offices
+    "offices.title": "Τα Γραφεία μας",
+    "offices.athens.title": "Αθήνα: Leof. Vasileos Georgiou B 4, Pireas 185 34",
+    "offices.aegina.title": "Αίγινα: Νοσοκομείου 5, 180 10 Αίγινα",
 
     // Contact
     "contact.title": "Επικοινωνήστε μαζί μας",
@@ -654,9 +655,10 @@ const translations: Record<Language, Record<string, string>> = {
     "doctor.readMore": "Read More",
     "doctor.imageAlt": "Dr. Lefteris Cheirakis - Gynecologist Athens",
 
-    // CTA
-    "cta.title": "Ready to Take Care of Your Health?",
-    "cta.subtitle": "Schedule your appointment today and experience personalized care",
+    // Offices
+    "offices.title": "Our Offices",
+    "offices.athens.title": "Athens: Leof. Vasileos Georgiou B 4, Pireas 185 34",
+    "offices.aegina.title": "Aegina: Νοσοκομείου 5, 180 10 Αίγινα",
 
     // Contact
     "contact.title": "Contact Us",
@@ -992,9 +994,10 @@ const translations: Record<Language, Record<string, string>> = {
     "doctor.readMore": "En savoir plus",
     "doctor.imageAlt": "Dr Lefteris Cheirakis - Gynécologue Athènes",
 
-    // CTA
-    "cta.title": "Prêt à Prendre Soin de Votre Santé ?",
-    "cta.subtitle": "Prenez rendez-vous dès aujourd'hui et bénéficiez de soins personnalisés",
+    // Offices
+    "offices.title": "Nos Bureaux",
+    "offices.athens.title": "Athènes: Leof. Vasileos Georgiou B 4, Pireas 185 34",
+    "offices.aegina.title": "Égine: Νοσοκομείου 5, 180 10 Αίγινα",
 
     // Contact
     "contact.title": "Contactez-nous",
