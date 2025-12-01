@@ -130,7 +130,7 @@ const Home = () => {
           <CarouselContent>
             {heroSlides.map((slide) => (
               <CarouselItem key={slide.id}>
-                <div className="relative min-h-[70vh] md:min-h-[80vh] flex items-center justify-center text-white overflow-hidden">
+                <div className="relative min-h-[70vh] md:min-h-[80vh] flex items-center text-white overflow-hidden">
                   
                   {/* Background Image */}
                   <img
@@ -140,28 +140,25 @@ const Home = () => {
                     // Using filter brightness to darken the image for text visibility
                   />
 
-                  {/* Dark Overlay (Alternative to brightness filter, but filter looks better here) */}
-                  {/* <div className="absolute inset-0 bg-black/60"></div> */}
-
                   {/* Decorative glowing elements - now over the image */}
                   <div className="absolute inset-0 opacity-10 pointer-events-none">
                     <div className="absolute top-20 right-20 w-72 h-72 bg-white rounded-full blur-3xl"></div>
                     <div className="absolute bottom-20 left-20 w-96 h-96 bg-white rounded-full blur-3xl"></div>
                   </div>
 
-                  {/* Slide Content */}
-                  <div className="container mx-auto px-4 relative z-10">
-                    <div className="max-w-4xl mx-auto text-center">
-                      <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight drop-shadow-lg">
+                  {/* Slide Content - Aligned to left */}
+                  <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
+                    <div className="max-w-3xl">
+                      <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 leading-tight drop-shadow-lg">
                         {t(`heroCarousel.${slide.id}.title`)}
                       </h1>
-                      <p className="text-lg md:text-xl lg:text-2xl mb-6 md:mb-8 text-white/90 max-w-3xl mx-auto drop-shadow-md">
+                      <p className="text-base md:text-lg lg:text-xl mb-5 md:mb-6 text-white/90 max-w-2xl drop-shadow-md">
                         {t(`heroCarousel.${slide.id}.subtitle`)}
                       </p>
                       <Link to={slide.link}>
                         <Button 
                           size="lg" 
-                          className="bg-white text-[hsl(var(--medical-darkest))] hover:bg-white/90 text-base md:text-lg px-6 md:px-8 py-4 md:py-6 shadow-xl"
+                          className="bg-white text-[hsl(var(--medical-darkest))] hover:bg-white/90 text-sm md:text-base px-5 md:px-6 py-3 md:py-4 shadow-xl"
                         >
                           {t(`heroCarousel.${slide.id}.button`)}
                         </Button>
@@ -242,21 +239,31 @@ const Home = () => {
           </div>
 
           {/* Service Cards Grid */}
-          <div className="max-w-4xl mx-auto grid gap-8 md:grid-cols-2 observe-animation">
-            {serviceCategories.map((category) => (
-              <Link key={category.key} to={category.route} className="block group">
+          <div className="max-w-4xl mx-auto grid gap-8 md:grid-cols-2">
+            {serviceCategories.map((category, index) => (
+              <Link 
+                key={category.key} 
+                to={category.route} 
+                className="block group observe-animation"
+                style={{
+                  animation: 'slide-in-bounce 0.6s ease-out forwards',
+                  animationDelay: `${index * 0.1}s`,
+                  opacity: 0,
+                  transform: index % 2 === 0 ? 'translateX(-50px)' : 'translateX(50px)'
+                }}
+              >
                 <Card className="overflow-hidden bg-card shadow-lg hover:shadow-xl transition-shadow duration-300 h-full">
                   {/* Top Section - Text Content */}
-                  <CardHeader className="relative p-6 md:p-8">
-                    <div className="flex items-start justify-between gap-4">
-                      <div className="flex-1">
-                        <CardTitle className="text-xl md:text-2xl font-heading font-medium mb-4 text-foreground group-hover:text-primary transition-colors whitespace-pre-line">
+                  <CardHeader className="relative p-4 md:p-6 lg:p-8">
+                    <div className="flex items-start justify-between gap-2 md:gap-4">
+                      <div className="flex-1 min-w-0">
+                        <CardTitle className="text-lg md:text-xl lg:text-2xl font-heading font-medium mb-2 md:mb-4 text-foreground group-hover:text-primary transition-colors whitespace-pre-line">
                           {formatTitleWithLineBreak(category.title, category.key, language)}
                         </CardTitle>
-                        <p className="text-base text-muted-foreground leading-relaxed">{category.description}</p>
+                        <p className="text-sm md:text-base text-muted-foreground leading-relaxed">{category.description}</p>
                       </div>
                       {/* Arrow Icon */}
-                      <ArrowUpRight className="w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0" />
+                      <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0" />
                     </div>
                   </CardHeader>
 
