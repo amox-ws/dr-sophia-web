@@ -134,11 +134,10 @@ const Home = () => {
     <div className="relative h-[calc(100vh-4rem)] md:h-[calc(100vh-5rem)] flex items-center text-white overflow-hidden">
       
       {/* Background Image */}
-      {/* ΑΛΛΑΓΗ 2: Χρήση του object-[50%_20%] για να εστιάζει λίγο πιο ψηλά από το κέντρο */}
       <img
         src={slide.image}
         alt={t(`heroCarousel.${slide.id}.title`)}
-        className="absolute inset-0 w-full h-full object-cover object-[50%_20%] filter brightness-[.3]"
+        className="absolute inset-0 w-full h-full object-cover object-center filter brightness-[.3]"
       />
 
       {/* Decorative glowing elements */}
@@ -147,19 +146,19 @@ const Home = () => {
         <div className="absolute bottom-20 left-20 w-96 h-96 bg-white rounded-full blur-3xl"></div>
       </div>
 
-      {/* Slide Content */}
-      <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
-        <div className="max-w-3xl">
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight drop-shadow-lg">
+      {/* Slide Content - Bottom Left */}
+      <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10 h-full flex items-end pb-12 md:pb-16">
+        <div className="max-w-2xl">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4 leading-tight drop-shadow-lg">
             {t(`heroCarousel.${slide.id}.title`)}
           </h1>
-          <p className="text-lg md:text-xl lg:text-2xl mb-6 md:mb-8 text-white/90 max-w-2xl drop-shadow-md">
+          <p className="text-base md:text-lg lg:text-xl mb-4 md:mb-6 text-white/90 drop-shadow-md">
             {t(`heroCarousel.${slide.id}.subtitle`)}
           </p>
           <Link to={slide.link}>
             <Button 
               size="lg" 
-              className="bg-white text-[hsl(var(--medical-darkest))] hover:bg-white/90 text-base md:text-lg px-6 md:px-8 py-4 md:py-6 shadow-xl"
+              className="bg-white text-[hsl(var(--medical-darkest))] hover:bg-white/90 text-sm md:text-base px-6 md:px-8 py-3 md:py-4 shadow-xl"
             >
               {t(`heroCarousel.${slide.id}.button`)}
             </Button>
@@ -244,7 +243,7 @@ const Home = () => {
           </div>
 
           {/* Service Cards Grid */}
-          <div className="max-w-4xl mx-auto grid gap-8 md:grid-cols-2">
+          <div className="max-w-4xl mx-auto grid gap-6 md:gap-8 grid-cols-2">
             {serviceCategories.map((category, index) => (
               <Link 
                 key={category.key} 
@@ -259,16 +258,16 @@ const Home = () => {
               >
                 <Card className="overflow-hidden bg-card shadow-lg hover:shadow-xl transition-shadow duration-300 h-full">
                   {/* Top Section - Text Content */}
-                  <CardHeader className="relative p-4 md:p-6 lg:p-8">
-                    <div className="flex items-start justify-between gap-2 md:gap-4">
+                  <CardHeader className="relative p-3 md:p-4 lg:p-6">
+                    <div className="flex items-start justify-between gap-2">
                       <div className="flex-1 min-w-0">
-                        <CardTitle className="text-lg md:text-xl lg:text-2xl font-heading font-medium mb-2 md:mb-4 text-foreground group-hover:text-primary transition-colors whitespace-pre-line">
+                        <CardTitle className="text-base md:text-lg lg:text-xl font-heading font-medium mb-2 text-foreground group-hover:text-primary transition-colors whitespace-pre-line">
                           {formatTitleWithLineBreak(category.title, category.key, language)}
                         </CardTitle>
-                        <p className="text-sm md:text-base text-muted-foreground leading-relaxed">{category.description}</p>
+                        <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{category.description}</p>
                       </div>
                       {/* Arrow Icon */}
-                      <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0" />
+                      <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0" />
                     </div>
                   </CardHeader>
 

@@ -58,21 +58,31 @@ const Services = () => {
       {/* Service Categories Cards */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto grid gap-8 md:grid-cols-2">
-            {serviceCategories.map((category) => (
-              <Link key={category.key} to={category.route} className="block group">
+          <div className="max-w-4xl mx-auto grid gap-6 md:gap-8 grid-cols-2">
+            {serviceCategories.map((category, index) => (
+              <Link 
+                key={category.key} 
+                to={category.route} 
+                className="block group"
+                style={{
+                  animation: 'slide-in-bounce 0.6s ease-out forwards',
+                  animationDelay: `${index * 0.1}s`,
+                  opacity: 0,
+                  transform: index % 2 === 0 ? 'translateX(-50px)' : 'translateX(50px)'
+                }}
+              >
                 <Card className="overflow-hidden bg-card shadow-lg hover:shadow-xl transition-shadow duration-300 h-full">
                   {/* Top Section - Text Content */}
-                  <CardHeader className="relative p-6 md:p-8">
-                    <div className="flex items-start justify-between gap-4">
-                      <div className="flex-1">
-                        <CardTitle className="text-xl md:text-2xl font-heading font-medium mb-4 text-foreground group-hover:text-primary transition-colors whitespace-pre-line">
+                  <CardHeader className="relative p-3 md:p-4 lg:p-6">
+                    <div className="flex items-start justify-between gap-2">
+                      <div className="flex-1 min-w-0">
+                        <CardTitle className="text-base md:text-lg lg:text-xl font-heading font-medium mb-2 text-foreground group-hover:text-primary transition-colors whitespace-pre-line">
                           {formatTitleWithLineBreak(category.title, category.key, language)}
                         </CardTitle>
-                        <p className="text-base text-muted-foreground leading-relaxed">{category.description}</p>
+                        <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{category.description}</p>
                       </div>
                       {/* Arrow Icon */}
-                      <ArrowUpRight className="w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0" />
+                      <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0" />
                     </div>
                   </CardHeader>
 
