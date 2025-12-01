@@ -13,6 +13,7 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 import Autoplay from 'embla-carousel-autoplay';
+import Fade from 'embla-carousel-fade';
 import { servicesData, type Language } from '@/data/servicesData';
 
 // 🩺 Import service images
@@ -37,6 +38,7 @@ const Home = () => {
   const autoplayPlugin = useRef(
     Autoplay({ delay: 5000, stopOnInteraction: false })
   );
+  const fadePlugin = useRef(Fade());
 
   const formatTitleWithLineBreak = (title: string, key: string, lang: string): string => {
     if (lang !== "el") return title;
@@ -122,7 +124,7 @@ const Home = () => {
             align: 'center',
             loop: true,
           }}
-          plugins={[autoplayPlugin.current]}
+          plugins={[autoplayPlugin.current, fadePlugin.current]}
           className="w-full"
         >
           <CarouselContent>
@@ -177,7 +179,7 @@ const Home = () => {
       </section>
 
       {/* 👩‍⚕️ Doctor Section */}
-      <section className="py-20 bg-gradient-to-br from-[hsl(var(--medical-light))] to-background">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto observe-animation">
             <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -194,12 +196,25 @@ const Home = () => {
               </div>
 
               <div className="order-2 md:order-2">
-                <h2 className="text-4xl font-bold mb-6 text-foreground">
+                <h2 className="text-4xl font-heading font-bold mb-6 text-foreground">
                   {t('doctor.title')}
                 </h2>
-                <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                  {t('doctor.intro')}
-                </p>
+                <p 
+                  className="text-lg text-muted-foreground mb-8 leading-[1.6] tracking-[0.2px] font-body"
+                  dangerouslySetInnerHTML={{
+                    __html: t('doctor.intro')
+                      .replace(/Υποβοηθούμενη Αναπαραγωγή \(IVF\)/g, '<strong class="text-[hsl(var(--medical-medium-dark))]">Υποβοηθούμενη Αναπαραγωγή (IVF)</strong>')
+                      .replace(/Assisted Reproduction \(IVF\)/g, '<strong class="text-[hsl(var(--medical-medium-dark))]">Assisted Reproduction (IVF)</strong>')
+                      .replace(/Procréation Assistée \(FIV\)/g, '<strong class="text-[hsl(var(--medical-medium-dark))]">Procréation Assistée (FIV)</strong>')
+                      .replace(/Ελάχιστα Επεμβατική Χειρουργική/g, '<strong class="text-[hsl(var(--medical-medium-dark))]">Ελάχιστα Επεμβατική Χειρουργική</strong>')
+                      .replace(/Minimally Invasive Surgery/g, '<strong class="text-[hsl(var(--medical-medium-dark))]">Minimally Invasive Surgery</strong>')
+                      .replace(/Chirurgie Mini-Invasive/g, '<strong class="text-[hsl(var(--medical-medium-dark))]">Chirurgie Mini-Invasive</strong>')
+                      .replace(/Port Royal/g, '<strong class="text-[hsl(var(--medical-medium))]">Port Royal</strong>')
+                      .replace(/επιστημονική αριστεία/g, '<strong class="text-foreground">επιστημονική αριστεία</strong>')
+                      .replace(/scientific excellence/g, '<strong class="text-foreground">scientific excellence</strong>')
+                      .replace(/excellence scientifique/g, '<strong class="text-foreground">excellence scientifique</strong>')
+                  }}
+                />
                 <Link to="/about">
                   <Button
                     size="lg"
@@ -215,7 +230,7 @@ const Home = () => {
       </section>
 
       {/* 🩺 Services Section - Matching /services page layout */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-gradient-to-br from-[hsl(var(--medical-light))] to-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 observe-animation">
             <h2 className="text-4xl font-bold mb-4 text-foreground">
@@ -266,7 +281,7 @@ const Home = () => {
       </section>
 
       {/* 🏢 Our Offices Section */}
-      <section className="py-20 bg-gradient-to-br from-[hsl(var(--medical-lightest))] to-background">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16 observe-animation">
