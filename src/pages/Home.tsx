@@ -171,8 +171,12 @@ const Home = () => {
   </CarouselItem>
 ))}
           </CarouselContent>
-          <CarouselPrevious className="left-4 md:left-8 z-20" />
-          <CarouselNext className="right-4 md:right-8 z-20" />
+          <CarouselPrevious 
+            className="left-4 md:left-8 z-20 bg-transparent border border-white/40 text-white hover:bg-white/10 hover:border-white hover:text-white h-10 w-10 md:h-12 md:w-12 transition-all duration-300" 
+          />
+          <CarouselNext 
+            className="right-4 md:right-8 z-20 bg-transparent border border-white/40 text-white hover:bg-white/10 hover:border-white hover:text-white h-10 w-10 md:h-12 md:w-12 transition-all duration-300" 
+          />
         </Carousel>
       </section>
 
