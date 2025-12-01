@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
-import { GraduationCap, Briefcase, Languages, Heart, Award, Globe2, Stethoscope } from 'lucide-react';
+import { GraduationCap, Briefcase, Languages, Award, Globe2, Stethoscope } from 'lucide-react';
 
 const About = () => {
   const { t } = useLanguage();
@@ -41,21 +41,37 @@ const About = () => {
       <section className="pt-32 pb-20 bg-gradient-to-br from-[hsl(var(--medical-lightest))] to-background">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-foreground animate-fade-in-up text-center">
-              {t('about.hero.name')}
-            </h1>
-            <p className="text-2xl md:text-3xl text-[hsl(var(--medical-medium))] font-semibold mb-4 animate-fade-in-up animation-delay-200 text-center">
-              {t('about.hero.title')}
-            </p>
-            <p className="text-lg text-muted-foreground mb-6 animate-fade-in-up animation-delay-300 text-center max-w-3xl mx-auto leading-relaxed">
-              {t('about.subtitle')}
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 mb-8 animate-fade-in-up animation-delay-400">
-              <div className="px-5 py-3 rounded-full bg-gradient-to-r from-[hsl(var(--medical-medium))] to-[hsl(var(--medical-medium-dark))] text-white text-sm font-medium shadow-lg">
-                {t('about.hero.specialty')}
+            <div className="grid md:grid-cols-2 gap-8 items-center mb-8">
+              {/* Photo Placeholder */}
+              <div className="order-1 md:order-1 flex justify-center">
+                <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden bg-gradient-to-br from-[hsl(var(--medical-medium))] to-[hsl(var(--medical-medium-dark))] shadow-2xl animate-fade-in-up">
+                  <img
+                    src="/placeholder.svg"
+                    alt={t('about.hero.name')}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
-              <div className="px-5 py-3 rounded-full bg-background border-2 border-[hsl(var(--medical-medium))] text-[hsl(var(--medical-medium-dark))] text-sm font-medium shadow-lg">
-                {t('about.hero.experience')}
+              
+              {/* Text Content */}
+              <div className="order-2 md:order-2">
+                <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground animate-fade-in-up">
+                  {t('about.hero.name')}
+                </h1>
+                <p className="text-xl md:text-2xl text-[hsl(var(--medical-medium))] font-semibold mb-4 animate-fade-in-up animation-delay-200">
+                  {t('about.hero.title')}
+                </p>
+                <p className="text-base text-muted-foreground mb-4 animate-fade-in-up animation-delay-300 leading-relaxed">
+                  {t('about.subtitle')}
+                </p>
+                <div className="flex flex-wrap gap-3 animate-fade-in-up animation-delay-400">
+                  <div className="px-4 py-2 rounded-full bg-gradient-to-r from-[hsl(var(--medical-medium))] to-[hsl(var(--medical-medium-dark))] text-white text-sm font-medium shadow-lg">
+                    {t('about.hero.specialty')}
+                  </div>
+                  <div className="px-4 py-2 rounded-full bg-background border-2 border-[hsl(var(--medical-medium))] text-[hsl(var(--medical-medium-dark))] text-sm font-medium shadow-lg">
+                    {t('about.hero.experience')}
+                  </div>
+                </div>
               </div>
             </div>
             <p className="text-base text-muted-foreground animate-fade-in-up animation-delay-500 text-center max-w-4xl mx-auto leading-relaxed">
@@ -324,65 +340,43 @@ const About = () => {
         </div>
       </section>
 
-      {/* Languages & Philosophy Section */}
+      {/* Languages Section */}
       <section className="py-20 bg-gradient-to-br from-[hsl(var(--medical-lightest))] to-background">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              {/* Languages */}
-              <div className="observe-animation">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="p-3 rounded-full bg-gradient-to-br from-[hsl(var(--medical-medium))] to-[hsl(var(--medical-medium-dark))]">
-                    <Languages className="h-7 w-7 text-white" />
-                  </div>
-                  <h2 className="text-3xl font-bold text-foreground">
-                    {t('about.languages.title')}
-                  </h2>
+            <div className="observe-animation">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="p-3 rounded-full bg-gradient-to-br from-[hsl(var(--medical-medium))] to-[hsl(var(--medical-medium-dark))]">
+                  <Languages className="h-7 w-7 text-white" />
                 </div>
-                <p className="text-muted-foreground mb-6 leading-relaxed">
-                  {t('about.languages.intro')}
-                </p>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="px-5 py-4 rounded-xl bg-white shadow-md border-l-4 border-l-[hsl(var(--medical-medium))]">
-                    <p className="text-[hsl(var(--medical-medium-dark))] font-semibold text-lg">
-                      {t('about.languages.greek')}
-                    </p>
-                  </div>
-                  <div className="px-5 py-4 rounded-xl bg-white shadow-md border-l-4 border-l-[hsl(var(--medical-medium))]">
-                    <p className="text-[hsl(var(--medical-medium-dark))] font-semibold text-lg">
-                      {t('about.languages.english')}
-                    </p>
-                  </div>
-                  <div className="px-5 py-4 rounded-xl bg-white shadow-md border-l-4 border-l-[hsl(var(--medical-medium))]">
-                    <p className="text-[hsl(var(--medical-medium-dark))] font-semibold text-lg">
-                      {t('about.languages.french')}
-                    </p>
-                  </div>
-                  <div className="px-5 py-4 rounded-xl bg-white shadow-md border-l-4 border-l-[hsl(var(--medical-medium))]">
-                    <p className="text-[hsl(var(--medical-medium-dark))] font-semibold text-lg">
-                      {t('about.languages.romanian')}
-                    </p>
-                  </div>
-                </div>
+                <h2 className="text-3xl font-bold text-foreground">
+                  {t('about.languages.title')}
+                </h2>
               </div>
-
-              {/* Philosophy */}
-              <div className="observe-animation">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="p-3 rounded-full bg-gradient-to-br from-[hsl(var(--medical-medium))] to-[hsl(var(--medical-medium-dark))]">
-                    <Heart className="h-7 w-7 text-white" />
-                  </div>
-                  <h2 className="text-3xl font-bold text-foreground">
-                    {t('about.philosophy.title')}
-                  </h2>
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                {t('about.languages.intro')}
+              </p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl">
+                <div className="px-5 py-4 rounded-xl bg-white shadow-md border-l-4 border-l-[hsl(var(--medical-medium))]">
+                  <p className="text-[hsl(var(--medical-medium-dark))] font-semibold text-lg">
+                    {t('about.languages.greek')}
+                  </p>
                 </div>
-                <Card className="border-none shadow-lg bg-white">
-                  <CardContent className="p-6">
-                    <p className="text-muted-foreground leading-relaxed text-lg">
-                      {t('about.philosophy.text')}
-                    </p>
-                  </CardContent>
-                </Card>
+                <div className="px-5 py-4 rounded-xl bg-white shadow-md border-l-4 border-l-[hsl(var(--medical-medium))]">
+                  <p className="text-[hsl(var(--medical-medium-dark))] font-semibold text-lg">
+                    {t('about.languages.english')}
+                  </p>
+                </div>
+                <div className="px-5 py-4 rounded-xl bg-white shadow-md border-l-4 border-l-[hsl(var(--medical-medium))]">
+                  <p className="text-[hsl(var(--medical-medium-dark))] font-semibold text-lg">
+                    {t('about.languages.french')}
+                  </p>
+                </div>
+                <div className="px-5 py-4 rounded-xl bg-white shadow-md border-l-4 border-l-[hsl(var(--medical-medium))]">
+                  <p className="text-[hsl(var(--medical-medium-dark))] font-semibold text-lg">
+                    {t('about.languages.romanian')}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
