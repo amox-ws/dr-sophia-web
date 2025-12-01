@@ -116,7 +116,7 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* 🌟 Hero Carousel Section */}
-      <section className="relative w-full">
+      <section className="relative w-full mt-16 md:mt-20">
         <Carousel
           opts={{
             align: 'center',
@@ -134,7 +134,7 @@ const Home = () => {
                   <img
                     src={slide.image}
                     alt={t(`heroCarousel.${slide.id}.title`)}
-                    className="absolute inset-0 w-full h-full object-cover filter brightness-[.3]"
+                    className="absolute inset-0 w-full h-full object-cover object-center filter brightness-[.3]"
                     // Using filter brightness to darken the image for text visibility
                   />
 
@@ -167,8 +167,6 @@ const Home = () => {
                     </div>
                   </div>
 
-                  {/* Fade to page background */}
-                  <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent z-10"></div>
                 </div>
               </CarouselItem>
             ))}
@@ -322,6 +320,28 @@ const Home = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 📞 Contact CTA Section */}
+      <section className="py-20 bg-gradient-to-br from-[hsl(var(--medical-medium))] to-[hsl(var(--medical-medium-dark))]">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center observe-animation">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              {t('contactCta.title')}
+            </h2>
+            <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
+              {t('contactCta.subtitle')}
+            </p>
+            <Link to="/contact">
+              <Button
+                size="lg"
+                className="bg-white text-[hsl(var(--medical-darkest))] hover:bg-white/90 text-base md:text-lg px-8 py-6 shadow-xl"
+              >
+                {t('contactCta.button')}
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

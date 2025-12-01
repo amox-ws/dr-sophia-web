@@ -329,6 +329,11 @@ const translations: Record<Language, Record<string, string>> = {
     "offices.athens.title": "Αθήνα: Leof. Vasileos Georgiou B 4, Pireas 185 34",
     "offices.aegina.title": "Αίγινα: Νοσοκομείου 5, 180 10 Αίγινα",
 
+    // Contact CTA
+    "contactCta.title": "Έτοιμοι να Κλείσετε Ραντεβού;",
+    "contactCta.subtitle": "Επικοινωνήστε μαζί μας σήμερα για να κανονίσουμε τη συνάντησή σας και να ξεκινήσουμε μαζί το ταξίδι προς την υγεία και την ευημερία σας.",
+    "contactCta.button": "Επικοινωνία",
+
     // Contact
     "contact.title": "Επικοινωνήστε μαζί μας",
     "contact.subtitle": "Είμαστε εδώ για να απαντήσουμε στις ερωτήσεις σας",
@@ -659,6 +664,11 @@ const translations: Record<Language, Record<string, string>> = {
     "offices.title": "Our Offices",
     "offices.athens.title": "Athens: Leof. Vasileos Georgiou B 4, Pireas 185 34",
     "offices.aegina.title": "Aegina: Νοσοκομείου 5, 180 10 Αίγινα",
+
+    // Contact CTA
+    "contactCta.title": "Ready to Schedule Your Appointment?",
+    "contactCta.subtitle": "Contact us today to arrange your consultation and begin your journey toward health and wellness with us.",
+    "contactCta.button": "Contact",
 
     // Contact
     "contact.title": "Contact Us",
@@ -998,6 +1008,11 @@ const translations: Record<Language, Record<string, string>> = {
     "offices.title": "Nos Bureaux",
     "offices.athens.title": "Athènes: Leof. Vasileos Georgiou B 4, Pireas 185 34",
     "offices.aegina.title": "Égine: Νοσοκομείου 5, 180 10 Αίγινα",
+
+    // Contact CTA
+    "contactCta.title": "Prêt à Prendre Rendez-vous?",
+    "contactCta.subtitle": "Contactez-nous dès aujourd'hui pour organiser votre consultation et commencer votre parcours vers la santé et le bien-être avec nous.",
+    "contactCta.button": "Contact",
 
     // Contact
     "contact.title": "Contactez-nous",
