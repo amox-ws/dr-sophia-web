@@ -320,9 +320,9 @@ const translations: Record<Language, Record<string, string>> = {
     // Doctor Section
     "doctor.title": "Ο Γιατρός",
     "doctor.intro":
-      "Με πάνω από 15 χρόνια εμπειρίας στη γυναικολογία και μαιευτική, αφιερώνομαι στην παροχή της υψηλότερης ποιότητας φροντίδας για κάθε ασθενή. Η προσέγγισή μου συνδυάζει την ιατρική αριστεία με την εξατομικευμένη φροντίδα.",
+      "Ο Δρ. Ελευθέριος Cheirakis είναι Μαιευτήρας-Γυναικολόγος με διεθνή εξειδίκευση στην Υποβοηθούμενη Αναπαραγωγή (IVF) και την Ελάχιστα Επεμβατική Χειρουργική. Με χρόνια εμπειρίας σε διακεκριμένα κέντρα της Ελλάδας και του Παρισιού (Port Royal), παρέχει εξειδικευμένη φροντίδα στη διαχείριση υπογονιμότητας, την αντιμετώπηση της ενδομητρίωσης και την μαιευτική παρακολούθηση (συμπεριλαμβανομένων των κυήσεων υψηλού κινδύνου). Η φιλοσοφία του συνδυάζει την επιστημονική αριστεία με την ανθρωποκεντρική προσέγγιση και την εξατομικευμένη θεραπεία.",
     "doctor.readMore": "Περισσότερα",
-    "doctor.imageAlt": "Δρ. Λευτέρης Χειράκης - Γυναικολόγος Αθήνα",
+    "doctor.imageAlt": "Δρ. Ελευθέριος Cheirakis - Μαιευτήρας-Γυναικολόγος",
 
     // Offices
     "offices.title": "Τα Γραφεία μας",
@@ -656,9 +656,9 @@ const translations: Record<Language, Record<string, string>> = {
     // Doctor Section
     "doctor.title": "The Doctor",
     "doctor.intro":
-      "With over 15 years of experience in gynecology and obstetrics, I am dedicated to providing the highest quality care for every patient. My approach combines medical excellence with personalized care.",
+      "Dr. Eleftherios Cheirakis is an Obstetrician-Gynecologist with international expertise in Assisted Reproduction (IVF) and Minimally Invasive Surgery. With years of experience in distinguished centers in Greece and Paris (Port Royal), he provides specialized care in infertility management, endometriosis treatment, and obstetric monitoring (including high-risk pregnancies). His philosophy combines scientific excellence with a patient-centered approach and personalized treatment.",
     "doctor.readMore": "Read More",
-    "doctor.imageAlt": "Dr. Lefteris Cheirakis - Gynecologist Athens",
+    "doctor.imageAlt": "Dr. Eleftherios Cheirakis - Obstetrician-Gynecologist",
 
     // Offices
     "offices.title": "Our Offices",
@@ -1000,9 +1000,9 @@ const translations: Record<Language, Record<string, string>> = {
     // Doctor Section
     "doctor.title": "Le Médecin",
     "doctor.intro":
-      "Avec plus de 15 ans d'expérience en gynécologie et obstétrique, je me consacre à fournir des soins de la plus haute qualité à chaque patiente. Mon approche combine l'excellence médicale avec des soins personnalisés.",
+      "Le Dr. Eleftherios Cheirakis est un Obstétricien-Gynécologue avec une expertise internationale en Procréation Assistée (FIV) et en Chirurgie Mini-Invasive. Fort de nombreuses années d'expérience dans des centres de renom en Grèce et à Paris (Port Royal), il offre des soins spécialisés dans la gestion de l'infertilité, le traitement de l'endométriose et le suivi obstétrical (y compris les grossesses à haut risque). Sa philosophie allie excellence scientifique, approche centrée sur le patient et traitement personnalisé.",
     "doctor.readMore": "En savoir plus",
-    "doctor.imageAlt": "Dr Lefteris Cheirakis - Gynécologue Athènes",
+    "doctor.imageAlt": "Dr. Eleftherios Cheirakis - Obstétricien-Gynécologue",
 
     // Offices
     "offices.title": "Nos Bureaux",
