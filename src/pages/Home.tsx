@@ -17,9 +17,15 @@ import assisted_reproduction_img from '@/assets/assisted-reproduction.jpeg';
 import endoscopic_surgery_img from '@/assets/endoscopic_surgery.jpeg';
 import pregnancy_img from '@/assets/pregnancy.jpeg';
 
+import doctor_hero from '@/assets/doctor_hero.jpg';
+import gynecology_hero from '@/assets/gynecology_hero.jpeg';
+import assisted_reproduction_hero from '@/assets/assisted-reproduction_hero.jpg';
+import endoscopic_surgery_hero from '@/assets/endoscopic_surgery_hero.jpg';
+import pregnancy_hero from '@/assets/pregnancy_hero.jpg';
+
 const Home = () => {
   const { t } = useLanguage();
-  const observerRef = useRef<IntersectionObserver | null>(null);
+  const observerRef = useRef(null);
   const autoplayPlugin = useRef(
     Autoplay({ delay: 5000, stopOnInteraction: false })
   );
@@ -46,22 +52,27 @@ const Home = () => {
     {
       id: 'slide1',
       link: '/contact',
+      image: doctor_hero, // Mapped to general doctor/clinic image
     },
     {
       id: 'slide2',
       link: '/services/gynecology',
+      image: gynecology_hero, // Mapped to gynecology
     },
     {
       id: 'slide3',
       link: '/services/pregnancy',
+      image: pregnancy_hero, // Mapped to pregnancy
     },
     {
       id: 'slide4',
       link: '/services/endoscopic-surgery',
+      image: endoscopic_surgery_hero, // Mapped to endoscopic surgery
     },
     {
       id: 'slide5',
       link: '/services/assisted-reproduction',
+      image: assisted_reproduction_hero, // Mapped to assisted reproduction
     },
   ];
 
@@ -81,10 +92,19 @@ const Home = () => {
             {heroSlides.map((slide) => (
               <CarouselItem key={slide.id}>
                 <div className="relative min-h-[70vh] md:min-h-[80vh] flex items-center justify-center text-white overflow-hidden">
-                  {/* Background with gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--medical-darkest))] via-[hsl(var(--medical-dark))] to-[hsl(var(--medical-medium-dark))]"></div>
+                  
+                  {/* Background Image */}
+                  <img
+                    src={slide.image}
+                    alt={t(`heroCarousel.${slide.id}.title`)}
+                    className="absolute inset-0 w-full h-full object-cover filter brightness-[.3]"
+                    // Using filter brightness to darken the image for text visibility
+                  />
 
-                  {/* Decorative glowing elements */}
+                  {/* Dark Overlay (Alternative to brightness filter, but filter looks better here) */}
+                  {/* <div className="absolute inset-0 bg-black/60"></div> */}
+
+                  {/* Decorative glowing elements - now over the image */}
                   <div className="absolute inset-0 opacity-10 pointer-events-none">
                     <div className="absolute top-20 right-20 w-72 h-72 bg-white rounded-full blur-3xl"></div>
                     <div className="absolute bottom-20 left-20 w-96 h-96 bg-white rounded-full blur-3xl"></div>
@@ -93,16 +113,16 @@ const Home = () => {
                   {/* Slide Content */}
                   <div className="container mx-auto px-4 relative z-10">
                     <div className="max-w-4xl mx-auto text-center">
-                      <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight">
+                      <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight drop-shadow-lg">
                         {t(`heroCarousel.${slide.id}.title`)}
                       </h1>
-                      <p className="text-lg md:text-xl lg:text-2xl mb-6 md:mb-8 text-white/90 max-w-3xl mx-auto">
+                      <p className="text-lg md:text-xl lg:text-2xl mb-6 md:mb-8 text-white/90 max-w-3xl mx-auto drop-shadow-md">
                         {t(`heroCarousel.${slide.id}.subtitle`)}
                       </p>
                       <Link to={slide.link}>
                         <Button 
                           size="lg" 
-                          className="bg-white text-[hsl(var(--medical-darkest))] hover:bg-white/90 text-base md:text-lg px-6 md:px-8 py-4 md:py-6"
+                          className="bg-white text-[hsl(var(--medical-darkest))] hover:bg-white/90 text-base md:text-lg px-6 md:px-8 py-4 md:py-6 shadow-xl"
                         >
                           {t(`heroCarousel.${slide.id}.button`)}
                         </Button>
@@ -111,13 +131,13 @@ const Home = () => {
                   </div>
 
                   {/* Fade to page background */}
-                  <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent"></div>
+                  <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent z-10"></div>
                 </div>
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="left-4 md:left-8" />
-          <CarouselNext className="right-4 md:right-8" />
+          <CarouselPrevious className="left-4 md:left-8 z-20" />
+          <CarouselNext className="right-4 md:right-8 z-20" />
         </Carousel>
       </section>
 
