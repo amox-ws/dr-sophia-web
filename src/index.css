@@ -64,7 +64,7 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 400;
     line-height: 1.6;
     letter-spacing: 0.2px;
@@ -74,17 +74,22 @@ All colors MUST be HSL.
     scroll-behavior: smooth;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Roboto Slab', serif;
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
     letter-spacing: 0.3px;
   }
 
-  h1, h2 {
+  h2, h3 {
+    font-family: 'Inter', sans-serif;
     font-weight: 600;
+    letter-spacing: 0.3px;
   }
 
-  h3, h4 {
+  h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
     font-weight: 500;
+    letter-spacing: 0.3px;
   }
 
   button, label, nav a {
