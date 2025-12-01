@@ -300,6 +300,23 @@ const translations: Record<Language, Record<string, string>> = {
     "carousel.surgery": "ΕΝΔΟΣΚΟΠΙΚΗ ΧΕΙΡΟΥΡΓΙΚΗ",
     "carousel.pregnancy": "ΕΓΚΥΜΟΣΥΝΗ",
 
+    // Hero Carousel
+    "heroCarousel.slide1.title": "Δρ. Ελευθέριος Χειράκης – Μαιευτήρας-Γυναικολόγος",
+    "heroCarousel.slide1.subtitle": "Εξειδικευμένη Φροντίδα στη Γυναικολογία, προσφέροντας εξατομικευμένη ιατρική φροντίδα με συμπόνια και επαγγελματισμό.",
+    "heroCarousel.slide1.button": "Επικοινωνία",
+    "heroCarousel.slide2.title": "Γυναικολογία",
+    "heroCarousel.slide2.subtitle": "Ολοκληρωμένη γυναικολογική φροντίδα με ρουτίνες ελέγχων και εξειδικευμένες θεραπείες.",
+    "heroCarousel.slide2.button": "Διαβάστε Περισσότερα",
+    "heroCarousel.slide3.title": "Εγκυμοσύνη",
+    "heroCarousel.slide3.subtitle": "Δίπλα σας από τη σύλληψη, καθοδηγώντας σας σε κάθε βήμα της εγκυμοσύνης για μια ασφαλή και άνετη εμπειρία τοκετού.",
+    "heroCarousel.slide3.button": "Διαβάστε Περισσότερα",
+    "heroCarousel.slide4.title": "Ενδοσκοπική Χειρουργική",
+    "heroCarousel.slide4.subtitle": "Χειρουργική Υψηλής Ευκρίνειας: Ελάχιστη παρέμβαση, μέγιστο αποτέλεσμα.",
+    "heroCarousel.slide4.button": "Διαβάστε Περισσότερα",
+    "heroCarousel.slide5.title": "Υποβοηθούμενη Αναπαραγωγή",
+    "heroCarousel.slide5.subtitle": "Εξατομικευμένες λύσεις γονιμότητας για άτομα και ζευγάρια.",
+    "heroCarousel.slide5.button": "Διαβάστε Περισσότερα",
+
     // Doctor Section
     "doctor.title": "Ο Γιατρός",
     "doctor.intro":
@@ -612,6 +629,23 @@ const translations: Record<Language, Record<string, string>> = {
     "carousel.reproduction": "ASSISTED REPRODUCTION",
     "carousel.surgery": "ENDOSCOPIC SURGERY",
     "carousel.pregnancy": "PREGNANCY",
+
+    // Hero Carousel
+    "heroCarousel.slide1.title": "Dr. Eleftherios Cheirakis – Obstetrician–Gynecologist",
+    "heroCarousel.slide1.subtitle": "Specialized gynecological care, offering personalized medical support with compassion and professionalism.",
+    "heroCarousel.slide1.button": "Contact",
+    "heroCarousel.slide2.title": "Gynecology",
+    "heroCarousel.slide2.subtitle": "Comprehensive gynecological care with routine examinations and specialized treatments.",
+    "heroCarousel.slide2.button": "Learn More",
+    "heroCarousel.slide3.title": "Pregnancy",
+    "heroCarousel.slide3.subtitle": "Supporting you from conception through every step of pregnancy, ensuring a safe and comfortable birth experience.",
+    "heroCarousel.slide3.button": "Learn More",
+    "heroCarousel.slide4.title": "Endoscopic Surgery",
+    "heroCarousel.slide4.subtitle": "High-definition surgical precision: minimum intervention, maximum results.",
+    "heroCarousel.slide4.button": "Learn More",
+    "heroCarousel.slide5.title": "Assisted Reproduction",
+    "heroCarousel.slide5.subtitle": "Personalized fertility solutions for individuals and couples.",
+    "heroCarousel.slide5.button": "Learn More",
 
     // Doctor Section
     "doctor.title": "The Doctor",
@@ -933,6 +967,23 @@ const translations: Record<Language, Record<string, string>> = {
     "carousel.reproduction": "REPRODUCTION ASSISTÉE",
     "carousel.surgery": "CHIRURGIE ENDOSCOPIQUE",
     "carousel.pregnancy": "GROSSESSE",
+
+    // Hero Carousel
+    "heroCarousel.slide1.title": "Dr. Eleftherios Cheirakis – Obstétricien-Gynécologue",
+    "heroCarousel.slide1.subtitle": "Des soins gynécologiques spécialisés, offrant un accompagnement personnalisé avec compassion et professionnalisme.",
+    "heroCarousel.slide1.button": "Contact",
+    "heroCarousel.slide2.title": "Gynécologie",
+    "heroCarousel.slide2.subtitle": "Des soins gynécologiques complets avec examens de routine et traitements spécialisés.",
+    "heroCarousel.slide2.button": "En savoir plus",
+    "heroCarousel.slide3.title": "Grossesse",
+    "heroCarousel.slide3.subtitle": "À vos côtés dès la conception, vous guidant à chaque étape pour une expérience d'accouchement sûre et confortable.",
+    "heroCarousel.slide3.button": "En savoir plus",
+    "heroCarousel.slide4.title": "Chirurgie Endoscopique",
+    "heroCarousel.slide4.subtitle": "Chirurgie haute définition : intervention minimale, résultat maximal.",
+    "heroCarousel.slide4.button": "En savoir plus",
+    "heroCarousel.slide5.title": "Procréation Assistée",
+    "heroCarousel.slide5.subtitle": "Des solutions de fertilité personnalisées pour individus et couples.",
+    "heroCarousel.slide5.button": "En savoir plus",
 
     // Doctor Section
     "doctor.title": "Le Médecin",

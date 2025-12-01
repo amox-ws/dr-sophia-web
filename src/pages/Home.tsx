@@ -9,6 +9,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel';
+import Autoplay from 'embla-carousel-autoplay';
 
 // 🩺 Import service images
 import gynecology_img from '@/assets/gynecology.jpeg';
@@ -16,12 +17,12 @@ import assisted_reproduction_img from '@/assets/assisted-reproduction.jpeg';
 import endoscopic_surgery_img from '@/assets/endoscopic_surgery.jpeg';
 import pregnancy_img from '@/assets/pregnancy.jpeg';
 
-// 🎬 Import background video
-import homebgVideo from '@/assets/homebg.mp4';
-
 const Home = () => {
   const { t } = useLanguage();
   const observerRef = useRef<IntersectionObserver | null>(null);
+  const autoplayPlugin = useRef(
+    Autoplay({ delay: 5000, stopOnInteraction: false })
+  );
 
   useEffect(() => {
     observerRef.current = new IntersectionObserver(
@@ -41,51 +42,83 @@ const Home = () => {
     return () => observerRef.current?.disconnect();
   }, []);
 
+  const heroSlides = [
+    {
+      id: 'slide1',
+      link: '/contact',
+    },
+    {
+      id: 'slide2',
+      link: '/services/gynecology',
+    },
+    {
+      id: 'slide3',
+      link: '/services/pregnancy',
+    },
+    {
+      id: 'slide4',
+      link: '/services/endoscopic-surgery',
+    },
+    {
+      id: 'slide5',
+      link: '/services/assisted-reproduction',
+    },
+  ];
+
   return (
     <div className="min-h-screen">
-      {/* 🌟 Hero Section with Background Video */}
-      <section className="relative min-h-[90vh] flex items-center justify-center text-white overflow-hidden">
-        {/* 🎥 Background Video */}
-        <video
-          className="absolute inset-0 w-full h-full object-cover"
-          src={homebgVideo}
-          autoPlay
-          muted
-          loop
-          playsInline
-        />
+      {/* 🌟 Hero Carousel Section */}
+      <section className="relative w-full">
+        <Carousel
+          opts={{
+            align: 'center',
+            loop: true,
+          }}
+          plugins={[autoplayPlugin.current]}
+          className="w-full"
+        >
+          <CarouselContent>
+            {heroSlides.map((slide) => (
+              <CarouselItem key={slide.id}>
+                <div className="relative min-h-[70vh] md:min-h-[80vh] flex items-center justify-center text-white overflow-hidden">
+                  {/* Background with gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--medical-darkest))] via-[hsl(var(--medical-dark))] to-[hsl(var(--medical-medium-dark))]"></div>
 
-        {/* Gradient overlay for readability */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--medical-darkest)/0.8)] via-[hsl(var(--medical-dark)/0.7)] to-[hsl(var(--medical-medium-dark)/0.6)]"></div>
+                  {/* Decorative glowing elements */}
+                  <div className="absolute inset-0 opacity-10 pointer-events-none">
+                    <div className="absolute top-20 right-20 w-72 h-72 bg-white rounded-full blur-3xl"></div>
+                    <div className="absolute bottom-20 left-20 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+                  </div>
 
-        {/* Decorative glowing elements */}
-        <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <div className="absolute top-20 right-20 w-72 h-72 bg-white rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 left-20 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-        </div>
+                  {/* Slide Content */}
+                  <div className="container mx-auto px-4 relative z-10">
+                    <div className="max-w-4xl mx-auto text-center">
+                      <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight">
+                        {t(`heroCarousel.${slide.id}.title`)}
+                      </h1>
+                      <p className="text-lg md:text-xl lg:text-2xl mb-6 md:mb-8 text-white/90 max-w-3xl mx-auto">
+                        {t(`heroCarousel.${slide.id}.subtitle`)}
+                      </p>
+                      <Link to={slide.link}>
+                        <Button 
+                          size="lg" 
+                          className="bg-white text-[hsl(var(--medical-darkest))] hover:bg-white/90 text-base md:text-lg px-6 md:px-8 py-4 md:py-6"
+                        >
+                          {t(`heroCarousel.${slide.id}.button`)}
+                        </Button>
+                      </Link>
+                    </div>
+                  </div>
 
-        {/* Hero Content */}
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-in-up leading-tight">
-              {t('hero.title')}
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-white/90 animate-fade-in-up animation-delay-200">
-              {t('hero.subtitle')}
-            </p>
-            <Link to="/contact">
-              <Button 
-                size="lg" 
-                className="bg-white text-[hsl(var(--medical-darkest))] hover:bg-white/90 animate-fade-in-up animation-delay-400 text-lg px-8 py-6"
-              >
-                {t('hero.cta')}
-              </Button>
-            </Link>
-          </div>
-        </div>
-
-        {/* Fade to page background */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent"></div>
+                  {/* Fade to page background */}
+                  <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent"></div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="left-4 md:left-8" />
+          <CarouselNext className="right-4 md:right-8" />
+        </Carousel>
       </section>
 
       {/* 🩺 Services Preview */}
