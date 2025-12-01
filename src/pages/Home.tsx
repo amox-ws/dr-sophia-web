@@ -187,7 +187,7 @@ const Home = () => {
                 <div className="max-w-md mx-auto">
                   <div className="aspect-square rounded-full overflow-hidden bg-gradient-to-br from-[hsl(var(--medical-medium))] to-[hsl(var(--medical-medium-dark))] shadow-2xl">
                     <img
-                      src="/placeholder.svg"
+                      src= {doctor_hero}
                       alt={t('doctor.imageAlt')}
                       className="w-full h-full object-cover"
                     />
