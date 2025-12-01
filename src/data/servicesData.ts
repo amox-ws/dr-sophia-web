@@ -90,7 +90,7 @@ export const servicesData: Service[] = [
   },
   {
     id: "assisted-reproduction",
-    title: { el: "Υποβοηθούμενη Αναπαραγωγή", en: "Assisted Reproduction", fr: "Aide Médicale à la Procréation (AMP)" },
+    title: { el: "Υποβοηθούμενη \nΑναπαραγωγή", en: "Assisted Reproduction", fr: "Aide Médicale à la Procréation (AMP)" },
     intro: {
       el: "Εξατομικευμένες λύσεις γονιμότητας για άτομα και ζευγάρια.",
       en: "Personalized fertility solutions for individuals and couples.",
