@@ -331,7 +331,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Contact CTA
     "contactCta.title": "Έτοιμοι να Κλείσετε Ραντεβού;",
-    "contactCta.subtitle": "Επικοινωνήστε μαζί μας σήμερα για να κανονίσουμε τη συνάντησή σας και να ξεκινήσουμε μαζί το ταξίδι προς την υγεία και την ευημερία σας.",
+    "contactCta.subtitle": "Επικοινωνήστε μαζί μας σήμερα για να κανονίσουμε τη συνάντησή σας.",
     "contactCta.button": "Επικοινωνία",
 
     // Contact
