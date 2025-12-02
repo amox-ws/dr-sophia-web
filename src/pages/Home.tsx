@@ -224,7 +224,7 @@ const Home = () => {
               <h3 className="text-2xl font-bold text-foreground mb-6 text-center">
                 {t('offices.athens.title')}
               </h3>
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div className="aspect-video bg-muted rounded-lg overflow-hidden shadow-lg">
                   <img
                     src="/placeholder.svg"
@@ -240,6 +240,20 @@ const Home = () => {
                   />
                 </div>
               </div>
+              {/* Athens Map */}
+              <div className="aspect-video md:aspect-[21/9] rounded-lg overflow-hidden shadow-lg">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3145.842427827482!2d23.64447!3d37.93869!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1bb7b5c1e5555%3A0x5555555555555555!2sLeof.%20Vasileos%20Georgiou%20B%204%2C%20Pireas%20185%2034!5e0!3m2!1sen!2sgr!4v1701500000000!5m2!1sen!2sgr"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Athens Office Location"
+                  className="w-full h-full"
+                />
+              </div>
             </div>
 
             {/* Aegina Office */}
@@ -247,7 +261,7 @@ const Home = () => {
               <h3 className="text-2xl font-bold text-foreground mb-6 text-center">
                 {t('offices.aegina.title')}
               </h3>
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div className="aspect-video bg-muted rounded-lg overflow-hidden shadow-lg">
                   <img
                     src="/placeholder.svg"
@@ -262,6 +276,20 @@ const Home = () => {
                     className="w-full h-full object-cover"
                   />
                 </div>
+              </div>
+              {/* Aegina Map */}
+              <div className="aspect-video md:aspect-[21/9] rounded-lg overflow-hidden shadow-lg">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3150.123456789!2d23.4289!3d37.7456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1c1234567890%3A0x1234567890abcdef!2sNosokomiou%205%2C%20Aegina%20180%2010!5e0!3m2!1sen!2sgr!4v1701500000000!5m2!1sen!2sgr"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Aegina Office Location"
+                  className="w-full h-full"
+                />
               </div>
             </div>
           </div>
