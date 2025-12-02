@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { servicesData, type Language } from "@/data/servicesData";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import AnimatedServiceCard from "@/components/AnimatedServiceCard";
 import AnimatedSectionTitle from "@/components/AnimatedSectionTitle";
+import { Button } from "@/components/ui/button";
 
 const formatTitleWithLineBreak = (title: string, key: string, language: string): string => {
   if (language !== "el") return title;
@@ -71,6 +73,28 @@ const Services = () => {
                 isVisible={isVisible}
               />
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 📞 Contact CTA Section */}
+      <section className="py-20 bg-gradient-to-br from-[hsl(var(--medical-medium))] to-[hsl(var(--medical-medium-dark))]">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <AnimatedSectionTitle 
+              title={t('contactCta.title')} 
+              subtitle={t('contactCta.subtitle')}
+              titleClassName="text-white"
+              subtitleClassName="text-white/90"
+            />
+            <Link to="/contact">
+              <Button
+                size="lg"
+                className="bg-white text-[hsl(var(--medical-darkest))] hover:bg-white/90 text-base md:text-lg px-8 py-6 shadow-xl"
+              >
+                {t('contactCta.button')}
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

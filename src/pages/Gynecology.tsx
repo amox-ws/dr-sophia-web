@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { getServiceById, type Language } from '@/data/servicesData';
-import gynecologyImage from '@/assets/gynecology.jpeg';
 
 // 🖼️ Imports εικόνων από τον φάκελο assets/gynecology
 import adenomyosisImage from '@/assets/gynecology/Adenomyosis.jpeg';
@@ -63,28 +62,12 @@ const Gynecology = () => {
       <title>{serviceData.title[language as Language]} - Medical Services</title>
       <meta name="description" content={serviceData.intro?.[language as Language] || ''} />
       
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-gradient-to-r from-[#4D6471]/90 to-[#1E2A30]/90 overflow-hidden">
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="flex flex-col md:flex-row items-center gap-8 max-w-6xl mx-auto">
-            <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white/20 shadow-2xl flex-shrink-0">
-              <img 
-                src={gynecologyImage} 
-                alt={`${serviceData.title[language as Language]} services`}
-                className="w-full h-full object-cover" 
-              />
-            </div>
-            <div className="flex-1 text-center md:text-left">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 whitespace-pre-line">
-                {serviceData.title[language as Language]}
-              </h1>
-              {serviceData.intro && (
-                <p className="text-white/80 text-lg md:text-xl leading-relaxed">
-                  {serviceData.intro[language as Language]}
-                </p>
-              )}
-            </div>
-          </div>
+      {/* Hero Section - Small & Clean */}
+      <section className="pt-28 pb-12 bg-gradient-to-br from-[hsl(var(--medical-medium))] to-[hsl(var(--medical-medium-dark))]">
+        <div className="container mx-auto px-4">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center">
+            {serviceData.title[language as Language]}
+          </h1>
         </div>
       </section>
 
@@ -98,7 +81,7 @@ const Gynecology = () => {
                 className="border border-muted-foreground/20 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow bg-background cursor-pointer"
                 onClick={() => toggleExpand(index)}
               >
-                {/* Image Placeholder - Τώρα χρησιμοποιούμε τις imported εικόνες */}
+                {/* Image */}
                 <div className="aspect-video bg-muted">
                   <img 
                     src={itemImages[item.title[language as Language] as keyof typeof itemImages] || '/placeholder.svg'} 
