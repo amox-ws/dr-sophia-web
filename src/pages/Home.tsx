@@ -1,3 +1,4 @@
+import { useRef } from 'react'; // Added useRef
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
@@ -9,15 +10,12 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 import Autoplay from 'embla-carousel-autoplay';
+import Fade from 'embla-carousel-fade';
 import { servicesData, type Language } from '@/data/servicesData';
 import AnimatedSectionTitle from '@/components/AnimatedSectionTitle';
 import ServicesSection from '@/components/ServicesSection';
 
 // 🩺 Import service images
-import gynecology_img from '@/assets/gynecology.jpeg';
-import assisted_reproduction_img from '@/assets/assisted-reproduction.jpeg';
-import endoscopic_surgery_img from '@/assets/endoscopic_surgery.jpeg';
-import pregnancy_img from '@/assets/pregnancy.jpeg';
 import mitraImg from '@/assets/mitra.jpeg';
 import spermImg from '@/assets/sperm.jpeg';
 import surgeryImg from '@/assets/surgery.jpeg';
@@ -31,7 +29,12 @@ import pregnancy_hero from '@/assets/pregnancy_hero.jpg';
 
 const Home = () => {
   const { t, language } = useLanguage();
-  const autoplayPlugin = Autoplay({ delay: 5000, stopOnInteraction: false });
+  
+  // FIXED: Wrapped in useRef to persist across renders like in your previous version
+  const autoplayPlugin = useRef(
+    Autoplay({ delay: 5000, stopOnInteraction: false })
+  );
+  const fadePlugin = Fade();
 
   const formatTitleWithLineBreak = (title: string, key: string, lang: string): string => {
     if (lang !== "el") return title;
@@ -66,27 +69,27 @@ const Home = () => {
     {
       id: 'slide1',
       link: '/contact',
-      image: doctor_hero, // Mapped to general doctor/clinic image
+      image: doctor_hero, 
     },
     {
       id: 'slide2',
       link: '/services/gynecology',
-      image: gynecology_hero, // Mapped to gynecology
+      image: gynecology_hero, 
     },
     {
       id: 'slide3',
       link: '/services/pregnancy',
-      image: pregnancy_hero, // Mapped to pregnancy
+      image: pregnancy_hero, 
     },
     {
       id: 'slide4',
       link: '/services/endoscopic-surgery',
-      image: endoscopic_surgery_hero, // Mapped to endoscopic surgery
+      image: endoscopic_surgery_hero, 
     },
     {
       id: 'slide5',
       link: '/services/assisted-reproduction',
-      image: assisted_reproduction_hero, // Mapped to assisted reproduction
+      image: assisted_reproduction_hero, 
     },
   ];
 
@@ -99,51 +102,52 @@ const Home = () => {
             align: 'center',
             loop: true,
           }}
-          // plugins={[autoplayPlugin]}
+          // FIXED: Passed the current ref to the plugins prop
+          plugins={[autoplayPlugin.current, fadePlugin]}
           className="w-full"
         >
           <CarouselContent>
           {heroSlides.map((slide) => (
-  <CarouselItem key={slide.id}>
-    {/* ΑΛΛΑΓΗ 1: Υπολογισμός ύψους 100vh μείον το ύψος του header (4rem mobile, 5rem desktop) */}
-    <div className="relative h-[calc(100vh-4rem)] md:h-[calc(100vh-5rem)] flex items-center text-white overflow-hidden">
-      
-      {/* Background Image */}
-      <img
-        src={slide.image}
-        alt={t(`heroCarousel.${slide.id}.title`)}
-        className="absolute inset-0 w-full h-full object-cover object-center filter brightness-[.3]"
-      />
+            <CarouselItem key={slide.id}>
+              {/* Height calc: 100vh minus header height */}
+              <div className="relative h-[calc(100vh-4rem)] md:h-[calc(100vh-5rem)] flex items-center text-white overflow-hidden">
+                
+                {/* Background Image */}
+                <img
+                  src={slide.image}
+                  alt={t(`heroCarousel.${slide.id}.title`)}
+                  className="absolute inset-0 w-full h-full object-cover object-center filter brightness-[.3]"
+                />
 
-      {/* Decorative glowing elements */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none">
-        <div className="absolute top-20 right-20 w-72 h-72 bg-white rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-20 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-      </div>
+                {/* Decorative glowing elements */}
+                <div className="absolute inset-0 opacity-10 pointer-events-none">
+                  <div className="absolute top-20 right-20 w-72 h-72 bg-white rounded-full blur-3xl"></div>
+                  <div className="absolute bottom-20 left-20 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+                </div>
 
-      {/* Slide Content - Bottom Left */}
-      <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10 h-full flex items-end pb-12 md:pb-16">
-        <div className="max-w-2xl">
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4 leading-tight drop-shadow-lg">
-            {t(`heroCarousel.${slide.id}.title`)}
-          </h1>
-          <p className="text-base md:text-lg lg:text-xl mb-4 md:mb-6 text-white/90 drop-shadow-md">
-            {t(`heroCarousel.${slide.id}.subtitle`)}
-          </p>
-          <Link to={slide.link}>
-            <Button 
-              size="lg" 
-              className="bg-white text-[hsl(var(--medical-darkest))] hover:bg-white/90 text-sm md:text-base px-6 md:px-8 py-3 md:py-4 shadow-xl"
-            >
-              {t(`heroCarousel.${slide.id}.button`)}
-            </Button>
-          </Link>
-        </div>
-      </div>
+                {/* Slide Content - Bottom Left */}
+                <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10 h-full flex items-end pb-12 md:pb-16">
+                  <div className="max-w-2xl">
+                    <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4 leading-tight drop-shadow-lg">
+                      {t(`heroCarousel.${slide.id}.title`)}
+                    </h1>
+                    <p className="text-base md:text-lg lg:text-xl mb-4 md:mb-6 text-white/90 drop-shadow-md">
+                      {t(`heroCarousel.${slide.id}.subtitle`)}
+                    </p>
+                    <Link to={slide.link}>
+                      <Button 
+                        size="lg" 
+                        className="bg-white text-[hsl(var(--medical-darkest))] hover:bg-white/90 text-sm md:text-base px-6 md:px-8 py-3 md:py-4 shadow-xl"
+                      >
+                        {t(`heroCarousel.${slide.id}.button`)}
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
 
-    </div>
-  </CarouselItem>
-))}
+              </div>
+            </CarouselItem>
+          ))}
           </CarouselContent>
           <CarouselPrevious 
             className="left-4 md:left-8 z-20 bg-transparent border border-white/40 text-white hover:bg-white/10 hover:border-white hover:text-white h-10 w-10 md:h-12 md:w-12 transition-all duration-300" 
