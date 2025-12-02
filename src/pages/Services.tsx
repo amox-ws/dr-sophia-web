@@ -7,8 +7,8 @@ import { servicesData, type Language } from "@/data/servicesData";
 
 const formatTitleWithLineBreak = (title: string, key: string, language: string): string => {
   if (language !== "el") return title;
-  if (key === "gynecology") return "Γυναικολογία";
-  if (key === "pregnancy") return "Εγκυμοσύνη";
+  if (key === "gynecology") return "Γυναικολογική Φροντίδα.";
+  if (key === "pregnancy") return "Εγκυμοσύνη - Μαιευτική.";
   return title;
 };
 

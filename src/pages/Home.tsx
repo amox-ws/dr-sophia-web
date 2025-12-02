@@ -13,7 +13,7 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 import Autoplay from 'embla-carousel-autoplay';
-import Fade from 'embla-carousel-fade';
+// import Fade from 'embla-carousel-fade';
 import { servicesData, type Language } from '@/data/servicesData';
 
 // 🩺 Import service images
@@ -38,12 +38,12 @@ const Home = () => {
   const autoplayPlugin = useRef(
     Autoplay({ delay: 5000, stopOnInteraction: false })
   );
-  const fadePlugin = useRef(Fade());
+  // const fadePlugin = useRef(Fade());
 
   const formatTitleWithLineBreak = (title: string, key: string, lang: string): string => {
     if (lang !== "el") return title;
-    if (key === "gynecology") return "Γυναικολογία";
-    if (key === "pregnancy") return "Εγκυμοσύνη";
+    if (key === "gynecology") return "Γυναικολογίκη Φροντίδα.";
+    if (key === "pregnancy") return "Εγκυμοσύνη - Μαιευτική.";
     return title;
   };
 
@@ -124,7 +124,7 @@ const Home = () => {
             align: 'center',
             loop: true,
           }}
-          plugins={[autoplayPlugin.current, fadePlugin.current]}
+          // plugins={[autoplayPlugin.current, fadePlugin.current]}
           className="w-full"
         >
           <CarouselContent>

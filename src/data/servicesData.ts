@@ -15,11 +15,11 @@ export interface Service {
 export const servicesData: Service[] = [
   {
     id: "gynecology",
-    title: { el: "Γυναικολογία", en: "Gynecology", fr: "Gynécologie" },
+    title: { el: "Γυναικολογική Φροντίδα.", en: "Gynecology", fr: "Gynécologie" },
     intro: {
-      el: "Ολοκληρωμένη γυναικολογική φροντίδα με ρουτίνες ελέγχων και εξειδικευμένες θεραπείες.",
-      en: "Comprehensive gynecological care including routine checkups and specialized treatments.",
-      fr: "Prise en charge gynécologique complète avec dépistages et traitements spécialisés."
+      el: " ",
+      en: " ",
+      fr: " "
     },
     items: [
       {
@@ -90,11 +90,11 @@ export const servicesData: Service[] = [
   },
   {
     id: "assisted-reproduction",
-    title: { el: "Υποβοηθούμενη \nΑναπαραγωγή", en: "Assisted Reproduction", fr: "Aide Médicale à la Procréation (AMP)" },
+    title: { el: "Υποβοηθούμενη Αναπαραγωγή.", en: "Assisted Reproduction", fr: "Procréation assistée" },
     intro: {
-      el: "Εξατομικευμένες λύσεις γονιμότητας για άτομα και ζευγάρια.",
-      en: "Personalized fertility solutions for individuals and couples.",
-      fr: "Solutions de fertilité personnalisées pour individus et couples."
+      el: " ",
+      en: " ",
+      fr: " "
     },
     items: [
       {
@@ -165,11 +165,11 @@ export const servicesData: Service[] = [
   },
   {
     id: "endoscopic-surgery",
-    title: { el: "Ενδοσκοπική Χειρουργική", en: "Endoscopic Surgery", fr: "Chirurgie Endoscopique" },
+    title: { el: "Ενδοσκοπική Χειρουργική.", en: "Endoscopic Surgery", fr: "Chirurgie Endoscopique" },
     intro: {
-      el: "Εξειδικευμένες ενδοσκοπικές χειρουργικές επεμβάσεις με ελάχιστα επεμβατικές τεχνικές για ταχύτερη ανάρρωση.",
-      en: "Specialized endoscopic surgical procedures using minimally invasive techniques for faster recovery.",
-      fr: "Procédures chirurgicales endoscopiques spécialisées avec techniques minimalement invasives pour une récupération plus rapide."
+      el: " ",
+      en: " ",
+      fr: " "
     },
     items: [
       {
@@ -200,11 +200,11 @@ export const servicesData: Service[] = [
   },
   {
     id: "pregnancy",
-    title: { el: "Εγκυμοσύνη", en: "Pregnancy", fr: "Grossesse" },
+    title: { el: "Εγκυμοσύνη - Μαιευτική.", en: "Pregnancy", fr: "Grossesse" },
     intro: {
-      el: "Πλήρης υποστήριξη και παρακολούθηση εγκυμοσύνης με σύγχρονες μεθόδους, από την προσύλληψη έως τον τοκετό.",
-      en: "Complete pregnancy support and monitoring with modern methods, from preconception to delivery.",
-      fr: "Soutien et suivi complets de la grossesse avec des méthodes modernes, de la préconception à l'accouchement."
+      el: " ",
+      en: " ",
+      fr: " "
     },
     items: [
       {
