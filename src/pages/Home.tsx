@@ -1,10 +1,6 @@
-import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
-import { Separator } from '@/components/ui/separator';
-import { ArrowUpRight } from 'lucide-react';
 import {
   Carousel,
   CarouselContent,
@@ -13,8 +9,9 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 import Autoplay from 'embla-carousel-autoplay';
-// import Fade from 'embla-carousel-fade';
 import { servicesData, type Language } from '@/data/servicesData';
+import AnimatedSectionTitle from '@/components/AnimatedSectionTitle';
+import ServicesSection from '@/components/ServicesSection';
 
 // 🩺 Import service images
 import gynecology_img from '@/assets/gynecology.jpeg';
@@ -34,11 +31,7 @@ import pregnancy_hero from '@/assets/pregnancy_hero.jpg';
 
 const Home = () => {
   const { t, language } = useLanguage();
-  const observerRef = useRef(null);
-  const autoplayPlugin = useRef(
-    Autoplay({ delay: 5000, stopOnInteraction: false })
-  );
-  // const fadePlugin = useRef(Fade());
+  const autoplayPlugin = Autoplay({ delay: 5000, stopOnInteraction: false });
 
   const formatTitleWithLineBreak = (title: string, key: string, lang: string): string => {
     if (lang !== "el") return title;
@@ -68,24 +61,6 @@ const Home = () => {
     title: service.title[language as Language],
     description: service.intro?.[language as Language] || service.title[language as Language],
   }));
-
-  useEffect(() => {
-    observerRef.current = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fade-in-up');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const elements = document.querySelectorAll('.observe-animation');
-    elements.forEach((el) => observerRef.current?.observe(el));
-
-    return () => observerRef.current?.disconnect();
-  }, []);
 
   const heroSlides = [
     {
@@ -124,7 +99,7 @@ const Home = () => {
             align: 'center',
             loop: true,
           }}
-          // plugins={[autoplayPlugin.current, fadePlugin.current]}
+          // plugins={[autoplayPlugin]}
           className="w-full"
         >
           <CarouselContent>
@@ -231,78 +206,21 @@ const Home = () => {
       </section>
 
       {/* 🩺 Services Section - Matching /services page layout */}
-      <section className="py-20 bg-gradient-to-br from-[hsl(var(--medical-light))] to-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12 observe-animation">
-            <h2 className="text-4xl font-bold mb-4 text-foreground">
-              {t('services.page.title')}
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              {t('services.page.subtitle')}
-            </p>
-          </div>
-
-          {/* Service Cards Grid */}
-          <div className="max-w-4xl mx-auto grid gap-6 md:gap-8 grid-cols-2">
-            {serviceCategories.map((category, index) => (
-              <Link 
-                key={category.key} 
-                to={category.route} 
-                className="block group observe-animation"
-                style={{
-                  animation: 'slide-in-bounce 0.6s ease-out forwards',
-                  animationDelay: `${index * 0.1}s`,
-                  opacity: 0,
-                  transform: index % 2 === 0 ? 'translateX(-50px)' : 'translateX(50px)'
-                }}
-              >
-                <Card className="overflow-hidden bg-card shadow-lg hover:shadow-xl transition-shadow duration-300 h-full">
-                  {/* Top Section - Text Content */}
-                  <CardHeader className="relative p-3 md:p-4 lg:p-6">
-                    <div className="flex items-start justify-between gap-2">
-                      <div className="flex-1 min-w-0">
-                        <CardTitle className="text-base md:text-lg lg:text-xl font-heading font-medium mb-2 text-foreground group-hover:text-primary transition-colors whitespace-pre-line">
-                          {formatTitleWithLineBreak(category.title, category.key, language)}
-                        </CardTitle>
-                        <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{category.description}</p>
-                      </div>
-                      {/* Arrow Icon */}
-                      <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0" />
-                    </div>
-                  </CardHeader>
-
-                  {/* Divider */}
-                  <Separator />
-
-                  {/* Bottom Section - Image */}
-                  <CardContent className="p-0">
-                    <div className="aspect-video overflow-hidden">
-                      <img
-                        src={category.image}
-                        alt={`${category.title} services`}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                  </CardContent>
-                </Card>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServicesSection 
+        serviceCategories={serviceCategories} 
+        formatTitleWithLineBreak={formatTitleWithLineBreak}
+        language={language}
+        t={t}
+      />
 
       {/* 🏢 Our Offices Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16 observe-animation">
-              <h2 className="text-4xl font-bold text-foreground">
-                {t('offices.title')}
-              </h2>
-            </div>
+            <AnimatedSectionTitle title={t('offices.title')} className="mb-16" />
 
             {/* Athens Office */}
-            <div className="mb-16 observe-animation">
+            <div className="mb-16">
               <h3 className="text-2xl font-bold text-foreground mb-6 text-center">
                 {t('offices.athens.title')}
               </h3>
@@ -325,7 +243,7 @@ const Home = () => {
             </div>
 
             {/* Aegina Office */}
-            <div className="observe-animation">
+            <div>
               <h3 className="text-2xl font-bold text-foreground mb-6 text-center">
                 {t('offices.aegina.title')}
               </h3>
@@ -353,13 +271,13 @@ const Home = () => {
       {/* 📞 Contact CTA Section */}
       <section className="py-20 bg-gradient-to-br from-[hsl(var(--medical-medium))] to-[hsl(var(--medical-medium-dark))]">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center observe-animation">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              {t('contactCta.title')}
-            </h2>
-            <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
-              {t('contactCta.subtitle')}
-            </p>
+          <div className="max-w-4xl mx-auto text-center">
+            <AnimatedSectionTitle 
+              title={t('contactCta.title')} 
+              subtitle={t('contactCta.subtitle')}
+              titleClassName="text-white"
+              subtitleClassName="text-white/90"
+            />
             <Link to="/contact">
               <Button
                 size="lg"
