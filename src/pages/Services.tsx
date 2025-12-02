@@ -61,7 +61,7 @@ const Services = () => {
       {/* Service Categories Cards */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div ref={ref} className="max-w-4xl mx-auto grid gap-4 sm:gap-6 md:gap-8 grid-cols-2">
+          <div ref={ref} className="max-w-4xl mx-auto grid gap-4 sm:gap-6 md:gap-1 grid-cols-2">
             {serviceCategories.map((category, index) => (
               <AnimatedServiceCard
                 key={category.key}
