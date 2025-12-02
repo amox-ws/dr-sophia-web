@@ -4,6 +4,8 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
 import { GraduationCap, Briefcase, Languages, Award, Globe2, Stethoscope } from 'lucide-react';
 
+import doctor_hero from '@/assets/doctor_hero.jpg';
+
 const About = () => {
   const { t } = useLanguage();
   const observerRef = useRef<IntersectionObserver | null>(null);
@@ -46,7 +48,7 @@ const About = () => {
               <div className="order-1 md:order-1 flex justify-center">
                 <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden bg-gradient-to-br from-[hsl(var(--medical-medium))] to-[hsl(var(--medical-medium-dark))] shadow-2xl animate-fade-in-up">
                   <img
-                    src="/placeholder.svg"
+                    src={doctor_hero}
                     alt={t('about.hero.name')}
                     className="w-full h-full object-cover"
                   />
