@@ -55,9 +55,9 @@ const Pregnancy = () => {
       <meta name="description" content={serviceData.title[language as Language]} />
       
       {/* Hero Section - Small & Clean */}
-      <section className="pt-28 pb-12 bg-gradient-to-br from-[hsl(var(--medical-medium))] to-[hsl(var(--medical-medium-dark))]">
+      <section className="pt-28 pb-12 bg-gradient-to-b from-[hsl(210_30%_92%)] to-background">
         <div className="container mx-auto px-4">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[hsl(var(--medical-darkest))] text-center">
             {serviceData.title[language as Language]}
           </h1>
         </div>
