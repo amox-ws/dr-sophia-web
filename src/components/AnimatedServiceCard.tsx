@@ -21,7 +21,15 @@ const AnimatedServiceCard = ({
   isVisible,
 }: AnimatedServiceCardProps) => {
   const isLeftColumn = index % 2 === 0;
-  const delay = index * 150;
+  // A delay that increases with each item creates a "staggered" effect
+  const delay = index * 200; 
+
+  // LOGIC:
+  // We use 1000px to ensure the element starts truly "off-screen" for most devices.
+  // We also add 100px of vertical movement (Y-axis) so it slides Up and In.
+  const startPosition = isLeftColumn 
+    ? "translate(-1000px, 100px)" // Left column starts far left and slightly down
+    : "translate(1000px, 100px)";  // Right column starts far right and slightly down
 
   return (
     <Link
@@ -29,12 +37,10 @@ const AnimatedServiceCard = ({
       className="block group"
       style={{
         opacity: isVisible ? 1 : 0,
-        transform: isVisible
-          ? "translateX(0)"
-          : isLeftColumn
-          ? "translateX(-80px)"
-          : "translateX(80px)",
-        transition: `opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1) ${delay}ms, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1) ${delay}ms`,
+        // When visible, move to natural position (0,0). When hidden, be far away.
+        transform: isVisible ? "translate(0, 0)" : startPosition,
+        // 1.8s is very slow and smooth. The cubic-bezier makes it start fast and land gently.
+        transition: `opacity 1.8s cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms, transform 1.8s cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms`,
       }}
     >
       <Card className="overflow-hidden bg-card shadow-lg hover:shadow-xl transition-shadow duration-300 h-full">
