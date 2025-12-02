@@ -3,12 +3,55 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { getServiceById, type Language } from '@/data/servicesData';
 import gynecologyImage from '@/assets/gynecology.jpeg';
 
+// 🖼️ Imports εικόνων από τον φάκελο assets/gynecology
+import adenomyosisImage from '@/assets/gynecology/Adenomyosis.jpeg';
+import deepEndometriosisImage from '@/assets/gynecology/Deep Infiltrating Endometriosis.jpg';
+import dysmenorrheaImage from '@/assets/gynecology/Dysmenorrhea.jpeg';
+import endometriomaImage from '@/assets/gynecology/Endometrioma – Endometriotic Cysts.jpg';
+import endometriosisImage from '@/assets/gynecology/Endometriosis.jpg';
+import menopauseImage from '@/assets/gynecology/Menopause.jpeg';
+import pcosImage from '@/assets/gynecology/Polycystic Ovary Syndrome.jpeg';
+import fibroidsImage from '@/assets/gynecology/Uterine Fibroids.jpeg';
+
 const Gynecology = () => {
   const { language } = useLanguage();
   const [expanded, setExpanded] = useState<string | null>(null);
 
   const serviceData = getServiceById('gynecology');
   
+  // Map που αντιστοιχεί τον Τίτλο Υπηρεσίας (σε οποιαδήποτε γλώσσα) με τη σωστή imported εικόνα
+  const itemImages: Record<string, string> = {
+    // Ελληνικά
+    'Ενδομητρίωση': endometriosisImage,
+    'Αδενομύωση': adenomyosisImage,
+    'Εν τω βάθει Ενδομητρίωση': deepEndometriosisImage,
+    'Ενδομητρίωμα – Κύστεις Ενδομητρίωσης': endometriomaImage,
+    'Ινομυώματα Μήτρας': fibroidsImage,
+    'Πολυκυστικές Ωοθήκες (PCOS)': pcosImage,
+    'Δυσμηνόρροια': dysmenorrheaImage,
+    'Εμμηνόπαυση': menopauseImage,
+
+    // English
+    'Endometriosis': endometriosisImage,
+    'Adenomyosis': adenomyosisImage,
+    'Deep Infiltrating Endometriosis': deepEndometriosisImage,
+    'Endometrioma – Endometriotic Cysts': endometriomaImage,
+    'Uterine Fibroids': fibroidsImage,
+    'Polycystic Ovary Syndrome (PCOS)': pcosImage,
+    'Dysmenorrhea': dysmenorrheaImage,
+    'Menopause': menopauseImage,
+
+    // Français
+    'Endométriose': endometriosisImage,
+    'Adénomyose': adenomyosisImage,
+    'Endométriose Profonde': deepEndometriosisImage,
+    "Endométriome – Kystes d'Endométriose": endometriomaImage,
+    'Fibromes Utérins': fibroidsImage,
+    'Syndrome des Ovaires Polykystiques (SOPK)': pcosImage,
+    'Dysménorrhée': dysmenorrheaImage,
+    'Ménopause': menopauseImage,
+  };
+
   if (!serviceData) return null;
 
   const toggleExpand = (index: number) => {
@@ -32,7 +75,7 @@ const Gynecology = () => {
               />
             </div>
             <div className="flex-1 text-center md:text-left">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 whitespace-pre-line">
                 {serviceData.title[language as Language]}
               </h1>
               {serviceData.intro && (
@@ -55,10 +98,10 @@ const Gynecology = () => {
                 className="border border-muted-foreground/20 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow bg-background cursor-pointer"
                 onClick={() => toggleExpand(index)}
               >
-                {/* Image Placeholder */}
+                {/* Image Placeholder - Τώρα χρησιμοποιούμε τις imported εικόνες */}
                 <div className="aspect-video bg-muted">
                   <img 
-                    src="/placeholder.svg" 
+                    src={itemImages[item.title[language as Language] as keyof typeof itemImages] || '/placeholder.svg'} 
                     alt={item.title[language as Language]}
                     className="w-full h-full object-cover"
                   />
@@ -68,7 +111,7 @@ const Gynecology = () => {
                 <div className="p-4 sm:p-6">
                   <div className="flex justify-between items-center mb-2 sm:mb-4">
                     <h2 className="text-base sm:text-lg md:text-xl font-semibold">{item.title[language as Language]}</h2>
-                    <span className="text-xl sm:text-2xl">{expanded === String(index) ? '-' : '+'}</span>
+                    <span className="text-xl sm:text-2xl text-primary">{expanded === String(index) ? '−' : '+'}</span>
                   </div>
                   
                   {/* Expandable Description */}
@@ -87,7 +130,7 @@ const Gynecology = () => {
           <div className="mt-16 text-center">
             <a 
               href="/contact" 
-              className="inline-block px-8 py-4 bg-primary text-primary-foreground rounded-xl font-semibold hover:bg-primary/90 transition"
+              className="inline-block px-8 py-4 bg-[hsl(var(--medical-medium))] text-white rounded-xl font-semibold hover:bg-[hsl(var(--medical-medium-dark))] transition"
             >
               {language === 'el' ? 'Κλείστε Ραντεβού Τώρα' : language === 'en' ? 'Book Appointment Now' : 'Prendre Rendez-vous'}
             </a>
