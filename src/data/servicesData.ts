@@ -166,6 +166,11 @@ export const servicesData: Service[] = [
   {
     id: "endoscopic-surgery",
     title: { el: "Ενδοσκοπική Χειρουργική", en: "Endoscopic Surgery", fr: "Chirurgie Endoscopique" },
+    intro: {
+      el: "Εξειδικευμένες ενδοσκοπικές χειρουργικές επεμβάσεις με ελάχιστα επεμβατικές τεχνικές για ταχύτερη ανάρρωση.",
+      en: "Specialized endoscopic surgical procedures using minimally invasive techniques for faster recovery.",
+      fr: "Procédures chirurgicales endoscopiques spécialisées avec techniques minimalement invasives pour une récupération plus rapide."
+    },
     items: [
       {
         title: { el: "Υστεροσκόπηση", en: "Hysteroscopy", fr: "Hystéroscopie" },
@@ -196,6 +201,11 @@ export const servicesData: Service[] = [
   {
     id: "pregnancy",
     title: { el: "Εγκυμοσύνη", en: "Pregnancy", fr: "Grossesse" },
+    intro: {
+      el: "Πλήρης υποστήριξη και παρακολούθηση εγκυμοσύνης με σύγχρονες μεθόδους, από την προσύλληψη έως τον τοκετό.",
+      en: "Complete pregnancy support and monitoring with modern methods, from preconception to delivery.",
+      fr: "Soutien et suivi complets de la grossesse avec des méthodes modernes, de la préconception à l'accouchement."
+    },
     items: [
       {
         title: { el: "Προγεννητικός Έλεγχος", en: "Prenatal Screening", fr: "Dépistage Prénatal" },
