@@ -1,4 +1,4 @@
-import { useRef } from 'react'; // Added useRef
+import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
@@ -14,6 +14,7 @@ import Fade from 'embla-carousel-fade';
 import { servicesData, type Language } from '@/data/servicesData';
 import AnimatedSectionTitle from '@/components/AnimatedSectionTitle';
 import ServicesSection from '@/components/ServicesSection';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 // 🩺 Import service images
 import mitraImg from '@/assets/mitra.jpeg';
@@ -30,7 +31,9 @@ import pregnancy_hero from '@/assets/pregnancy_hero.jpg';
 const Home = () => {
   const { t, language } = useLanguage();
   
-  // FIXED: Wrapped in useRef to persist across renders like in your previous version
+  // Animation hook for the doctor section
+  const { ref: doctorRef, isVisible: isDoctorVisible } = useScrollAnimation({ threshold: 0.1 });
+  
   const autoplayPlugin = useRef(
     Autoplay({ delay: 5000, stopOnInteraction: false })
   );
@@ -102,7 +105,6 @@ const Home = () => {
             align: 'center',
             loop: true,
           }}
-          // FIXED: Passed the current ref to the plugins prop
           plugins={[autoplayPlugin.current, fadePlugin]}
           className="w-full"
         >
@@ -159,11 +161,20 @@ const Home = () => {
       </section>
 
       {/* 👩‍⚕️ Doctor Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white overflow-hidden">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto observe-animation">
+          <div ref={doctorRef} className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="order-1 md:order-1">
+              
+              {/* Left Side: Doctor Image - Flies in from LEFT */}
+              <div 
+                className="order-1 md:order-1"
+                style={{
+                  opacity: isDoctorVisible ? 1 : 0,
+                  transform: isDoctorVisible ? "translate(0, 0)" : "translate(-1000px, 100px)",
+                  transition: "opacity 1.8s cubic-bezier(0.16, 1, 0.3, 1), transform 1.8s cubic-bezier(0.16, 1, 0.3, 1)"
+                }}
+              >
                 <div className="max-w-md mx-auto">
                   <div className="aspect-square rounded-full overflow-hidden bg-gradient-to-br from-[hsl(var(--medical-medium))] to-[hsl(var(--medical-medium-dark))] shadow-2xl">
                     <img
@@ -175,7 +186,16 @@ const Home = () => {
                 </div>
               </div>
 
-              <div className="order-2 md:order-2">
+              {/* Right Side: Text - Flies in from RIGHT */}
+              <div 
+                className="order-2 md:order-2"
+                style={{
+                  opacity: isDoctorVisible ? 1 : 0,
+                  transform: isDoctorVisible ? "translate(0, 0)" : "translate(1000px, 100px)",
+                  // Added a small delay (0.2s) so the text arrives just slightly after the image starts moving
+                  transition: "opacity 1.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s, transform 1.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s"
+                }}
+              >
                 <h2 className="text-4xl font-heading font-bold mb-6 text-foreground">
                   {t('doctor.title')}
                 </h2>
