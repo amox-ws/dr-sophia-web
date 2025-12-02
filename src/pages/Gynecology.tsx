@@ -48,7 +48,7 @@ const Gynecology = () => {
       {/* Sub-services Section */}
       <section className="py-20 bg-background/90">
         <div className="container mx-auto px-4 max-w-5xl">
-          <div className="grid gap-8 grid-cols-2">
+          <div className="grid gap-4 sm:gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2">
             {serviceData.items.map((item, index) => (
               <article 
                 key={index} 
@@ -65,16 +65,16 @@ const Gynecology = () => {
                 </div>
                 
                 {/* Title */}
-                <div className="p-6">
-                  <div className="flex justify-between items-center mb-4">
-                    <h2 className="text-xl font-semibold">{item.title[language as Language]}</h2>
-                    <span className="text-2xl">{expanded === String(index) ? '-' : '+'}</span>
+                <div className="p-4 sm:p-6">
+                  <div className="flex justify-between items-center mb-2 sm:mb-4">
+                    <h2 className="text-base sm:text-lg md:text-xl font-semibold">{item.title[language as Language]}</h2>
+                    <span className="text-xl sm:text-2xl">{expanded === String(index) ? '-' : '+'}</span>
                   </div>
                   
                   {/* Expandable Description */}
                   {expanded === String(index) && (
-                    <div className="mt-4 space-y-3 pt-4 border-t border-muted-foreground/20">
-                      <p className="text-foreground/80 leading-relaxed">
+                    <div className="mt-3 sm:mt-4 space-y-3 pt-3 sm:pt-4 border-t border-muted-foreground/20">
+                      <p className="text-sm sm:text-base text-foreground/80 leading-relaxed">
                         {item.desc[language as Language]}
                       </p>
                     </div>
