@@ -20,29 +20,25 @@ const AnimatedServiceCard = ({
   index,
   isVisible,
 }: AnimatedServiceCardProps) => {
-  // Determine animation direction based on position (left or right column)
   const isLeftColumn = index % 2 === 0;
-  
-  // Staggered delays: 0ms, 150ms, 300ms, 450ms
   const delay = index * 150;
-  
+
   return (
     <Link
       to={route}
       className="block group"
       style={{
         opacity: isVisible ? 1 : 0,
-        transform: isVisible 
-          ? 'translateX(0)' 
-          : isLeftColumn 
-            ? 'translateX(-80px)' 
-            : 'translateX(80px)',
+        transform: isVisible
+          ? "translateX(0)"
+          : isLeftColumn
+          ? "translateX(-80px)"
+          : "translateX(80px)",
         transition: `opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1) ${delay}ms, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1) ${delay}ms`,
       }}
     >
       <Card className="overflow-hidden bg-card shadow-lg hover:shadow-xl transition-shadow duration-300 h-full">
-        {/* Top Section - Text Content */}
-        <CardHeader className="relative p-3 md:p-4 lg:p-6">
+        <CardHeader className="relative p-3 md:p-4 lg:p-6 h-[58px]">
           <div className="flex items-start justify-between gap-2">
             <div className="flex-1 min-w-0">
               <CardTitle className="text-sm sm:text-base md:text-lg lg:text-xl font-heading font-medium mb-1 sm:mb-2 text-foreground group-hover:text-primary transition-colors whitespace-pre-line">
@@ -52,17 +48,15 @@ const AnimatedServiceCard = ({
                 {description}
               </p>
             </div>
-            {/* Arrow Icon */}
             <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0" />
           </div>
         </CardHeader>
 
-        {/* Divider */}
         <Separator />
 
-        {/* Bottom Section - Image */}
         <CardContent className="p-0">
-          <div className="aspect-video overflow-hidden">
+          {/* FIXED HEIGHT IMAGE */}
+          <div className="aspect-[4/3] overflow-hidden rounded-b-xl">
             <img
               src={image}
               alt={`${title} services`}
