@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { getServiceById, type Language } from '@/data/servicesData';
-import pregnancyImage from '@/assets/pregnancy.jpeg';
 
-// 🖼️ Imports για τις επιμέρους υπηρεσίες (βασισμένα στα paths των assets σας)
+// 🖼️ Imports για τις επιμέρους υπηρεσίες
 import prenatalScreeningImage from '@/assets/pregnancy/prenatal_screening.jpg';
 import niptImage from '@/assets/pregnancy/nipt.jpg';
 import ultrasoundImage from '@/assets/pregnancy/ultrasound.jpg';
@@ -55,30 +54,12 @@ const Pregnancy = () => {
       <title>{serviceData.title[language as Language]} - Medical Services</title>
       <meta name="description" content={serviceData.title[language as Language]} />
       
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-16 overflow-hidden" style={{ backgroundColor: '#4D6471' }}>
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#4D6471]/80" />
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8">
-            <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden flex-shrink-0 border-4 border-white/20 shadow-2xl">
-              <img 
-                src={pregnancyImage} 
-                alt={`${serviceData.title[language as Language]} services`}
-                className="w-full h-full object-cover"
-              />
-            </div>
-            
-            <div className="flex-1 text-center md:text-left">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white whitespace-pre-line">
-                {serviceData.title[language as Language]}
-              </h1>
-              {serviceData.intro && (
-                <p className="text-white/80 text-lg md:text-xl leading-relaxed mt-4">
-                  {serviceData.intro[language as Language]}
-                </p>
-              )}
-            </div>
-          </div>
+      {/* Hero Section - Small & Clean */}
+      <section className="pt-28 pb-12 bg-gradient-to-br from-[hsl(var(--medical-medium))] to-[hsl(var(--medical-medium-dark))]">
+        <div className="container mx-auto px-4">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center">
+            {serviceData.title[language as Language]}
+          </h1>
         </div>
       </section>
 
@@ -92,7 +73,7 @@ const Pregnancy = () => {
                 className="border border-muted-foreground/20 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow bg-background cursor-pointer"
                 onClick={() => toggleExpand(index)}
               >
-                {/* Image Placeholder - Τώρα χρησιμοποιούμε τις imported εικόνες */}
+                {/* Image */}
                 <div className="aspect-video bg-muted">
                   <img 
                     src={itemImages[item.title[language as Language] as keyof typeof itemImages] || '/placeholder.svg'} 
@@ -120,10 +101,19 @@ const Pregnancy = () => {
               </article>
             ))}
           </div>
+
+          <div className="mt-16 text-center">
+            <a 
+              href="/contact" 
+              className="inline-block px-8 py-4 bg-[hsl(var(--medical-medium))] text-white rounded-xl font-semibold hover:bg-[hsl(var(--medical-medium-dark))] transition"
+            >
+              {language === 'el' ? 'Κλείστε Ραντεβού Τώρα' : language === 'en' ? 'Book Appointment Now' : 'Prendre Rendez-vous'}
+            </a>
+          </div>
         </div>
       </section>
     </main>
   );
 };
-nutritionImage
+
 export default Pregnancy;

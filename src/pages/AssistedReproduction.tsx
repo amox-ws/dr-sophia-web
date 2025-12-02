@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { getServiceById, type Language } from '@/data/servicesData';
-import assistedReproductionImage from '@/assets/assisted-reproduction.jpeg';
 
-// 🖼️ Imports για τις επιμέρους υπηρεσίες (βασισμένα στα paths των assets σας)
+// 🖼️ Imports για τις επιμέρους υπηρεσίες
 import eggSpermDonationImage from '@/assets/assisted_reproduction/Egg & Sperm Donation.jpeg';
 import eggCryopreservationImage from '@/assets/assisted_reproduction/egg cryopreservation.jpeg';
 import fertilityEvaluationImage from '@/assets/assisted_reproduction/Fertility Evaluation.jpeg';
@@ -12,7 +11,6 @@ import ivfImage from '@/assets/assisted_reproduction/InVitroFertilization.jpeg';
 import miniIvfImage from '@/assets/assisted_reproduction/mini-ivf.jpeg';
 import pgtImage from '@/assets/assisted_reproduction/Preimplantation Genetic Testing.jpeg';
 import surrogacyImage from '@/assets/assisted_reproduction/Surrogacy.jpeg';
-
 
 const AssistedReproduction = () => {
   const { language } = useLanguage();
@@ -52,7 +50,6 @@ const AssistedReproduction = () => {
     'Gestation pour Autrui (GPA)': surrogacyImage,
   };
 
-
   const toggleExpand = (index: number) => {
     setExpanded(prev => (prev === String(index) ? null : String(index)));
   };
@@ -64,30 +61,12 @@ const AssistedReproduction = () => {
       <title>{serviceData.title[language as Language]} - Medical Services</title>
       <meta name="description" content={serviceData.intro?.[language as Language] || ''} />
       
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-16 overflow-hidden" style={{ backgroundColor: '#4D6471' }}>
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#4D6471]/80" />
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8">
-            <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden flex-shrink-0 border-4 border-white/20 shadow-2xl">
-              <img 
-                src={assistedReproductionImage} 
-                alt={`${serviceData.title[language as Language]} services`}
-                className="w-full h-full object-cover"
-              />
-            </div>
-            
-            <div className="flex-1 text-center md:text-left">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 whitespace-pre-line">
-                {serviceData.title[language as Language]}
-              </h1>
-              {serviceData.intro && (
-                <p className="text-white/80 text-lg md:text-xl leading-relaxed">
-                  {serviceData.intro[language as Language]}
-                </p>
-              )}
-            </div>
-          </div>
+      {/* Hero Section - Small & Clean */}
+      <section className="pt-28 pb-12 bg-gradient-to-br from-[hsl(var(--medical-medium))] to-[hsl(var(--medical-medium-dark))]">
+        <div className="container mx-auto px-4">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center">
+            {serviceData.title[language as Language]}
+          </h1>
         </div>
       </section>
 
@@ -101,7 +80,7 @@ const AssistedReproduction = () => {
                 className="border border-muted-foreground/20 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow bg-background cursor-pointer"
                 onClick={() => toggleExpand(index)}
               >
-                {/* Image Placeholder - Τώρα χρησιμοποιούμε τις imported εικόνες */}
+                {/* Image */}
                 <div className="aspect-video bg-muted">
                   <img 
                     src={itemImages[item.title[language as Language] as keyof typeof itemImages] || '/placeholder.svg'}

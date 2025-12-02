@@ -23,8 +23,8 @@ const AnimatedSectionTitle = ({
 
   return (
     <div ref={ref} className={cn("text-center mb-12 relative", className)}>
-      {/* Title with brush reveal effect */}
-      <div className="relative inline-block overflow-hidden">
+      {/* Title with fade reveal effect */}
+      <div className="relative inline-block">
         <h2
           className={cn(
             "text-4xl font-bold transition-all duration-500",
@@ -39,20 +39,6 @@ const AnimatedSectionTitle = ({
         >
           {title}
         </h2>
-        
-        {/* Brush line reveal effect */}
-        <div
-          className={cn(
-            "absolute bottom-0 left-0 h-[3px] rounded-full",
-            isLightTitle 
-              ? "bg-gradient-to-r from-white/60 via-white to-white/60"
-              : "bg-gradient-to-r from-[hsl(var(--medical-medium))] via-[hsl(var(--medical-light))] to-[hsl(var(--medical-medium))]"
-          )}
-          style={{
-            width: isVisible ? '100%' : '0%',
-            transition: 'width 0.5s cubic-bezier(0.22, 1, 0.36, 1)',
-          }}
-        />
       </div>
 
       {/* Subtitle */}

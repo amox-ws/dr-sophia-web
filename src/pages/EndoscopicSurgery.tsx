@@ -3,7 +3,6 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { getServiceById, type Language } from '@/data/servicesData';
 
 // 🖼️ Import Images
-import endoscopicSurgeryImage from '@/assets/endoscopic_surgery_hero.jpg'; 
 import hysteroscopyImage from '@/assets/endoscopic_surgery/Hysteroscopy.jpg'; 
 import laparoscopyImage from '@/assets/endoscopic_surgery/laparoscopy.jpg'; 
 import roboticSurgeryImage from '@/assets/endoscopic_surgery/robotic_surgery.jpg';
@@ -24,7 +23,6 @@ const EndoscopicSurgery = () => {
     'Chirurgie Robotique': roboticSurgeryImage,
   };
 
-
   const toggleExpand = (index: number) => {
     setExpanded(prev => (prev === String(index) ? null : String(index)));
   };
@@ -36,45 +34,26 @@ const EndoscopicSurgery = () => {
       <title>{serviceData.title[language as Language]} - Medical Services</title>
       <meta name="description" content={serviceData.title[language as Language]} />
       
-      {/* Hero Section */}
-      {/* Χρησιμοποιούμε pt-32/pb-16 αντί για fixed h-[50vh] για καλύτερο responsiveness */}
-      <section className="relative pt-32 pb-16 overflow-hidden" style={{ backgroundColor: '#4D6471' }}>
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#4D6471]/80" />
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8">
-            <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden flex-shrink-0 border-4 border-white/20 shadow-2xl">
-              <img 
-                src={endoscopicSurgeryImage} 
-                alt={`${serviceData.title[language as Language]} services`}
-                className="w-full h-full object-cover"
-              />
-            </div>
-            
-            <div className="flex-1 text-center md:text-left">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white whitespace-pre-line">
-                {serviceData.title[language as Language]}
-              </h1>
-              {serviceData.intro && (
-                <p className="text-white/80 text-lg md:text-xl leading-relaxed mt-4">
-                  {serviceData.intro[language as Language]}
-                </p>
-              )}
-            </div>
-          </div>
+      {/* Hero Section - Small & Clean */}
+      <section className="pt-28 pb-12 bg-gradient-to-br from-[hsl(var(--medical-medium))] to-[hsl(var(--medical-medium-dark))]">
+        <div className="container mx-auto px-4">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center">
+            {serviceData.title[language as Language]}
+          </h1>
         </div>
       </section>
 
       {/* Content Section */}
       <section className="py-20 bg-background/90">
         <div className="container mx-auto px-4 max-w-5xl">
-          <div className="grid gap-8 grid-cols-1 md:grid-cols-2"> {/* Αλλαγή σε grid-cols-1 md:grid-cols-2 για καλύτερο mobile */}
+          <div className="grid gap-4 sm:gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2">
             {serviceData.items.map((item, index) => (
               <article 
                 key={index} 
-                className="border border-muted-foreground/20 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow bg-white cursor-pointer"
+                className="border border-muted-foreground/20 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow bg-background cursor-pointer"
                 onClick={() => toggleExpand(index)}
               >
-                {/* Image Section - Τώρα χρησιμοποιούμε τις imported εικόνες */}
+                {/* Image Section */}
                 <div className="aspect-video bg-muted">
                   <img 
                     src={itemImages[item.title[language as Language] as keyof typeof itemImages] || '/placeholder.svg'}
@@ -84,16 +63,16 @@ const EndoscopicSurgery = () => {
                 </div>
                 
                 {/* Title */}
-                <div className="p-6">
-                  <div className="flex justify-between items-center mb-4">
-                    <h2 className="text-xl font-semibold">{item.title[language as Language]}</h2>
-                    <span className="text-2xl text-primary">{expanded === String(index) ? '−' : '+'}</span>
+                <div className="p-4 sm:p-6">
+                  <div className="flex justify-between items-center mb-2 sm:mb-4">
+                    <h2 className="text-base sm:text-lg md:text-xl font-semibold">{item.title[language as Language]}</h2>
+                    <span className="text-xl sm:text-2xl text-primary">{expanded === String(index) ? '−' : '+'}</span>
                   </div>
                   
                   {/* Expandable Description */}
                   {expanded === String(index) && (
-                    <div className="mt-4 space-y-3 pt-4 border-t border-muted-foreground/20">
-                      <p className="text-foreground/80 leading-relaxed">
+                    <div className="mt-3 sm:mt-4 space-y-3 pt-3 sm:pt-4 border-t border-muted-foreground/20">
+                      <p className="text-sm sm:text-base text-foreground/80 leading-relaxed">
                         {item.desc[language as Language]}
                       </p>
                     </div>
