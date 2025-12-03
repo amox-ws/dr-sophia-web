@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { getServiceById, type Language } from '@/data/servicesData';
+import ContactCTASection from '@/components/ContactCTASection';
 
 // 🖼️ Imports για τις επιμέρους υπηρεσίες
 import eggSpermDonationImage from '@/assets/assisted_reproduction/Egg & Sperm Donation.jpeg';
@@ -109,16 +110,11 @@ const AssistedReproduction = () => {
             ))}
           </div>
           
-          <div className="mt-16 text-center">
-            <a 
-              href="/contact" 
-              className="inline-block px-8 py-4 bg-[hsl(var(--medical-medium))] text-white rounded-xl font-semibold hover:bg-[hsl(var(--medical-medium-dark))] transition"
-            >
-              {language === 'el' ? 'Κλείστε Ραντεβού Τώρα' : language === 'en' ? 'Book Appointment Now' : 'Prendre Rendez-vous'}
-            </a>
-          </div>
         </div>
       </section>
+
+      {/* Contact CTA Section */}
+      <ContactCTASection />
     </main>
   );
 };
