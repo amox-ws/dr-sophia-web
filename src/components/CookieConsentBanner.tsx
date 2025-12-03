@@ -53,26 +53,42 @@ const CookieConsentBanner = () => {
   const c = content[language];
 
   useEffect(() => {
-    const consent = localStorage.getItem("cookie-consent");
-    if (!consent) {
-      setIsVisible(true);
-    }
+    const checkConsent = () => {
+      const consent = localStorage.getItem("cookie-consent");
+      if (!consent) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    checkConsent();
+
+    // Listen for custom event to re-show banner
+    window.addEventListener("cookie-consent-updated", checkConsent);
+    
+    return () => {
+      window.removeEventListener("cookie-consent-updated", checkConsent);
+    };
   }, []);
 
   const handleAcceptAll = () => {
     localStorage.setItem("cookie-consent", JSON.stringify({ functional: true, thirdParty: true }));
     setIsVisible(false);
+    window.dispatchEvent(new Event("cookie-consent-updated"));
   };
 
   const handleRejectNonEssential = () => {
     localStorage.setItem("cookie-consent", JSON.stringify({ functional: true, thirdParty: false }));
     setIsVisible(false);
+    window.dispatchEvent(new Event("cookie-consent-updated"));
   };
 
   const handleSavePreferences = (thirdParty: boolean) => {
     localStorage.setItem("cookie-consent", JSON.stringify({ functional: true, thirdParty }));
     setIsVisible(false);
     setShowPreferences(false);
+    window.dispatchEvent(new Event("cookie-consent-updated"));
   };
 
   if (!isVisible) return null;

@@ -10,10 +10,13 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
 import StaggeredTextReveal from "@/components/StaggeredTextReveal";
+import { useCookieConsent } from "@/hooks/useCookieConsent";
+import MapPlaceholder from "@/components/MapPlaceholder";
 
 const Contact = () => {
   const { t, language } = useLanguage();
   const { toast } = useToast();
+  const { hasThirdPartyConsent, openCookiePreferences } = useCookieConsent();
   const observerRef = useRef<IntersectionObserver | null>(null);
   const [formData, setFormData] = useState({
     name: "",
@@ -271,15 +274,19 @@ const Contact = () => {
                   <CardContent className="p-6">
                     <h3 className="text-xl font-semibold mb-4 text-foreground">Αθήνα - Πειραιάς</h3>
                     <div className="aspect-video mb-4 rounded-lg overflow-hidden">
-                      <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3145.8374447890447!2d23.647999!3d37.9408838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1bbef4dd46271%3A0xe8b44844d7f54f29!2sLeof.%20Vasileos%20Georgiou%20B%204%2C%20Pireas%20185%2034!5e0!3m2!1sel!2sgr!4v1234567890"
-                        width="100%"
-                        height="100%"
-                        style={{ border: 0 }}
-                        allowFullScreen
-                        loading="lazy"
-                        referrerPolicy="no-referrer-when-downgrade"
-                      />
+                      {hasThirdPartyConsent ? (
+                        <iframe
+                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3145.8374447890447!2d23.647999!3d37.9408838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1bbef4dd46271%3A0xe8b44844d7f54f29!2sLeof.%20Vasileos%20Georgiou%20B%204%2C%20Pireas%20185%2034!5e0!3m2!1sel!2sgr!4v1234567890"
+                          width="100%"
+                          height="100%"
+                          style={{ border: 0 }}
+                          allowFullScreen
+                          loading="lazy"
+                          referrerPolicy="no-referrer-when-downgrade"
+                        />
+                      ) : (
+                        <MapPlaceholder onAcceptCookies={openCookiePreferences} className="w-full h-full" />
+                      )}
                     </div>
                     <a
                       href="https://www.google.com/maps/place/%CE%9B%CE%B5%CF%89%CF%86.+%CE%92%CE%B1%CF%83%CE%B9%CE%BB%CE%AD%CF%89%CF%82+%CE%93%CE%B5%CF%89%CF%81%CE%B3%CE%AF%CE%BF%CF%85+%CE%92+4,+%CE%A0%CE%B5%CE%B9%CF%81%CE%B1%CE%B9%CE%AC%CF%82+185+34/@37.9408838,23.647999,17z/data=!3m1!4b1!4m6!3m5!1s0x14a1bbef4dd46271:0xe8b44844d7f54f29!8m2!3d37.9408796!4d23.6505739!16s%2Fg%2F11r_t8f4kf"
@@ -297,15 +304,19 @@ const Contact = () => {
                   <CardContent className="p-6">
                     <h3 className="text-xl font-semibold mb-4 text-foreground">Αίγινα</h3>
                     <div className="aspect-video mb-4 rounded-lg overflow-hidden">
-                      <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.1876954321!2d23.4286997!3d37.7475664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1cd9d725858d5%3A0xd269f4a98843dbe4!2sNosokomeiou%205%2C%20Aigina%20180%2010!5e0!3m2!1sel!2sgr!4v1234567890"
-                        width="100%"
-                        height="100%"
-                        style={{ border: 0 }}
-                        allowFullScreen
-                        loading="lazy"
-                        referrerPolicy="no-referrer-when-downgrade"
-                      />
+                      {hasThirdPartyConsent ? (
+                        <iframe
+                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.1876954321!2d23.4286997!3d37.7475664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1cd9d725858d5%3A0xd269f4a98843dbe4!2sNosokomeiou%205%2C%20Aigina%20180%2010!5e0!3m2!1sel!2sgr!4v1234567890"
+                          width="100%"
+                          height="100%"
+                          style={{ border: 0 }}
+                          allowFullScreen
+                          loading="lazy"
+                          referrerPolicy="no-referrer-when-downgrade"
+                        />
+                      ) : (
+                        <MapPlaceholder onAcceptCookies={openCookiePreferences} className="w-full h-full" />
+                      )}
                     </div>
                     <a
                       href="https://www.google.com/maps/place/%CE%9D%CE%BF%CF%83%CE%BF%CE%BA%CE%BF%CE%BC%CE%B5%CE%AF%CE%BF%CF%85+5,+%CE%91%CE%AF%CE%B3%CE%B9%CE%BD%CE%B1+180+10/@37.7475664,23.4286997,17z/data=!3m1!4b1!4m6!3m5!1s0x14a1cd9d725858d5:0xd269f4a98843dbe4!8m2!3d37.7475622!4d23.4312746!16s%2Fg%2F11jwlyks7l"
