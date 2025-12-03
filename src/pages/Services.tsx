@@ -5,18 +5,19 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import AnimatedServiceCard from "@/components/AnimatedServiceCard";
 import AnimatedSectionTitle from "@/components/AnimatedSectionTitle";
 import { Button } from "@/components/ui/button";
+import StaggeredTextReveal from "@/components/StaggeredTextReveal"; // ✅ Import του component
 
 const formatTitleWithLineBreak = (title: string, key: string, language: string): string => {
   if (language !== "el") return title;
-  if (key === "gynecology") return "Γυναικολογία";
-  if (key === "pregnancy") return "Εγκυμοσύνη";
+  if (key === "gynecology") return "Γυναικολογική Φροντίδα.";
+  if (key === "pregnancy") return "Εγκυμοσύνη - Μαιευτική.";
   return title;
 };
 
 // 🖼️ Import your local images
 import birthImg from "@/assets/birth.jpeg";
 import mitraImg from "@/assets/mitra.jpeg";
-import spermImg from "@/assets/assisted_reproduction/Intrauterine Insemination.jpeg";
+import spermImg from "@/assets/sperm.jpeg";
 import surgeryImg from "@/assets/surgery.jpeg";
 
 const Services = () => {
@@ -50,11 +51,28 @@ const Services = () => {
       {/* Hero Section */}
       <section className="pt-32 pb-16 bg-gradient-to-br from-[hsl(var(--medical-lightest))] to-background">
         <div className="container mx-auto px-4">
-          <AnimatedSectionTitle
-            title={t("services.page.title")}
-            subtitle={t("services.page.subtitle")}
-            titleClassName="text-4xl md:text-5xl"
-          />
+          <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
+            
+            {/* Title with Staggered Letter Reveal */}
+            <div className="mb-6">
+              <StaggeredTextReveal 
+                text={t("services.page.title")}
+                className="text-4xl md:text-5xl font-bold text-foreground"
+                stagger={40} // 40ms ανά γράμμα
+              />
+            </div>
+
+            {/* Subtitle with Staggered Letter Reveal (Delayed) */}
+            <div className="mb-8">
+              <StaggeredTextReveal 
+                text={t("services.page.subtitle")}
+                className="text-xl text-muted-foreground"
+                delay={800} // Ξεκινάει αφού ολοκληρωθεί ο τίτλος περίπου
+                stagger={20} // Λίγο πιο γρήγορα για το μεγάλο κείμενο
+              />
+            </div>
+
+          </div>
         </div>
       </section>
 
