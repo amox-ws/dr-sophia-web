@@ -15,6 +15,7 @@ import { servicesData, type Language } from '@/data/servicesData';
 import AnimatedSectionTitle from '@/components/AnimatedSectionTitle';
 import ServicesSection from '@/components/ServicesSection';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import StaggeredTextReveal from '@/components/StaggeredTextReveal'; 
 
 // 🩺 Import service images
 import mitraImg from '@/assets/mitra.jpeg';
@@ -31,8 +32,9 @@ import pregnancy_hero from '@/assets/pregnancy_hero.jpg';
 const Home = () => {
   const { t, language } = useLanguage();
   
-  // Animation hook for the doctor section
+  // Animation hooks
   const { ref: doctorRef, isVisible: isDoctorVisible } = useScrollAnimation({ threshold: 0.1 });
+  const { ref: btnRef, isVisible: isBtnVisible } = useScrollAnimation({ threshold: 0.1 });
   
   const autoplayPlugin = useRef(
     Autoplay({ delay: 5000, stopOnInteraction: false })
@@ -166,7 +168,7 @@ const Home = () => {
           <div ref={doctorRef} className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               
-              {/* Left Side: Doctor Image - Flies in from LEFT */}
+              {/* Left Side: Doctor Image */}
               <div 
                 className="order-1 md:order-1"
                 style={{
@@ -186,13 +188,12 @@ const Home = () => {
                 </div>
               </div>
 
-              {/* Right Side: Text - Flies in from RIGHT */}
+              {/* Right Side: Text */}
               <div 
                 className="order-2 md:order-2"
                 style={{
                   opacity: isDoctorVisible ? 1 : 0,
                   transform: isDoctorVisible ? "translate(0, 0)" : "translate(1000px, 100px)",
-                  // Added a small delay (0.2s) so the text arrives just slightly after the image starts moving
                   transition: "opacity 1.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s, transform 1.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s"
                 }}
               >
@@ -229,7 +230,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 🩺 Services Section - Matching /services page layout */}
+      {/* 🩺 Services Section */}
       <ServicesSection 
         serviceCategories={serviceCategories} 
         formatTitleWithLineBreak={formatTitleWithLineBreak}
@@ -320,24 +321,49 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 📞 Contact CTA Section */}
+      {/* 📞 Contact CTA Section with Staggered Letter Reveal */}
       <section className="py-20 bg-gradient-to-br from-[hsl(var(--medical-medium))] to-[hsl(var(--medical-medium-dark))]">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <AnimatedSectionTitle 
-              title={t('contactCta.title')} 
-              subtitle={t('contactCta.subtitle')}
-              titleClassName="text-white"
-              subtitleClassName="text-white/90"
-            />
-            <Link to="/contact">
-              <Button
-                size="lg"
-                className="bg-white text-[hsl(var(--medical-darkest))] hover:bg-white/90 text-base md:text-lg px-8 py-6 shadow-xl"
-              >
-                {t('contactCta.button')}
-              </Button>
-            </Link>
+          <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
+            
+            {/* Title with Staggered Letter Reveal */}
+            <div className="mb-6">
+              <StaggeredTextReveal 
+                text={t('contactCta.title')} 
+                className="text-4xl md:text-5xl font-bold text-white"
+                stagger={40} // 40ms per letter
+              />
+            </div>
+
+            {/* Subtitle with Staggered Letter Reveal (Delayed) */}
+            <div className="mb-8">
+              <StaggeredTextReveal 
+                text={t('contactCta.subtitle')} 
+                className="text-xl text-white/90"
+                delay={800} // Start after title finishes (approx)
+                stagger={20} // Faster stagger for longer text
+              />
+            </div>
+
+            {/* Button with simple fade up */}
+            <div 
+              ref={btnRef}
+              style={{
+                opacity: isBtnVisible ? 1 : 0,
+                transform: isBtnVisible ? "translateY(0)" : "translateY(20px)",
+                transition: "all 1s ease-out 1.5s" // Wait for text to mostly finish
+              }}
+            >
+              <Link to="/contact">
+                <Button
+                  size="lg"
+                  className="bg-white text-[hsl(var(--medical-darkest))] hover:bg-white/90 text-base md:text-lg px-8 py-6 shadow-xl"
+                >
+                  {t('contactCta.button')}
+                </Button>
+              </Link>
+            </div>
+
           </div>
         </div>
       </section>
