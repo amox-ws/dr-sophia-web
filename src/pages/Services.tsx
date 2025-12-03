@@ -3,9 +3,9 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { servicesData, type Language } from "@/data/servicesData";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import AnimatedServiceCard from "@/components/AnimatedServiceCard";
-import AnimatedSectionTitle from "@/components/AnimatedSectionTitle";
+// Αφαιρέθηκε το AnimatedSectionTitle καθώς πλέον χρησιμοποιούμε το StaggeredTextReveal παντού
 import { Button } from "@/components/ui/button";
-import StaggeredTextReveal from "@/components/StaggeredTextReveal"; // ✅ Import του component
+import StaggeredTextReveal from "@/components/StaggeredTextReveal";
 
 const formatTitleWithLineBreak = (title: string, key: string, language: string): string => {
   if (language !== "el") return title;
@@ -22,7 +22,10 @@ import surgeryImg from "@/assets/surgery.jpeg";
 
 const Services = () => {
   const { t, language } = useLanguage();
-  const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
+  
+  // Animation hooks: Ξεχωριστά refs για το grid και το κουμπί της φόρμας επικοινωνίας
+  const { ref: gridRef, isVisible: isGridVisible } = useScrollAnimation({ threshold: 0.1 });
+  const { ref: btnRef, isVisible: isBtnVisible } = useScrollAnimation({ threshold: 0.1 });
 
   const serviceImages: Record<string, string> = {
     gynecology: mitraImg,
@@ -79,7 +82,8 @@ const Services = () => {
       {/* Service Categories Cards */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div ref={ref} className="max-w-4xl mx-auto grid gap-4 sm:gap-6 md:gap-1 grid-cols-2">
+          {/* Χρήση του gridRef και isGridVisible */}
+          <div ref={gridRef} className="max-w-4xl mx-auto grid gap-4 sm:gap-6 md:gap-1 grid-cols-2">
             {serviceCategories.map((category, index) => (
               <AnimatedServiceCard
                 key={category.key}
@@ -88,31 +92,56 @@ const Services = () => {
                 description={category.description}
                 image={category.image}
                 index={index}
-                isVisible={isVisible}
+                isVisible={isGridVisible}
               />
             ))}
           </div>
         </div>
       </section>
 
-      {/* 📞 Contact CTA Section */}
+      {/* 📞 Contact CTA Section - Updated with Staggered Animation */}
       <section className="py-20 bg-gradient-to-br from-[hsl(var(--medical-medium))] to-[hsl(var(--medical-medium-dark))]">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <AnimatedSectionTitle 
-              title={t('contactCta.title')} 
-              subtitle={t('contactCta.subtitle')}
-              titleClassName="text-white"
-              subtitleClassName="text-white/90"
-            />
-            <Link to="/contact">
-              <Button
-                size="lg"
-                className="bg-white text-[hsl(var(--medical-darkest))] hover:bg-white/90 text-base md:text-lg px-8 py-6 shadow-xl"
-              >
-                {t('contactCta.button')}
-              </Button>
-            </Link>
+          <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
+            
+            {/* Title with Staggered Letter Reveal (White Text) */}
+            <div className="mb-6">
+              <StaggeredTextReveal 
+                text={t('contactCta.title')} 
+                className="text-4xl md:text-5xl font-bold text-white"
+                stagger={40}
+              />
+            </div>
+
+            {/* Subtitle with Staggered Letter Reveal (White Text, Delayed) */}
+            <div className="mb-8">
+              <StaggeredTextReveal 
+                text={t('contactCta.subtitle')} 
+                className="text-xl text-white/90"
+                delay={800} // Περιμένει να τελειώσει ο τίτλος
+                stagger={20}
+              />
+            </div>
+
+            {/* Button with Fade Up Animation */}
+            <div 
+              ref={btnRef}
+              style={{
+                opacity: isBtnVisible ? 1 : 0,
+                transform: isBtnVisible ? "translateY(0)" : "translateY(20px)",
+                transition: "all 1s ease-out 1.5s" // Καθυστέρηση ώστε να εμφανιστεί μετά το κείμενο
+              }}
+            >
+              <Link to="/contact">
+                <Button
+                  size="lg"
+                  className="bg-white text-[hsl(var(--medical-darkest))] hover:bg-white/90 text-base md:text-lg px-8 py-6 shadow-xl"
+                >
+                  {t('contactCta.button')}
+                </Button>
+              </Link>
+            </div>
+
           </div>
         </div>
       </section>
