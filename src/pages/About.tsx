@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { GraduationCap, Briefcase, Monitor } from "lucide-react";
+import ContactCTASection from "@/components/ContactCTASection";
 
 import doctor_hero from "@/assets/doctor_hero.jpg";
 
@@ -387,6 +388,9 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      {/* Contact CTA Section */}
+      <ContactCTASection />
     </div>
   );
 };
