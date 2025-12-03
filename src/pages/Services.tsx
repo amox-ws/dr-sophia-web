@@ -16,7 +16,7 @@ const formatTitleWithLineBreak = (title: string, key: string, language: string):
 // 🖼️ Import your local images
 import birthImg from "@/assets/birth.jpeg";
 import mitraImg from "@/assets/mitra.jpeg";
-import spermImg from "@/assets/sperm.jpeg";
+import spermImg from "@/assets/assisted_reproduction/Intrauterine Insemination.jpeg";
 import surgeryImg from "@/assets/surgery.jpeg";
 
 const Services = () => {
