@@ -25,7 +25,7 @@ const StaggeredTextReveal = ({
   return (
     <div 
       ref={ref} 
-      className={cn("flex flex-wrap justify-center gap-x-[0.25em] leading-tight", wrapperClassName)}
+      className={cn("flex flex-wrap justify-center gap-x-[0.5em] leading-tight", wrapperClassName)}
     >
       {words.map((word, wordIndex) => {
         const wordChars = word.split("");
