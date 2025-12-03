@@ -19,7 +19,7 @@ import StaggeredTextReveal from '@/components/StaggeredTextReveal';
 
 // 🩺 Import service images
 import mitraImg from '@/assets/mitra.jpeg';
-import spermImg from '@/assets/sperm.jpeg';
+import spermImg from "@/assets/assisted_reproduction/Intrauterine Insemination.jpeg";
 import surgeryImg from '@/assets/surgery.jpeg';
 import birthImg from '@/assets/birth.jpeg';
 
