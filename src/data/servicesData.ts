@@ -165,7 +165,7 @@ export const servicesData: Service[] = [
   },
   {
     id: "endoscopic-surgery",
-    title: { el: "Ενδοσκοπική Χειρουργική.", en: "Endoscopic Surgery", fr: "Chirurgie Endoscopique" },
+    title: { el: "Ενδοσκοπική Χειρουργική", en: "Endoscopic Surgery", fr: "Chirurgie Endoscopique" },
     intro: {
       el: " ",
       en: " ",
