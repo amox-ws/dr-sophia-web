@@ -43,8 +43,8 @@ const Home = () => {
 
   const formatTitleWithLineBreak = (title: string, key: string, lang: string): string => {
     if (lang !== "el") return title;
-    if (key === "gynecology") return "Γυναικολογίκη Φροντίδα.";
-    if (key === "pregnancy") return "Εγκυμοσύνη - Μαιευτική.";
+    if (key === "gynecology") return "Γυναικολογία";
+    if (key === "pregnancy") return "Εγκυμοσύνη";
     return title;
   };
 

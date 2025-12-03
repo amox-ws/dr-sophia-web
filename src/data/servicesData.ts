@@ -15,7 +15,7 @@ export interface Service {
 export const servicesData: Service[] = [
   {
     id: "gynecology",
-    title: { el: "Γυναικολογική Φροντίδα.", en: "Gynecology", fr: "Gynécologie" },
+    title: { el: "Γυναικολογία", en: "Gynecology", fr: "Gynécologie" },
     intro: {
       el: " ",
       en: " ",
@@ -90,7 +90,7 @@ export const servicesData: Service[] = [
   },
   {
     id: "assisted-reproduction",
-    title: { el: "Υποβοηθούμενη Αναπαραγωγή.", en: "Assisted Reproduction", fr: "Procréation assistée" },
+    title: { el: "Υποβοηθούμενη Αναπαραγωγή", en: "Assisted Reproduction", fr: "Procréation assistée" },
     intro: {
       el: " ",
       en: " ",
@@ -200,7 +200,7 @@ export const servicesData: Service[] = [
   },
   {
     id: "pregnancy",
-    title: { el: "Εγκυμοσύνη - Μαιευτική.", en: "Pregnancy", fr: "Grossesse" },
+    title: { el: "Εγκυμοσύνη", en: "Pregnancy", fr: "Grossesse" },
     intro: {
       el: " ",
       en: " ",

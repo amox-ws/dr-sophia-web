@@ -8,8 +8,8 @@ import { Button } from "@/components/ui/button";
 
 const formatTitleWithLineBreak = (title: string, key: string, language: string): string => {
   if (language !== "el") return title;
-  if (key === "gynecology") return "Γυναικολογική Φροντίδα.";
-  if (key === "pregnancy") return "Εγκυμοσύνη - Μαιευτική.";
+  if (key === "gynecology") return "Γυναικολογία";
+  if (key === "pregnancy") return "Εγκυμοσύνη";
   return title;
 };
 
