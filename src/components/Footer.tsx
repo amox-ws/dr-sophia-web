@@ -76,10 +76,33 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-white/20 mt-8 pt-8 text-center">
-          <p className="text-white/60 text-sm">
-            © {currentYear} {t("footer.name")}. {t("footer.rights")}
-          </p>
+        <div className="border-t border-white/20 mt-8 pt-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-white/60 text-sm">
+              © {currentYear} {t("footer.name")}. {t("footer.rights")}
+            </p>
+            <div className="flex items-center gap-4 text-sm">
+              <Link to="/privacy-policy" className="text-white/60 hover:text-white transition-colors">
+                {t("footer.privacy")}
+              </Link>
+              <Link to="/cookies-policy" className="text-white/60 hover:text-white transition-colors">
+                {t("footer.cookies")}
+              </Link>
+              <Link to="/terms" className="text-white/60 hover:text-white transition-colors">
+                {t("footer.terms")}
+              </Link>
+            </div>
+          </div>
+          <div className="mt-4 text-center">
+            <a 
+              href="https://amox.gr/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-white/40 hover:text-white/60 transition-colors text-xs"
+            >
+              Powered by Amox
+            </a>
+          </div>
         </div>
       </div>
     </footer>

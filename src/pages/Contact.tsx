@@ -5,12 +5,14 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import StaggeredTextReveal from "@/components/StaggeredTextReveal"; // Import Text Reveal
+import { Link } from "react-router-dom";
+import StaggeredTextReveal from "@/components/StaggeredTextReveal";
 
 const Contact = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { toast } = useToast();
   const observerRef = useRef<IntersectionObserver | null>(null);
   const [formData, setFormData] = useState({
@@ -19,6 +21,27 @@ const Contact = () => {
     phone: "",
     message: "",
   });
+  const [consentChecked, setConsentChecked] = useState(false);
+
+  const consentText = {
+    el: {
+      label: "Συμφωνώ με την",
+      policy: "Πολιτική Απορρήτου",
+      and: "και την επεξεργασία των προσωπικών μου δεδομένων."
+    },
+    en: {
+      label: "I agree to the",
+      policy: "Privacy Policy",
+      and: "and the processing of my personal data."
+    },
+    fr: {
+      label: "J'accepte la",
+      policy: "Politique de Confidentialité",
+      and: "et le traitement de mes données personnelles."
+    }
+  };
+
+  const currentConsentText = consentText[language as keyof typeof consentText] || consentText.el;
 
   useEffect(() => {
     observerRef.current = new IntersectionObserver(
@@ -40,11 +63,20 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!consentChecked) {
+      toast({
+        title: language === "el" ? "Απαιτείται συγκατάθεση" : language === "fr" ? "Consentement requis" : "Consent required",
+        description: language === "el" ? "Παρακαλώ αποδεχτείτε την πολιτική απορρήτου." : language === "fr" ? "Veuillez accepter la politique de confidentialité." : "Please accept the privacy policy.",
+        variant: "destructive"
+      });
+      return;
+    }
     toast({
-      title: "Message Sent!",
-      description: "We will get back to you as soon as possible.",
+      title: language === "el" ? "Το μήνυμα στάλθηκε!" : language === "fr" ? "Message envoyé!" : "Message Sent!",
+      description: language === "el" ? "Θα επικοινωνήσουμε μαζί σας το συντομότερο." : language === "fr" ? "Nous vous répondrons bientôt." : "We will get back to you as soon as possible.",
     });
     setFormData({ name: "", email: "", phone: "", message: "" });
+    setConsentChecked(false);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -141,6 +173,23 @@ const Contact = () => {
                         rows={5}
                         className="mt-2"
                       />
+                    </div>
+
+                    {/* Privacy Consent Checkbox */}
+                    <div className="flex items-start space-x-3">
+                      <Checkbox
+                        id="consent"
+                        checked={consentChecked}
+                        onCheckedChange={(checked) => setConsentChecked(checked === true)}
+                        required
+                      />
+                      <Label htmlFor="consent" className="text-sm text-muted-foreground leading-relaxed cursor-pointer">
+                        {currentConsentText.label}{" "}
+                        <Link to="/privacy-policy" className="text-[hsl(var(--medical-medium))] hover:underline">
+                          {currentConsentText.policy}
+                        </Link>{" "}
+                        {currentConsentText.and}
+                      </Label>
                     </div>
 
                     <Button

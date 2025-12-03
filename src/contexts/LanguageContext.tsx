@@ -386,6 +386,9 @@ const translations: Record<Language, Record<string, string>> = {
     "footer.description": "Παρέχοντας εξειδικευμένη γυναικολογική φροντίδα με συμπόνια και επαγγελματισμό.",
     "footer.rights": "Όλα τα δικαιώματα κατοχυρωμένα.",
     "footer.name": "Dr. Cheirakis",
+    "footer.privacy": "Πολιτική Απορρήτου",
+    "footer.cookies": "Πολιτική Cookies",
+    "footer.terms": "Όροι Χρήσης",
   },
   en: {
     // Navigation
@@ -755,6 +758,9 @@ const translations: Record<Language, Record<string, string>> = {
     "footer.description": "Providing specialized gynecological care with compassion and professionalism.",
     "footer.rights": "All rights reserved.",
     "footer.name": "Dr. Cheirakis",
+    "footer.privacy": "Privacy Policy",
+    "footer.cookies": "Cookies Policy",
+    "footer.terms": "Terms of Use",
   },
   fr: {
     // Navigation
@@ -1135,6 +1141,9 @@ const translations: Record<Language, Record<string, string>> = {
     "footer.description": "Fournir des soins gynécologiques spécialisés avec compassion et professionnalisme.",
     "footer.rights": "Tous droits réservés.",
     "footer.name": "Dr. Cheirakis",
+    "footer.privacy": "Politique de Confidentialité",
+    "footer.cookies": "Politique de Cookies",
+    "footer.terms": "Conditions d'Utilisation",
   },
 };
 
