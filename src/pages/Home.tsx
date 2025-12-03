@@ -36,7 +36,6 @@ import endoscopic_surgery_hero_mobile from '@/assets/endoscopic_surgery_hero_mob
 import pregnancy_hero from '@/assets/pregnancy_hero.jpg';
 import pregnancy_hero_mobile from '@/assets/pregnancy_hero_mobile.jpg';
 
-
 const Home = () => {
   const { t, language } = useLanguage();
   const { hasThirdPartyConsent, openCookiePreferences } = useCookieConsent();
@@ -44,6 +43,8 @@ const Home = () => {
   // Animation hooks
   const { ref: doctorRef, isVisible: isDoctorVisible } = useScrollAnimation({ threshold: 0.1 });
   const { ref: btnRef, isVisible: isBtnVisible } = useScrollAnimation({ threshold: 0.1 });
+  
+  // Refs for "Pop" animation in Offices section
   const { ref: athensCarouselRef, isVisible: isAthensCarouselVisible } = useScrollAnimation({ threshold: 0.1 });
   const { ref: athensMapRef, isVisible: isAthensMapVisible } = useScrollAnimation({ threshold: 0.1 });
   const { ref: aeginaCarouselRef, isVisible: isAeginaCarouselVisible } = useScrollAnimation({ threshold: 0.1 });
@@ -58,7 +59,7 @@ const Home = () => {
   const athensAutoplay = useRef(Autoplay({ delay: 3000, stopOnInteraction: false }));
   const aeginaAutoplay = useRef(Autoplay({ delay: 3000, stopOnInteraction: false }));
   
-  // Office placeholder images (to be replaced later)
+  // Office Images Arrays (Placeholders)
   const athensOfficeImages = [
     '/placeholder.svg',
     '/placeholder.svg',
@@ -160,7 +161,7 @@ const Home = () => {
                   className="absolute inset-0 w-full h-full object-cover object-center filter brightness-[.3] hidden md:block"
                 />
                 
-                {/* Mobile Background Image (placeholder) */}
+                {/* Mobile Background Image */}
                 <img
                   src={slide.imageMobile}
                   alt={t(`heroCarousel.${slide.id}.title`)}
@@ -282,7 +283,7 @@ const Home = () => {
         t={t}
       />
 
-      {/* 🏢 Our Offices Section */}
+      {/* 🏢 Our Offices Section with "Pop" Animation */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
@@ -294,14 +295,16 @@ const Home = () => {
                 {t('offices.athens.title')}
               </h3>
               
-              {/* Athens Office Carousel */}
+              {/* Athens Office Carousel - POP Animation */}
               <div 
                 ref={athensCarouselRef}
                 className="mb-6"
                 style={{
                   opacity: isAthensCarouselVisible ? 1 : 0,
-                  transform: isAthensCarouselVisible ? "translateY(0)" : "translateY(50px)",
-                  transition: "opacity 0.8s ease-out, transform 0.8s ease-out"
+                  // Start down and small (0.9 scale), move up and grow to 1
+                  transform: isAthensCarouselVisible ? "translateY(0) scale(1)" : "translateY(100px) scale(0.9)",
+                  // Bouncy transition for the "pop" effect
+                  transition: "opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)"
                 }}
               >
                 <Carousel
@@ -330,14 +333,15 @@ const Home = () => {
                 </Carousel>
               </div>
               
-              {/* Athens Map */}
+              {/* Athens Map - POP Animation (Delayed) */}
               <div 
                 ref={athensMapRef}
                 className="aspect-video md:aspect-[21/9] rounded-lg overflow-hidden shadow-lg"
                 style={{
                   opacity: isAthensMapVisible ? 1 : 0,
-                  transform: isAthensMapVisible ? "translateY(0)" : "translateY(50px)",
-                  transition: "opacity 0.8s ease-out 0.2s, transform 0.8s ease-out 0.2s"
+                  transform: isAthensMapVisible ? "translateY(0) scale(1)" : "translateY(100px) scale(0.9)",
+                  // 200ms delay to come after the carousel
+                  transition: "opacity 0.8s ease-out 0.2s, transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s"
                 }}
               >
                 {hasThirdPartyConsent ? (
@@ -364,14 +368,14 @@ const Home = () => {
                 {t('offices.aegina.title')}
               </h3>
               
-              {/* Aegina Office Carousel */}
+              {/* Aegina Office Carousel - POP Animation */}
               <div 
                 ref={aeginaCarouselRef}
                 className="mb-6"
                 style={{
                   opacity: isAeginaCarouselVisible ? 1 : 0,
-                  transform: isAeginaCarouselVisible ? "translateY(0)" : "translateY(50px)",
-                  transition: "opacity 0.8s ease-out, transform 0.8s ease-out"
+                  transform: isAeginaCarouselVisible ? "translateY(0) scale(1)" : "translateY(100px) scale(0.9)",
+                  transition: "opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)"
                 }}
               >
                 <Carousel
@@ -400,14 +404,14 @@ const Home = () => {
                 </Carousel>
               </div>
               
-              {/* Aegina Map - Updated with correct coordinates */}
+              {/* Aegina Map - POP Animation (Delayed) */}
               <div 
                 ref={aeginaMapRef}
                 className="aspect-video md:aspect-[21/9] rounded-lg overflow-hidden shadow-lg"
                 style={{
                   opacity: isAeginaMapVisible ? 1 : 0,
-                  transform: isAeginaMapVisible ? "translateY(0)" : "translateY(50px)",
-                  transition: "opacity 0.8s ease-out 0.2s, transform 0.8s ease-out 0.2s"
+                  transform: isAeginaMapVisible ? "translateY(0) scale(1)" : "translateY(100px) scale(0.9)",
+                  transition: "opacity 0.8s ease-out 0.2s, transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s"
                 }}
               >
                 {hasThirdPartyConsent ? (
@@ -431,7 +435,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 📞 Contact CTA Section with Staggered Letter Reveal */}
+      {/* 📞 Contact CTA Section */}
       <section className="py-20 bg-gradient-to-br from-[hsl(var(--medical-medium))] to-[hsl(var(--medical-medium-dark))]">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
