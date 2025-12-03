@@ -28,16 +28,14 @@ import birthImg from '@/assets/birth.jpeg';
 // Desktop hero images
 import doctor_hero from '@/assets/doctor_hero.jpg';
 import gynecology_hero from '@/assets/gynecology_hero.jpeg';
+import gynecology_hero_mobile from '@/assets/gynecology_hero_mobile.jpeg';
 import assisted_reproduction_hero from '@/assets/assisted-reproduction_hero.jpg';
+import assisted_reproduction_hero_mobile from '@/assets/assisted-reproduction_hero_mobile.jpg';
 import endoscopic_surgery_hero from '@/assets/endoscopic_surgery_hero.jpg';
+import endoscopic_surgery_hero_mobile from '@/assets/endoscopic_surgery_hero_mobile.jpg';
 import pregnancy_hero from '@/assets/pregnancy_hero.jpg';
+import pregnancy_hero_mobile from '@/assets/pregnancy_hero_mobile.jpg';
 
-// Mobile hero placeholders (to be replaced later)
-const doctor_hero_mobile = '/placeholder.svg';
-const gynecology_hero_mobile = '/placeholder.svg';
-const assisted_reproduction_hero_mobile = '/placeholder.svg';
-const endoscopic_surgery_hero_mobile = '/placeholder.svg';
-const pregnancy_hero_mobile = '/placeholder.svg';
 
 const Home = () => {
   const { t, language } = useLanguage();
@@ -86,7 +84,7 @@ const Home = () => {
       id: 'slide1',
       link: '/contact',
       imageDesktop: doctor_hero,
-      imageMobile: doctor_hero_mobile,
+      imageMobile: doctor_hero,
     },
     {
       id: 'slide2',
