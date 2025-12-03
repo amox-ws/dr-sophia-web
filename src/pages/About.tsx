@@ -3,7 +3,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { GraduationCap, Briefcase, Monitor } from "lucide-react";
 import ContactCTASection from "@/components/ContactCTASection";
-import StaggeredTextReveal from "@/components/StaggeredTextReveal"; // Import Text Reveal
+import StaggeredTextReveal from "@/components/StaggeredTextReveal";
 
 import doctor_hero from "@/assets/doctor_hero.jpg";
 
@@ -11,7 +11,6 @@ const About = () => {
   const { language, t } = useLanguage();
 
   const biographyContent = {
-    // ... (Your biography content remains exactly the same) ...
     el: {
       intro:
         "Ο Ελευθέριος Χειράκης είναι Ιατρός, ειδικευόμενος στη Μαιευτική - Γυναικολογία με εξειδίκευση στην Υποβοηθούμενη Αναπαραγωγή.",
@@ -75,8 +74,13 @@ const About = () => {
         ],
         languages: {
           title: "Γλωσσικές Δεξιότητες",
-          content:
-            "Η μητρική του γλώσσα είναι η Ελληνική (Grecque). Διαθέτει άριστη γνώση (Επίπεδο C2 - Έμπειρος χρήστης) της Αγγλικής και πολύ καλή γνώση (Επίπεδο C1 - Έμπειρος χρήστης) της Γαλλικής. Επίσης, ομιλεί και γράφει Ρουμανικά (Επίπεδο Β2 - Ανεξάρτητος χρήστης).",
+          // Changed content to an array of strings for bullets
+          content: [
+            "Ελληνικά (Μητρική)",
+            "Αγγλικά: Άριστη γνώση (Επίπεδο C2)",
+            "Γαλλικά: Πολύ καλή γνώση (Επίπεδο C1)",
+            "Ρουμανικά: Ομιλία και γραφή (Επίπεδο Β2)",
+          ],
         },
       },
     },
@@ -143,8 +147,12 @@ const About = () => {
         ],
         languages: {
           title: "Language Skills",
-          content:
-            "His mother tongue is Greek (Grecque). He has excellent knowledge (Level C2 - Proficient user) of English and very good knowledge (Level C1 - Proficient user) of French. He also speaks and writes Romanian (Level B2 - Independent user).",
+          content: [
+            "Greek (Native)",
+            "English: Excellent knowledge (Level C2)",
+            "French: Very good knowledge (Level C1)",
+            "Romanian: Speaking and writing (Level B2)",
+          ],
         },
       },
     },
@@ -211,8 +219,12 @@ const About = () => {
         ],
         languages: {
           title: "Compétences Linguistiques",
-          content:
-            "Sa langue maternelle est le Grec (Grecque). Il a une excellente maîtrise (Niveau C2 - Utilisateur expérimenté) de l'Anglais et une très bonne maîtrise (Niveau C1 - Utilisateur expérimenté) du Français. Il parle et écrit également le Roumain (Niveau B2 - Utilisateur indépendant).",
+          content: [
+            "Grec (Maternelle)",
+            "Anglais : Excellente maîtrise (Niveau C2)",
+            "Français : Très bonne maîtrise (Niveau C1)",
+            "Roumain : Parlé et écrit (Niveau B2)",
+          ],
         },
       },
     },
@@ -385,7 +397,12 @@ const About = () => {
                       ))}
                       <div className="mt-6">
                         <h3 className="text-lg font-semibold text-foreground mb-3">{content.skills.languages.title}</h3>
-                        <p className="text-muted-foreground leading-relaxed">{content.skills.languages.content}</p>
+                        {/* CHANGED HERE: Now rendering as list items */}
+                        <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                          {content.skills.languages.content.map((lang, index) => (
+                            <li key={index}>{lang}</li>
+                          ))}
+                        </ul>
                       </div>
                     </div>
                   </div>
