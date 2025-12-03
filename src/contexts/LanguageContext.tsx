@@ -26,87 +26,118 @@ const translations: Record<Language, Record<string, string>> = {
 
     // About
     "about.seo.title": "Ο Γιατρός | Δρ. Ελευθέριος Cheirakis - Μαιευτήρας Γυναικολόγος Πειραιάς",
-    "about.seo.description": "Δρ. Ελευθέριος Cheirakis - Ειδικός μαιευτήρας-γυναικολόγος με διεθνή εμπειρία στην υποβοηθούμενη αναπαραγωγή, εξωσωματική γονιμοποίηση, ενδοσκοπική χειρουργική και μαιευτική υψηλού κινδύνου. Πειραιάς & Αίγινα.",
+    "about.seo.description":
+      "Δρ. Ελευθέριος Cheirakis - Ειδικός μαιευτήρας-γυναικολόγος με διεθνή εμπειρία στην υποβοηθούμενη αναπαραγωγή, εξωσωματική γονιμοποίηση, ενδοσκοπική χειρουργική και μαιευτική υψηλού κινδύνου. Πειραιάς & Αίγινα.",
     "about.title": "Ο Γιατρός",
-    "about.subtitle": "Μαιευτήρας-Γυναικολόγος με διεθνή εξειδίκευση στην Υποβοηθούμενη Αναπαραγωγή, Εξωσωματική Γονιμοποίηση και Ενδοσκοπική Χειρουργική. Πάνω από 15 χρόνια εμπειρίας σε κορυφαία ιατρικά κέντρα της Ελλάδας και του εξωτερικού.",
+    "about.subtitle":
+      "Μαιευτήρας-Γυναικολόγος με διεθνή εξειδίκευση στην Υποβοηθούμενη Αναπαραγωγή, Εξωσωματική Γονιμοποίηση και Ενδοσκοπική Χειρουργική. Πάνω από 15 χρόνια εμπειρίας σε κορυφαία ιατρικά κέντρα της Ελλάδας και του εξωτερικού.",
     "about.hero.name": "Δρ. Ελευθέριος Cheirakis",
     "about.hero.title": "Μαιευτήρας Γυναικολόγος",
     "about.hero.specialty": "Υποβοηθούμενη Αναπαραγωγή & Ενδοσκοπική Χειρουργική",
     "about.hero.experience": "15+ χρόνια κλινικής εμπειρίας",
-    "about.hero.description": "Εξειδικευμένος στη θεραπεία υπογονιμότητας, εξωσωματική γονιμοποίηση (IVF), ενδομητρίωση, ελάχιστα επεμβατική χειρουργική και μαιευτική παρακολούθηση εγκυμοσυνών υψηλού κινδύνου.",
+    "about.hero.description":
+      "Εξειδικευμένος στη θεραπεία υπογονιμότητας, εξωσωματική γονιμοποίηση (IVF), ενδομητρίωση, ελάχιστα επεμβατική χειρουργική και μαιευτική παρακολούθηση εγκυμοσυνών υψηλού κινδύνου.",
     "about.education.title": "Εκπαίδευση & Πιστοποιήσεις",
-    "about.education.intro": "Η ακαδημαϊκή μου κατάρτιση συνδυάζει θεμελιώδη ιατρική εκπαίδευση με εξειδικευμένες σπουδές σε κορυφαία ευρωπαϊκά κέντρα αριστείας.",
+    "about.education.intro":
+      "Η ακαδημαϊκή μου κατάρτιση συνδυάζει θεμελιώδη ιατρική εκπαίδευση με εξειδικευμένες σπουδές σε κορυφαία ευρωπαϊκά κέντρα αριστείας.",
     "about.education.medical.title": "Πτυχίο Ιατρικής",
-    "about.education.medical.description": "Απόφοιτος της Ιατρικής Σχολής του Πανεπιστημίου Ιατρικής και Φαρμακευτικής 'Grigore T. Popa' στο Iasi της Ρουμανίας, όπου απέκτησα ολοκληρωμένη κατάρτιση στις βασικές ιατρικές επιστήμες και την κλινική πρακτική.",
+    "about.education.medical.description":
+      "Απόφοιτος της Ιατρικής Σχολής του Πανεπιστημίου Ιατρικής και Φαρμακευτικής 'Grigore T. Popa' στο Iasi της Ρουμανίας, όπου απέκτησα ολοκληρωμένη κατάρτιση στις βασικές ιατρικές επιστήμες και την κλινική πρακτική.",
     "about.education.msc.title": "Μεταπτυχιακό Δίπλωμα Υποβοηθούμενης Αναπαραγωγής",
-    "about.education.msc.description": "Ολοκλήρωσα το MSc στην Υποβοηθούμενη Αναπαραγωγή στο Port Royal του Παρισιού, ένα από τα πιο διακεκριμένα κέντρα γονιμότητας στην Ευρώπη. Η εκπαίδευσή μου εστίασε σε προηγμένες τεχνικές IVF, διαχείριση υπογονιμότητας και εξατομικευμένα πρωτόκολλα θεραπείας.",
+    "about.education.msc.description":
+      "Ολοκλήρωσα το MSc στην Υποβοηθούμενη Αναπαραγωγή στο Port Royal του Παρισιού, ένα από τα πιο διακεκριμένα κέντρα γονιμότητας στην Ευρώπη. Η εκπαίδευσή μου εστίασε σε προηγμένες τεχνικές IVF, διαχείριση υπογονιμότητας και εξατομικευμένα πρωτόκολλα θεραπείας.",
     "about.education.endoscopy.title": "Διπλώματα Ενδοσκοπικής Χειρουργικής",
-    "about.education.endoscopy.description": "Κάτοχος των διπλωμάτων Bachelor in Endoscopy – Level 1 και Level 2 από το Κολλέγιο Ενδοσκοπικής Χειρουργικής (CICE). Η εξειδίκευση αυτή μου επιτρέπει να εκτελώ προηγμένες λαπαροσκοπικές και υστεροσκοπικές επεμβάσεις με ελάχιστη επεμβατικότητα.",
+    "about.education.endoscopy.description":
+      "Κάτοχος των διπλωμάτων Bachelor in Endoscopy – Level 1 και Level 2 από το Κολλέγιο Ενδοσκοπικής Χειρουργικής (CICE). Η εξειδίκευση αυτή μου επιτρέπει να εκτελώ προηγμένες λαπαροσκοπικές και υστεροσκοπικές επεμβάσεις με ελάχιστη επεμβατικότητα.",
     "about.education.laser.title": "Πιστοποιητικά Κολπικού Laser",
-    "about.education.laser.description": "Εκπαιδευμένος στη χρήση της τεχνολογίας κολπικού laser για τη θεραπεία γυναικολογικών παθήσεων, συμπεριλαμβανομένης της ατροφίας κόλπου και της ακράτειας ούρων.",
+    "about.education.laser.description":
+      "Εκπαιδευμένος στη χρήση της τεχνολογίας κολπικού laser για τη θεραπεία γυναικολογικών παθήσεων, συμπεριλαμβανομένης της ατροφίας κόλπου και της ακράτειας ούρων.",
     "about.education.conferences.title": "Συνεχής Ιατρική Εκπαίδευση",
-    "about.education.conferences.description": "Συμμετέχω ενεργά σε διεθνή συνέδρια και εκπαιδευτικά προγράμματα μαιευτικής, γυναικολογίας και υποβοηθούμενης αναπαραγωγής, διατηρώντας τις γνώσεις μου ενημερωμένες με τις τελευταίες επιστημονικές εξελίξεις.",
+    "about.education.conferences.description":
+      "Συμμετέχω ενεργά σε διεθνή συνέδρια και εκπαιδευτικά προγράμματα μαιευτικής, γυναικολογίας και υποβοηθούμενης αναπαραγωγής, διατηρώντας τις γνώσεις μου ενημερωμένες με τις τελευταίες επιστημονικές εξελίξεις.",
     "about.experience.title": "Επαγγελματική Εμπειρία",
-    "about.experience.intro": "Η κλινική μου πορεία περιλαμβάνει συνεργασίες με κορυφαία ιατρικά κέντρα στην Ελλάδα και το εξωτερικό, όπου απέκτησα πολύτιμη εμπειρία στη διαχείριση σύνθετων περιπτώσεων.",
+    "about.experience.intro":
+      "Η κλινική μου πορεία περιλαμβάνει συνεργασίες με κορυφαία ιατρικά κέντρα στην Ελλάδα και το εξωτερικό, όπου απέκτησα πολύτιμη εμπειρία στη διαχείριση σύνθετων περιπτώσεων.",
     "about.experience.current.title": "Τρέχουσες Θέσεις στην Ελλάδα",
     "about.experience.current.embryoland.role": "Σύμβουλος Υποβοηθούμενης Αναπαραγωγής",
     "about.experience.current.embryoland.location": "Embryoland - Κέντρο Εξωσωματικής Γονιμοποίησης",
-    "about.experience.current.embryoland.description": "Παρέχω ολοκληρωμένες υπηρεσίες γονιμότητας, συμπεριλαμβανομένων προγραμμάτων IVF, ICSI, κρυοσυντήρησης ωαρίων και εμβρύων, και εξατομικευμένων πρωτοκόλλων θεραπείας για ζευγάρια με προβλήματα γονιμότητας.",
+    "about.experience.current.embryoland.description":
+      "Παρέχω ολοκληρωμένες υπηρεσίες γονιμότητας, συμπεριλαμβανομένων προγραμμάτων IVF, ICSI, κρυοσυντήρησης ωαρίων και εμβρύων, και εξατομικευμένων πρωτοκόλλων θεραπείας για ζευγάρια με προβλήματα γονιμότητας.",
     "about.experience.current.rea.role": "Μαιευτήρας-Γυναικολόγος",
     "about.experience.current.rea.location": "REA Μαιευτική Κλινική & Γυναικολογικό Κέντρο",
-    "about.experience.current.rea.description": "Εξειδίκευση στη μαιευτική παρακολούθηση εγκυμοσυνών, διαχείριση εγκυμοσυνών υψηλού κινδύνου και γυναικολογικές επεμβάσεις.",
+    "about.experience.current.rea.description":
+      "Εξειδίκευση στη μαιευτική παρακολούθηση εγκυμοσυνών, διαχείριση εγκυμοσυνών υψηλού κινδύνου και γυναικολογικές επεμβάσεις.",
     "about.experience.current.tzaneio.role": "Σύμβουλος Μαιευτήρας-Γυναικολόγος",
     "about.experience.current.tzaneio.location": "Γενικό Νοσοκομείο Τζάνειο - Πειραιάς",
-    "about.experience.current.tzaneio.description": "Κλινική πρακτική σε δημόσιο νοσοκομείο με εστίαση στην οξεία μαιευτική φροντίδα, τοκετούς και επείγουσες γυναικολογικές παθήσεις.",
+    "about.experience.current.tzaneio.description":
+      "Κλινική πρακτική σε δημόσιο νοσοκομείο με εστίαση στην οξεία μαιευτική φροντίδα, τοκετούς και επείγουσες γυναικολογικές παθήσεις.",
     "about.experience.current.diamantis.role": "Μαιευτήρας-Γυναικολόγος",
     "about.experience.current.diamantis.location": "Διαμάντης Ιατρικό Κέντρο",
-    "about.experience.current.diamantis.description": "Προσφορά γυναικολογικών υπηρεσιών, προληπτικής φροντίδας και χειρουργικών επεμβάσεων.",
+    "about.experience.current.diamantis.description":
+      "Προσφορά γυναικολογικών υπηρεσιών, προληπτικής φροντίδας και χειρουργικών επεμβάσεων.",
     "about.experience.current.euromedica.role": "Μαιευτήρας-Γυναικολόγος",
     "about.experience.current.euromedica.location": "EuroMedica - Αίγινα",
-    "about.experience.current.euromedica.description": "Παροχή γυναικολογικών και μαιευτικών υπηρεσιών στο νησί της Αίγινας, διασφαλίζοντας ποιοτική φροντίδα υγείας για τις γυναίκες της περιοχής.",
+    "about.experience.current.euromedica.description":
+      "Παροχή γυναικολογικών και μαιευτικών υπηρεσιών στο νησί της Αίγινας, διασφαλίζοντας ποιοτική φροντίδα υγείας για τις γυναίκες της περιοχής.",
     "about.experience.international.title": "Διεθνής Εμπειρία - Γαλλία",
     "about.experience.international.santulli.role": "Fellow στην Υποβοηθούμενη Αναπαραγωγή",
     "about.experience.international.santulli.location": "Ομάδα του Καθηγητή Paolo Santulli - Παρίσι",
-    "about.experience.international.santulli.description": "Προηγμένη εκπαίδευση στην υποβοηθούμενη αναπαραγωγή, ενδομητρίωση και χειρουργικές τεχνικές υπό την καθοδήγηση αναγνωρισμένων διεθνών ειδικών.",
+    "about.experience.international.santulli.description":
+      "Προηγμένη εκπαίδευση στην υποβοηθούμενη αναπαραγωγή, ενδομητρίωση και χειρουργικές τεχνικές υπό την καθοδήγηση αναγνωρισμένων διεθνών ειδικών.",
     "about.experience.international.saint_joseph.role": "Resident στη Μαιευτική-Γυναικολογία",
     "about.experience.international.saint_joseph.location": "Hôpital Saint Joseph - Παρίσι",
-    "about.experience.international.saint_joseph.description": "Κλινική κατάρτιση σε γενική μαιευτική, γυναικολογία και χειρουργικές τεχνικές.",
+    "about.experience.international.saint_joseph.description":
+      "Κλινική κατάρτιση σε γενική μαιευτική, γυναικολογία και χειρουργικές τεχνικές.",
     "about.experience.international.port_royal.role": "Resident στη Μαιευτική-Γυναικολογία & Υποβοηθούμενη Αναπαραγωγή",
     "about.experience.international.port_royal.location": "Port Royal Maternity Hospital - Παρίσι",
-    "about.experience.international.port_royal.description": "Εργασία σε ένα από τα πιο διάσημα μαιευτήρια στην Ευρώπη, με εξειδίκευση στις προηγμένες τεχνικές IVF και τη διαχείριση περίπλοκων περιπτώσεων γονιμότητας.",
+    "about.experience.international.port_royal.description":
+      "Εργασία σε ένα από τα πιο διάσημα μαιευτήρια στην Ευρώπη, με εξειδίκευση στις προηγμένες τεχνικές IVF και τη διαχείριση περίπλοκων περιπτώσεων γονιμότητας.",
     "about.experience.international.tenon.role": "Resident στη Μαιευτική-Γυναικολογία",
     "about.experience.international.tenon.location": "Hôpital Tenon - Παρίσι",
-    "about.experience.international.tenon.description": "Πολύπλευρη κλινική εμπειρία σε μαιευτική, γυναικολογία και επείγοντα περιστατικά.",
-    "about.experience.international.other.description": "Επιπλέον κλινική εμπειρία στα νοσοκομεία Victor Dupuy και άλλα κέντρα στη Γαλλία, όπου ανέπτυξα εξειδίκευση σε διάφορες πτυχές της μαιευτικής και της γυναικολογίας.",
+    "about.experience.international.tenon.description":
+      "Πολύπλευρη κλινική εμπειρία σε μαιευτική, γυναικολογία και επείγοντα περιστατικά.",
+    "about.experience.international.other.description":
+      "Επιπλέον κλινική εμπειρία στα νοσοκομεία Victor Dupuy και άλλα κέντρα στη Γαλλία, όπου ανέπτυξα εξειδίκευση σε διάφορες πτυχές της μαιευτικής και της γυναικολογίας.",
     "about.experience.greece_other.title": "Προηγούμενη Εμπειρία στην Ελλάδα",
     "about.experience.greece_other.bladi.role": "Μαιευτήρας-Γυναικολόγος",
     "about.experience.greece_other.bladi.location": "Κλινική Αριστείδη Μπλάδη",
-    "about.experience.greece_other.bladi.description": "Κλινική πρακτική με εστίαση στη γυναικολογία και τη μαιευτική φροντίδα.",
+    "about.experience.greece_other.bladi.description":
+      "Κλινική πρακτική με εστίαση στη γυναικολογία και τη μαιευτική φροντίδα.",
     "about.experience.greece_other.military.role": "Ιατρός Στρατού",
     "about.experience.greece_other.military.location": "Στρατιωτική Ιατρική Υπηρεσία",
-    "about.experience.greece_other.military.description": "Παροχή ιατρικών υπηρεσιών κατά τη διάρκεια της στρατιωτικής θητείας.",
+    "about.experience.greece_other.military.description":
+      "Παροχή ιατρικών υπηρεσιών κατά τη διάρκεια της στρατιωτικής θητείας.",
     "about.expertise.title": "Ιατρική Εξειδίκευση",
-    "about.expertise.intro": "Οι κλινικές μου εξειδικεύσεις καλύπτουν ένα ευρύ φάσμα γυναικολογικών και μαιευτικών παθήσεων, με ιδιαίτερη έμφαση στην υποβοηθούμενη αναπαραγωγή και την ελάχιστα επεμβατική χειρουργική.",
+    "about.expertise.intro":
+      "Οι κλινικές μου εξειδικεύσεις καλύπτουν ένα ευρύ φάσμα γυναικολογικών και μαιευτικών παθήσεων, με ιδιαίτερη έμφαση στην υποβοηθούμενη αναπαραγωγή και την ελάχιστα επεμβατική χειρουργική.",
     "about.expertise.areas.endometriosis.title": "Ενδομητρίωση",
-    "about.expertise.areas.endometriosis.description": "Διάγνωση και θεραπεία της ενδομητρίωσης με χρήση προηγμένων ενδοσκοπικών τεχνικών και ολιστικής προσέγγισης για τη βελτίωση της ποιότητας ζωής και της γονιμότητας.",
+    "about.expertise.areas.endometriosis.description":
+      "Διάγνωση και θεραπεία της ενδομητρίωσης με χρήση προηγμένων ενδοσκοπικών τεχνικών και ολιστικής προσέγγισης για τη βελτίωση της ποιότητας ζωής και της γονιμότητας.",
     "about.expertise.areas.robotics.title": "Ρομποτική Χειρουργική",
-    "about.expertise.areas.robotics.description": "Εξοικείωση με ρομποτικά συστήματα για την εκτέλεση πολύπλοκων γυναικολογικών επεμβάσεων με μέγιστη ακρίβεια και ελάχιστο τραύμα για την ασθενή.",
+    "about.expertise.areas.robotics.description":
+      "Εξοικείωση με ρομποτικά συστήματα για την εκτέλεση πολύπλοκων γυναικολογικών επεμβάσεων με μέγιστη ακρίβεια και ελάχιστο τραύμα για την ασθενή.",
     "about.expertise.areas.ivf.title": "Εξωσωματική Γονιμοποίηση (IVF) & Mini IVF",
-    "about.expertise.areas.ivf.description": "Προσφορά ολοκληρωμένων προγραμμάτων IVF, συμπεριλαμβανομένων πρωτοκόλλων mini IVF για ήπια διέγερση, προσαρμοσμένων στις ατομικές ανάγκες κάθε ασθενούς.",
+    "about.expertise.areas.ivf.description":
+      "Προσφορά ολοκληρωμένων προγραμμάτων IVF, συμπεριλαμβανομένων πρωτοκόλλων mini IVF για ήπια διέγερση, προσαρμοσμένων στις ατομικές ανάγκες κάθε ασθενούς.",
     "about.expertise.areas.infertility.title": "Διαχείριση Υπογονιμότητας",
-    "about.expertise.areas.infertility.description": "Διερεύνηση και θεραπεία ανδρικών και γυναικείων παραγόντων υπογονιμότητας με βάση τις πιο πρόσφατες επιστημονικές κατευθυντήριες οδηγίες.",
+    "about.expertise.areas.infertility.description":
+      "Διερεύνηση και θεραπεία ανδρικών και γυναικείων παραγόντων υπογονιμότητας με βάση τις πιο πρόσφατες επιστημονικές κατευθυντήριες οδηγίες.",
     "about.expertise.areas.cryopreservation.title": "Κρυοσυντήρηση Ωαρίων",
-    "about.expertise.areas.cryopreservation.description": "Προγράμματα κρυοσυντήρησης ωαρίων για διατήρηση της γονιμότητας για ιατρικούς ή προσωπικούς λόγους.",
+    "about.expertise.areas.cryopreservation.description":
+      "Προγράμματα κρυοσυντήρησης ωαρίων για διατήρηση της γονιμότητας για ιατρικούς ή προσωπικούς λόγους.",
     "about.expertise.areas.obstetrics.title": "Μαιευτική Παρακολούθηση",
-    "about.expertise.areas.obstetrics.description": "Εξατομικευμένη μαιευτική φροντίδα, από την προσύλληψη έως τον τοκετό, με ιδιαίτερη προσοχή στις εγκυμοσύνες υψηλού κινδύνου και τις πολύδυμες κυήσεις.",
+    "about.expertise.areas.obstetrics.description":
+      "Εξατομικευμένη μαιευτική φροντίδα, από την προσύλληψη έως τον τοκετό, με ιδιαίτερη προσοχή στις εγκυμοσύνες υψηλού κινδύνου και τις πολύδυμες κυήσεις.",
     "about.languages.title": "Γλώσσες",
-    "about.languages.intro": "Η πολυγλωσσία μου επιτρέπει την αποτελεσματική επικοινωνία με ασθενείς από διαφορετικά πολιτισμικά υπόβαθρα.",
+    "about.languages.intro":
+      "Η πολυγλωσσία μου επιτρέπει την αποτελεσματική επικοινωνία με ασθενείς από διαφορετικά πολιτισμικά υπόβαθρα.",
     "about.languages.greek": "Ελληνικά (Μητρική)",
     "about.languages.english": "Αγγλικά (C2 - Επίπεδο Proficiency)",
     "about.languages.french": "Γαλλικά (C1 - Προχωρημένο)",
     "about.languages.romanian": "Ρουμανικά (B2 - Ανώτερο Μεσαίο)",
     "about.philosophy.title": "Φιλοσοφία Φροντίδας",
-    "about.philosophy.text": "Η ιατρική μου πρακτική βασίζεται σε τρεις θεμελιώδεις αρχές: εξατομικευμένη φροντίδα, επιστήμη βασισμένη σε αποδείξεις και ανθρωποκεντρική προσέγγιση. Πιστεύω ότι κάθε ασθενής είναι μοναδική και χρειάζεται ένα προσαρμοσμένο σχέδιο θεραπείας που λαμβάνει υπόψη όχι μόνο την ιατρική της κατάσταση, αλλά και τις συναισθηματικές, κοινωνικές και προσωπικές της ανάγκες. Συνδυάζω την επιστημονική μου κατάρτιση από διεθνή κέντρα αριστείας με μια ολιστική προσέγγιση που τοποθετεί την ασθενή στο κέντρο κάθε απόφασης. Ο σεβασμός, η ειλικρινής επικοινωνία και η συμπόνια είναι οι πυλώνες της σχέσης μου με κάθε ασθενή. Στόχος μου είναι να δημιουργήσω ένα ασφαλές περιβάλλον όπου οι γυναίκες αισθάνονται άνετα να μοιράζονται τις ανησυχίες τους και να λαμβάνουν την υποστήριξη που χρειάζονται σε κάθε στάδιο της αναπαραγωγικής και γυναικολογικής τους υγείας.",
+    "about.philosophy.text":
+      "Η ιατρική μου πρακτική βασίζεται σε τρεις θεμελιώδεις αρχές: εξατομικευμένη φροντίδα, επιστήμη βασισμένη σε αποδείξεις και ανθρωποκεντρική προσέγγιση. Πιστεύω ότι κάθε ασθενής είναι μοναδική και χρειάζεται ένα προσαρμοσμένο σχέδιο θεραπείας που λαμβάνει υπόψη όχι μόνο την ιατρική της κατάσταση, αλλά και τις συναισθηματικές, κοινωνικές και προσωπικές της ανάγκες. Συνδυάζω την επιστημονική μου κατάρτιση από διεθνή κέντρα αριστείας με μια ολιστική προσέγγιση που τοποθετεί την ασθενή στο κέντρο κάθε απόφασης. Ο σεβασμός, η ειλικρινής επικοινωνία και η συμπόνια είναι οι πυλώνες της σχέσης μου με κάθε ασθενή. Στόχος μου είναι να δημιουργήσω ένα ασφαλές περιβάλλον όπου οι γυναίκες αισθάνονται άνετα να μοιράζονται τις ανησυχίες τους και να λαμβάνουν την υποστήριξη που χρειάζονται σε κάθε στάδιο της αναπαραγωγικής και γυναικολογικής τους υγείας.",
 
     // Services Page
     "services.page.title": "Οι Υπηρεσίες μας",
@@ -302,13 +333,16 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Hero Carousel
     "heroCarousel.slide1.title": "Δρ. Ελευθέριος Χειράκης – Μαιευτήρας-Γυναικολόγος",
-    "heroCarousel.slide1.subtitle": "Εξειδικευμένη Φροντίδα στη Γυναικολογία, προσφέροντας εξατομικευμένη ιατρική φροντίδα με συμπόνια και επαγγελματισμό.",
+    "heroCarousel.slide1.subtitle":
+      "Εξειδικευμένη Φροντίδα στη Γυναικολογία, προσφέροντας εξατομικευμένη ιατρική φροντίδα με συμπόνια και επαγγελματισμό.",
     "heroCarousel.slide1.button": "Επικοινωνία",
     "heroCarousel.slide2.title": "Γυναικολογία",
-    "heroCarousel.slide2.subtitle": "Ολοκληρωμένη γυναικολογική φροντίδα με ρουτίνες ελέγχων και εξειδικευμένες θεραπείες.",
+    "heroCarousel.slide2.subtitle":
+      "Ολοκληρωμένη γυναικολογική φροντίδα με ρουτίνες ελέγχων και εξειδικευμένες θεραπείες.",
     "heroCarousel.slide2.button": "Διαβάστε Περισσότερα",
     "heroCarousel.slide3.title": "Εγκυμοσύνη",
-    "heroCarousel.slide3.subtitle": "Δίπλα σας από τη σύλληψη, καθοδηγώντας σας σε κάθε βήμα της εγκυμοσύνης για μια ασφαλή και άνετη εμπειρία τοκετού.",
+    "heroCarousel.slide3.subtitle":
+      "Δίπλα σας από τη σύλληψη, καθοδηγώντας σας σε κάθε βήμα της εγκυμοσύνης για μια ασφαλή και άνετη εμπειρία τοκετού.",
     "heroCarousel.slide3.button": "Διαβάστε Περισσότερα",
     "heroCarousel.slide4.title": "Ενδοσκοπική Χειρουργική",
     "heroCarousel.slide4.subtitle": "Χειρουργική Υψηλής Ευκρίνειας: Ελάχιστη παρέμβαση, μέγιστο αποτέλεσμα.",
@@ -326,7 +360,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Offices
     "offices.title": "Τα Γραφεία μας",
-    "offices.athens.title": "Αθήνα: Leof. Vasileos Georgiou B 4, Pireas 185 34",
+    "offices.athens.title": "Αθήνα: Λεωφ. Βασιλέως Γεωργίου Β 4, Πειραιάς 185 34",
     "offices.aegina.title": "Αίγινα: Νοσοκομείου 5, 180 10 Αίγινα",
 
     // Contact CTA
@@ -368,58 +402,78 @@ const translations: Record<Language, Record<string, string>> = {
 
     // About
     "about.seo.title": "The Doctor | Dr. Eleftherios Cheirakis - Obstetrician Gynecologist Piraeus",
-    "about.seo.description": "Dr. Eleftherios Cheirakis - Expert obstetrician-gynecologist with international experience in assisted reproduction, IVF, endoscopic surgery and high-risk obstetrics. Piraeus & Aegina.",
+    "about.seo.description":
+      "Dr. Eleftherios Cheirakis - Expert obstetrician-gynecologist with international experience in assisted reproduction, IVF, endoscopic surgery and high-risk obstetrics. Piraeus & Aegina.",
     "about.title": "The Doctor",
-    "about.subtitle": "Obstetrician-Gynecologist with international specialization in Assisted Reproduction, In Vitro Fertilization and Endoscopic Surgery. Over 15 years of experience in leading medical centers in Greece and abroad.",
+    "about.subtitle":
+      "Obstetrician-Gynecologist with international specialization in Assisted Reproduction, In Vitro Fertilization and Endoscopic Surgery. Over 15 years of experience in leading medical centers in Greece and abroad.",
     "about.hero.name": "Dr. Eleftherios Cheirakis",
     "about.hero.title": "Obstetrician Gynecologist",
     "about.hero.specialty": "Assisted Reproduction & Endoscopic Surgery",
     "about.hero.experience": "15+ years of clinical experience",
-    "about.hero.description": "Specialized in infertility treatment, in vitro fertilization (IVF), endometriosis, minimally invasive surgery and obstetric monitoring of high-risk pregnancies.",
+    "about.hero.description":
+      "Specialized in infertility treatment, in vitro fertilization (IVF), endometriosis, minimally invasive surgery and obstetric monitoring of high-risk pregnancies.",
     "about.education.title": "Education & Certifications",
-    "about.education.intro": "My academic training combines fundamental medical education with specialized studies at leading European centers of excellence.",
+    "about.education.intro":
+      "My academic training combines fundamental medical education with specialized studies at leading European centers of excellence.",
     "about.education.medical.title": "Medical Degree",
-    "about.education.medical.description": "Graduate of the Medical School of the University of Medicine and Pharmacy 'Grigore T. Popa' in Iasi, Romania, where I acquired comprehensive training in basic medical sciences and clinical practice.",
+    "about.education.medical.description":
+      "Graduate of the Medical School of the University of Medicine and Pharmacy 'Grigore T. Popa' in Iasi, Romania, where I acquired comprehensive training in basic medical sciences and clinical practice.",
     "about.education.msc.title": "Master's Degree in Assisted Reproduction",
-    "about.education.msc.description": "I completed my MSc in Assisted Reproduction at Port Royal in Paris, one of the most distinguished fertility centers in Europe. My training focused on advanced IVF techniques, infertility management and personalized treatment protocols.",
+    "about.education.msc.description":
+      "I completed my MSc in Assisted Reproduction at Port Royal in Paris, one of the most distinguished fertility centers in Europe. My training focused on advanced IVF techniques, infertility management and personalized treatment protocols.",
     "about.education.endoscopy.title": "Endoscopic Surgery Certificates",
-    "about.education.endoscopy.description": "Holder of Bachelor in Endoscopy – Level 1 and Level 2 certificates from the College of Endoscopic Surgery (CICE). This specialization allows me to perform advanced laparoscopic and hysteroscopic procedures with minimal invasiveness.",
+    "about.education.endoscopy.description":
+      "Holder of Bachelor in Endoscopy – Level 1 and Level 2 certificates from the College of Endoscopic Surgery (CICE). This specialization allows me to perform advanced laparoscopic and hysteroscopic procedures with minimal invasiveness.",
     "about.education.laser.title": "Vaginal Laser Certificates",
-    "about.education.laser.description": "Trained in the use of vaginal laser technology for the treatment of gynecological conditions, including vaginal atrophy and urinary incontinence.",
+    "about.education.laser.description":
+      "Trained in the use of vaginal laser technology for the treatment of gynecological conditions, including vaginal atrophy and urinary incontinence.",
     "about.education.conferences.title": "Continuous Medical Education",
-    "about.education.conferences.description": "I actively participate in international congresses and educational programs in obstetrics, gynecology and assisted reproduction, keeping my knowledge updated with the latest scientific developments.",
+    "about.education.conferences.description":
+      "I actively participate in international congresses and educational programs in obstetrics, gynecology and assisted reproduction, keeping my knowledge updated with the latest scientific developments.",
     "about.experience.title": "Professional Experience",
-    "about.experience.intro": "My clinical career includes collaborations with leading medical centers in Greece and abroad, where I gained valuable experience in managing complex cases.",
+    "about.experience.intro":
+      "My clinical career includes collaborations with leading medical centers in Greece and abroad, where I gained valuable experience in managing complex cases.",
     "about.experience.current.title": "Current Positions in Greece",
     "about.experience.current.embryoland.role": "Assisted Reproduction Consultant",
     "about.experience.current.embryoland.location": "Embryoland - IVF Center",
-    "about.experience.current.embryoland.description": "I provide comprehensive fertility services, including IVF programs, ICSI, egg and embryo cryopreservation, and personalized treatment protocols for couples with fertility problems.",
+    "about.experience.current.embryoland.description":
+      "I provide comprehensive fertility services, including IVF programs, ICSI, egg and embryo cryopreservation, and personalized treatment protocols for couples with fertility problems.",
     "about.experience.current.rea.role": "Obstetrician-Gynecologist",
     "about.experience.current.rea.location": "REA Maternity Clinic & Gynecological Center",
-    "about.experience.current.rea.description": "Specialization in obstetric pregnancy monitoring, high-risk pregnancy management and gynecological procedures.",
+    "about.experience.current.rea.description":
+      "Specialization in obstetric pregnancy monitoring, high-risk pregnancy management and gynecological procedures.",
     "about.experience.current.tzaneio.role": "Consultant Obstetrician-Gynecologist",
     "about.experience.current.tzaneio.location": "Tzaneio General Hospital - Piraeus",
-    "about.experience.current.tzaneio.description": "Clinical practice in a public hospital with a focus on acute obstetric care, deliveries and emergency gynecological conditions.",
+    "about.experience.current.tzaneio.description":
+      "Clinical practice in a public hospital with a focus on acute obstetric care, deliveries and emergency gynecological conditions.",
     "about.experience.current.diamantis.role": "Obstetrician-Gynecologist",
     "about.experience.current.diamantis.location": "Diamantis Medical Center",
-    "about.experience.current.diamantis.description": "Provision of gynecological services, preventive care and surgical procedures.",
+    "about.experience.current.diamantis.description":
+      "Provision of gynecological services, preventive care and surgical procedures.",
     "about.experience.current.euromedica.role": "Obstetrician-Gynecologist",
     "about.experience.current.euromedica.location": "EuroMedica - Aegina",
-    "about.experience.current.euromedica.description": "Provision of gynecological and obstetric services on the island of Aegina, ensuring quality healthcare for women in the region.",
+    "about.experience.current.euromedica.description":
+      "Provision of gynecological and obstetric services on the island of Aegina, ensuring quality healthcare for women in the region.",
     "about.experience.international.title": "International Experience - France",
     "about.experience.international.santulli.role": "Fellow in Assisted Reproduction",
     "about.experience.international.santulli.location": "Professor Paolo Santulli's Team - Paris",
-    "about.experience.international.santulli.description": "Advanced training in assisted reproduction, endometriosis and surgical techniques under the guidance of recognized international experts.",
+    "about.experience.international.santulli.description":
+      "Advanced training in assisted reproduction, endometriosis and surgical techniques under the guidance of recognized international experts.",
     "about.experience.international.saint_joseph.role": "Resident in Obstetrics-Gynecology",
     "about.experience.international.saint_joseph.location": "Hôpital Saint Joseph - Paris",
-    "about.experience.international.saint_joseph.description": "Clinical training in general obstetrics, gynecology and surgical techniques.",
+    "about.experience.international.saint_joseph.description":
+      "Clinical training in general obstetrics, gynecology and surgical techniques.",
     "about.experience.international.port_royal.role": "Resident in Obstetrics-Gynecology & Assisted Reproduction",
     "about.experience.international.port_royal.location": "Port Royal Maternity Hospital - Paris",
-    "about.experience.international.port_royal.description": "Work at one of the most famous maternity hospitals in Europe, specializing in advanced IVF techniques and managing complex fertility cases.",
+    "about.experience.international.port_royal.description":
+      "Work at one of the most famous maternity hospitals in Europe, specializing in advanced IVF techniques and managing complex fertility cases.",
     "about.experience.international.tenon.role": "Resident in Obstetrics-Gynecology",
     "about.experience.international.tenon.location": "Hôpital Tenon - Paris",
-    "about.experience.international.tenon.description": "Multifaceted clinical experience in obstetrics, gynecology and emergency cases.",
-    "about.experience.international.other.description": "Additional clinical experience at Victor Dupuy Hospital and other centers in France, where I developed expertise in various aspects of obstetrics and gynecology.",
+    "about.experience.international.tenon.description":
+      "Multifaceted clinical experience in obstetrics, gynecology and emergency cases.",
+    "about.experience.international.other.description":
+      "Additional clinical experience at Victor Dupuy Hospital and other centers in France, where I developed expertise in various aspects of obstetrics and gynecology.",
     "about.experience.greece_other.title": "Previous Experience in Greece",
     "about.experience.greece_other.bladi.role": "Obstetrician-Gynecologist",
     "about.experience.greece_other.bladi.location": "Aristidis Bladi Clinic",
@@ -428,27 +482,36 @@ const translations: Record<Language, Record<string, string>> = {
     "about.experience.greece_other.military.location": "Military Medical Service",
     "about.experience.greece_other.military.description": "Provision of medical services during military service.",
     "about.expertise.title": "Medical Expertise",
-    "about.expertise.intro": "My clinical specialties cover a wide range of gynecological and obstetric conditions, with particular emphasis on assisted reproduction and minimally invasive surgery.",
+    "about.expertise.intro":
+      "My clinical specialties cover a wide range of gynecological and obstetric conditions, with particular emphasis on assisted reproduction and minimally invasive surgery.",
     "about.expertise.areas.endometriosis.title": "Endometriosis",
-    "about.expertise.areas.endometriosis.description": "Diagnosis and treatment of endometriosis using advanced endoscopic techniques and a holistic approach to improve quality of life and fertility.",
+    "about.expertise.areas.endometriosis.description":
+      "Diagnosis and treatment of endometriosis using advanced endoscopic techniques and a holistic approach to improve quality of life and fertility.",
     "about.expertise.areas.robotics.title": "Robotic Surgery",
-    "about.expertise.areas.robotics.description": "Familiarity with robotic systems for performing complex gynecological procedures with maximum precision and minimal trauma to the patient.",
+    "about.expertise.areas.robotics.description":
+      "Familiarity with robotic systems for performing complex gynecological procedures with maximum precision and minimal trauma to the patient.",
     "about.expertise.areas.ivf.title": "In Vitro Fertilization (IVF) & Mini IVF",
-    "about.expertise.areas.ivf.description": "Offering comprehensive IVF programs, including mini IVF protocols for mild stimulation, tailored to the individual needs of each patient.",
+    "about.expertise.areas.ivf.description":
+      "Offering comprehensive IVF programs, including mini IVF protocols for mild stimulation, tailored to the individual needs of each patient.",
     "about.expertise.areas.infertility.title": "Infertility Management",
-    "about.expertise.areas.infertility.description": "Investigation and treatment of male and female infertility factors based on the most recent scientific guidelines.",
+    "about.expertise.areas.infertility.description":
+      "Investigation and treatment of male and female infertility factors based on the most recent scientific guidelines.",
     "about.expertise.areas.cryopreservation.title": "Egg Cryopreservation",
-    "about.expertise.areas.cryopreservation.description": "Egg cryopreservation programs for fertility preservation for medical or personal reasons.",
+    "about.expertise.areas.cryopreservation.description":
+      "Egg cryopreservation programs for fertility preservation for medical or personal reasons.",
     "about.expertise.areas.obstetrics.title": "Obstetric Monitoring",
-    "about.expertise.areas.obstetrics.description": "Personalized obstetric care, from preconception to delivery, with special attention to high-risk pregnancies and multiple gestations.",
+    "about.expertise.areas.obstetrics.description":
+      "Personalized obstetric care, from preconception to delivery, with special attention to high-risk pregnancies and multiple gestations.",
     "about.languages.title": "Languages",
-    "about.languages.intro": "My multilingualism allows effective communication with patients from different cultural backgrounds.",
+    "about.languages.intro":
+      "My multilingualism allows effective communication with patients from different cultural backgrounds.",
     "about.languages.greek": "Greek (Native)",
     "about.languages.english": "English (C2 - Proficiency Level)",
     "about.languages.french": "French (C1 - Advanced)",
     "about.languages.romanian": "Romanian (B2 - Upper Intermediate)",
     "about.philosophy.title": "Philosophy of Care",
-    "about.philosophy.text": "My medical practice is based on three fundamental principles: personalized care, evidence-based science and a human-centered approach. I believe that every patient is unique and needs a customized treatment plan that takes into account not only her medical condition, but also her emotional, social and personal needs. I combine my scientific training from international centers of excellence with a holistic approach that places the patient at the center of every decision. Respect, honest communication and compassion are the pillars of my relationship with every patient. My goal is to create a safe environment where women feel comfortable sharing their concerns and receiving the support they need at every stage of their reproductive and gynecological health.",
+    "about.philosophy.text":
+      "My medical practice is based on three fundamental principles: personalized care, evidence-based science and a human-centered approach. I believe that every patient is unique and needs a customized treatment plan that takes into account not only her medical condition, but also her emotional, social and personal needs. I combine my scientific training from international centers of excellence with a holistic approach that places the patient at the center of every decision. Respect, honest communication and compassion are the pillars of my relationship with every patient. My goal is to create a safe environment where women feel comfortable sharing their concerns and receiving the support they need at every stage of their reproductive and gynecological health.",
 
     // Services Page
     "services.page.title": "Our Services",
@@ -638,13 +701,16 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Hero Carousel
     "heroCarousel.slide1.title": "Dr. Eleftherios Cheirakis – Obstetrician–Gynecologist",
-    "heroCarousel.slide1.subtitle": "Specialized gynecological care, offering personalized medical support with compassion and professionalism.",
+    "heroCarousel.slide1.subtitle":
+      "Specialized gynecological care, offering personalized medical support with compassion and professionalism.",
     "heroCarousel.slide1.button": "Contact",
     "heroCarousel.slide2.title": "Gynecology",
-    "heroCarousel.slide2.subtitle": "Comprehensive gynecological care with routine examinations and specialized treatments.",
+    "heroCarousel.slide2.subtitle":
+      "Comprehensive gynecological care with routine examinations and specialized treatments.",
     "heroCarousel.slide2.button": "Learn More",
     "heroCarousel.slide3.title": "Pregnancy",
-    "heroCarousel.slide3.subtitle": "Supporting you from conception through every step of pregnancy, ensuring a safe and comfortable birth experience.",
+    "heroCarousel.slide3.subtitle":
+      "Supporting you from conception through every step of pregnancy, ensuring a safe and comfortable birth experience.",
     "heroCarousel.slide3.button": "Learn More",
     "heroCarousel.slide4.title": "Endoscopic Surgery",
     "heroCarousel.slide4.subtitle": "High-definition surgical precision: minimum intervention, maximum results.",
@@ -663,11 +729,12 @@ const translations: Record<Language, Record<string, string>> = {
     // Offices
     "offices.title": "Our Offices",
     "offices.athens.title": "Athens: Leof. Vasileos Georgiou B 4, Pireas 185 34",
-    "offices.aegina.title": "Aegina: Νοσοκομείου 5, 180 10 Αίγινα",
+    "offices.aegina.title": "Aegina: 5 Nosokomeiou St, 180 10 Aegina",
 
     // Contact CTA
     "contactCta.title": "Ready to Schedule Your Appointment?",
-    "contactCta.subtitle": "Contact us today to arrange your consultation and begin your journey toward health and wellness with us.",
+    "contactCta.subtitle":
+      "Contact us today to arrange your consultation and begin your journey toward health and wellness with us.",
     "contactCta.button": "Contact",
 
     // Contact
@@ -704,87 +771,118 @@ const translations: Record<Language, Record<string, string>> = {
 
     // About
     "about.seo.title": "Le Médecin | Dr. Eleftherios Cheirakis - Gynécologue Obstétricien Le Pirée",
-    "about.seo.description": "Dr. Eleftherios Cheirakis - Expert gynécologue-obstétricien avec expérience internationale en reproduction assistée, FIV, chirurgie endoscopique et obstétrique à haut risque. Le Pirée & Égine.",
+    "about.seo.description":
+      "Dr. Eleftherios Cheirakis - Expert gynécologue-obstétricien avec expérience internationale en reproduction assistée, FIV, chirurgie endoscopique et obstétrique à haut risque. Le Pirée & Égine.",
     "about.title": "Le Médecin",
-    "about.subtitle": "Gynécologue-obstétricien avec spécialisation internationale en Reproduction Assistée, Fécondation In Vitro et Chirurgie Endoscopique. Plus de 15 ans d'expérience dans des centres médicaux de premier plan en Grèce et à l'étranger.",
+    "about.subtitle":
+      "Gynécologue-obstétricien avec spécialisation internationale en Reproduction Assistée, Fécondation In Vitro et Chirurgie Endoscopique. Plus de 15 ans d'expérience dans des centres médicaux de premier plan en Grèce et à l'étranger.",
     "about.hero.name": "Dr. Eleftherios Cheirakis",
     "about.hero.title": "Gynécologue Obstétricien",
     "about.hero.specialty": "Reproduction Assistée & Chirurgie Endoscopique",
     "about.hero.experience": "15+ années d'expérience clinique",
-    "about.hero.description": "Spécialisé dans le traitement de l'infertilité, la fécondation in vitro (FIV), l'endométriose, la chirurgie mini-invasive et le suivi obstétrical des grossesses à haut risque.",
+    "about.hero.description":
+      "Spécialisé dans le traitement de l'infertilité, la fécondation in vitro (FIV), l'endométriose, la chirurgie mini-invasive et le suivi obstétrical des grossesses à haut risque.",
     "about.education.title": "Formation & Certifications",
-    "about.education.intro": "Ma formation académique combine une formation médicale fondamentale avec des études spécialisées dans des centres européens d'excellence de premier plan.",
+    "about.education.intro":
+      "Ma formation académique combine une formation médicale fondamentale avec des études spécialisées dans des centres européens d'excellence de premier plan.",
     "about.education.medical.title": "Diplôme de Médecine",
-    "about.education.medical.description": "Diplômé de la Faculté de Médecine de l'Université de Médecine et de Pharmacie 'Grigore T. Popa' à Iasi, en Roumanie, où j'ai acquis une formation complète en sciences médicales de base et en pratique clinique.",
+    "about.education.medical.description":
+      "Diplômé de la Faculté de Médecine de l'Université de Médecine et de Pharmacie 'Grigore T. Popa' à Iasi, en Roumanie, où j'ai acquis une formation complète en sciences médicales de base et en pratique clinique.",
     "about.education.msc.title": "Master en Reproduction Assistée",
-    "about.education.msc.description": "J'ai complété mon MSc en Reproduction Assistée à Port Royal à Paris, l'un des centres de fertilité les plus distingués d'Europe. Ma formation s'est concentrée sur les techniques avancées de FIV, la gestion de l'infertilité et les protocoles de traitement personnalisés.",
+    "about.education.msc.description":
+      "J'ai complété mon MSc en Reproduction Assistée à Port Royal à Paris, l'un des centres de fertilité les plus distingués d'Europe. Ma formation s'est concentrée sur les techniques avancées de FIV, la gestion de l'infertilité et les protocoles de traitement personnalisés.",
     "about.education.endoscopy.title": "Certificats de Chirurgie Endoscopique",
-    "about.education.endoscopy.description": "Titulaire des certificats Bachelor in Endoscopy – Level 1 et Level 2 du Collège de Chirurgie Endoscopique (CICE). Cette spécialisation me permet d'effectuer des procédures laparoscopiques et hystéroscopiques avancées avec un minimum d'invasivité.",
+    "about.education.endoscopy.description":
+      "Titulaire des certificats Bachelor in Endoscopy – Level 1 et Level 2 du Collège de Chirurgie Endoscopique (CICE). Cette spécialisation me permet d'effectuer des procédures laparoscopiques et hystéroscopiques avancées avec un minimum d'invasivité.",
     "about.education.laser.title": "Certificats de Laser Vaginal",
-    "about.education.laser.description": "Formé à l'utilisation de la technologie laser vaginal pour le traitement des affections gynécologiques, y compris l'atrophie vaginale et l'incontinence urinaire.",
+    "about.education.laser.description":
+      "Formé à l'utilisation de la technologie laser vaginal pour le traitement des affections gynécologiques, y compris l'atrophie vaginale et l'incontinence urinaire.",
     "about.education.conferences.title": "Formation Médicale Continue",
-    "about.education.conferences.description": "Je participe activement à des congrès internationaux et des programmes éducatifs en obstétrique, gynécologie et reproduction assistée, maintenant mes connaissances à jour avec les derniers développements scientifiques.",
+    "about.education.conferences.description":
+      "Je participe activement à des congrès internationaux et des programmes éducatifs en obstétrique, gynécologie et reproduction assistée, maintenant mes connaissances à jour avec les derniers développements scientifiques.",
     "about.experience.title": "Expérience Professionnelle",
-    "about.experience.intro": "Ma carrière clinique comprend des collaborations avec des centres médicaux de premier plan en Grèce et à l'étranger, où j'ai acquis une expérience précieuse dans la gestion de cas complexes.",
+    "about.experience.intro":
+      "Ma carrière clinique comprend des collaborations avec des centres médicaux de premier plan en Grèce et à l'étranger, où j'ai acquis une expérience précieuse dans la gestion de cas complexes.",
     "about.experience.current.title": "Postes Actuels en Grèce",
     "about.experience.current.embryoland.role": "Consultant en Reproduction Assistée",
     "about.experience.current.embryoland.location": "Embryoland - Centre FIV",
-    "about.experience.current.embryoland.description": "Je fournis des services complets de fertilité, y compris des programmes de FIV, ICSI, cryoconservation d'ovules et d'embryons, et des protocoles de traitement personnalisés pour les couples ayant des problèmes de fertilité.",
+    "about.experience.current.embryoland.description":
+      "Je fournis des services complets de fertilité, y compris des programmes de FIV, ICSI, cryoconservation d'ovules et d'embryons, et des protocoles de traitement personnalisés pour les couples ayant des problèmes de fertilité.",
     "about.experience.current.rea.role": "Gynécologue-Obstétricien",
     "about.experience.current.rea.location": "Clinique de Maternité REA & Centre Gynécologique",
-    "about.experience.current.rea.description": "Spécialisation dans le suivi obstétrical des grossesses, la gestion des grossesses à haut risque et les procédures gynécologiques.",
+    "about.experience.current.rea.description":
+      "Spécialisation dans le suivi obstétrical des grossesses, la gestion des grossesses à haut risque et les procédures gynécologiques.",
     "about.experience.current.tzaneio.role": "Consultant Gynécologue-Obstétricien",
     "about.experience.current.tzaneio.location": "Hôpital Général Tzaneio - Le Pirée",
-    "about.experience.current.tzaneio.description": "Pratique clinique dans un hôpital public axée sur les soins obstétricaux aigus, les accouchements et les urgences gynécologiques.",
+    "about.experience.current.tzaneio.description":
+      "Pratique clinique dans un hôpital public axée sur les soins obstétricaux aigus, les accouchements et les urgences gynécologiques.",
     "about.experience.current.diamantis.role": "Gynécologue-Obstétricien",
     "about.experience.current.diamantis.location": "Centre Médical Diamantis",
-    "about.experience.current.diamantis.description": "Prestation de services gynécologiques, de soins préventifs et de procédures chirurgicales.",
+    "about.experience.current.diamantis.description":
+      "Prestation de services gynécologiques, de soins préventifs et de procédures chirurgicales.",
     "about.experience.current.euromedica.role": "Gynécologue-Obstétricien",
     "about.experience.current.euromedica.location": "EuroMedica - Égine",
-    "about.experience.current.euromedica.description": "Prestation de services gynécologiques et obstétricaux sur l'île d'Égine, assurant des soins de santé de qualité pour les femmes de la région.",
+    "about.experience.current.euromedica.description":
+      "Prestation de services gynécologiques et obstétricaux sur l'île d'Égine, assurant des soins de santé de qualité pour les femmes de la région.",
     "about.experience.international.title": "Expérience Internationale - France",
     "about.experience.international.santulli.role": "Fellow en Reproduction Assistée",
     "about.experience.international.santulli.location": "Équipe du Professeur Paolo Santulli - Paris",
-    "about.experience.international.santulli.description": "Formation avancée en reproduction assistée, endométriose et techniques chirurgicales sous la direction d'experts internationaux reconnus.",
+    "about.experience.international.santulli.description":
+      "Formation avancée en reproduction assistée, endométriose et techniques chirurgicales sous la direction d'experts internationaux reconnus.",
     "about.experience.international.saint_joseph.role": "Résident en Obstétrique-Gynécologie",
     "about.experience.international.saint_joseph.location": "Hôpital Saint Joseph - Paris",
-    "about.experience.international.saint_joseph.description": "Formation clinique en obstétrique générale, gynécologie et techniques chirurgicales.",
+    "about.experience.international.saint_joseph.description":
+      "Formation clinique en obstétrique générale, gynécologie et techniques chirurgicales.",
     "about.experience.international.port_royal.role": "Résident en Obstétrique-Gynécologie & Reproduction Assistée",
     "about.experience.international.port_royal.location": "Maternité Port Royal - Paris",
-    "about.experience.international.port_royal.description": "Travail dans l'une des maternités les plus célèbres d'Europe, spécialisée dans les techniques avancées de FIV et la gestion de cas complexes de fertilité.",
+    "about.experience.international.port_royal.description":
+      "Travail dans l'une des maternités les plus célèbres d'Europe, spécialisée dans les techniques avancées de FIV et la gestion de cas complexes de fertilité.",
     "about.experience.international.tenon.role": "Résident en Obstétrique-Gynécologie",
     "about.experience.international.tenon.location": "Hôpital Tenon - Paris",
-    "about.experience.international.tenon.description": "Expérience clinique polyvalente en obstétrique, gynécologie et cas d'urgence.",
-    "about.experience.international.other.description": "Expérience clinique supplémentaire à l'Hôpital Victor Dupuy et dans d'autres centres en France, où j'ai développé une expertise dans divers aspects de l'obstétrique et de la gynécologie.",
+    "about.experience.international.tenon.description":
+      "Expérience clinique polyvalente en obstétrique, gynécologie et cas d'urgence.",
+    "about.experience.international.other.description":
+      "Expérience clinique supplémentaire à l'Hôpital Victor Dupuy et dans d'autres centres en France, où j'ai développé une expertise dans divers aspects de l'obstétrique et de la gynécologie.",
     "about.experience.greece_other.title": "Expérience Antérieure en Grèce",
     "about.experience.greece_other.bladi.role": "Gynécologue-Obstétricien",
     "about.experience.greece_other.bladi.location": "Clinique Aristidis Bladi",
-    "about.experience.greece_other.bladi.description": "Pratique clinique axée sur la gynécologie et les soins obstétricaux.",
+    "about.experience.greece_other.bladi.description":
+      "Pratique clinique axée sur la gynécologie et les soins obstétricaux.",
     "about.experience.greece_other.military.role": "Médecin Militaire",
     "about.experience.greece_other.military.location": "Service Médical Militaire",
-    "about.experience.greece_other.military.description": "Prestation de services médicaux pendant le service militaire.",
+    "about.experience.greece_other.military.description":
+      "Prestation de services médicaux pendant le service militaire.",
     "about.expertise.title": "Expertise Médicale",
-    "about.expertise.intro": "Mes spécialités cliniques couvrent un large éventail de conditions gynécologiques et obstétricales, avec un accent particulier sur la reproduction assistée et la chirurgie mini-invasive.",
+    "about.expertise.intro":
+      "Mes spécialités cliniques couvrent un large éventail de conditions gynécologiques et obstétricales, avec un accent particulier sur la reproduction assistée et la chirurgie mini-invasive.",
     "about.expertise.areas.endometriosis.title": "Endométriose",
-    "about.expertise.areas.endometriosis.description": "Diagnostic et traitement de l'endométriose en utilisant des techniques endoscopiques avancées et une approche holistique pour améliorer la qualité de vie et la fertilité.",
+    "about.expertise.areas.endometriosis.description":
+      "Diagnostic et traitement de l'endométriose en utilisant des techniques endoscopiques avancées et une approche holistique pour améliorer la qualité de vie et la fertilité.",
     "about.expertise.areas.robotics.title": "Chirurgie Robotique",
-    "about.expertise.areas.robotics.description": "Familiarité avec les systèmes robotiques pour effectuer des procédures gynécologiques complexes avec une précision maximale et un traumatisme minimal pour la patiente.",
+    "about.expertise.areas.robotics.description":
+      "Familiarité avec les systèmes robotiques pour effectuer des procédures gynécologiques complexes avec une précision maximale et un traumatisme minimal pour la patiente.",
     "about.expertise.areas.ivf.title": "Fécondation In Vitro (FIV) & Mini FIV",
-    "about.expertise.areas.ivf.description": "Offre de programmes complets de FIV, y compris des protocoles de mini FIV pour une stimulation douce, adaptés aux besoins individuels de chaque patiente.",
+    "about.expertise.areas.ivf.description":
+      "Offre de programmes complets de FIV, y compris des protocoles de mini FIV pour une stimulation douce, adaptés aux besoins individuels de chaque patiente.",
     "about.expertise.areas.infertility.title": "Gestion de l'Infertilité",
-    "about.expertise.areas.infertility.description": "Investigation et traitement des facteurs d'infertilité masculine et féminine basés sur les directives scientifiques les plus récentes.",
+    "about.expertise.areas.infertility.description":
+      "Investigation et traitement des facteurs d'infertilité masculine et féminine basés sur les directives scientifiques les plus récentes.",
     "about.expertise.areas.cryopreservation.title": "Cryoconservation d'Ovules",
-    "about.expertise.areas.cryopreservation.description": "Programmes de cryoconservation d'ovules pour la préservation de la fertilité pour des raisons médicales ou personnelles.",
+    "about.expertise.areas.cryopreservation.description":
+      "Programmes de cryoconservation d'ovules pour la préservation de la fertilité pour des raisons médicales ou personnelles.",
     "about.expertise.areas.obstetrics.title": "Suivi Obstétrical",
-    "about.expertise.areas.obstetrics.description": "Soins obstétricaux personnalisés, de la préconception à l'accouchement, avec une attention particulière aux grossesses à haut risque et aux gestations multiples.",
+    "about.expertise.areas.obstetrics.description":
+      "Soins obstétricaux personnalisés, de la préconception à l'accouchement, avec une attention particulière aux grossesses à haut risque et aux gestations multiples.",
     "about.languages.title": "Langues",
-    "about.languages.intro": "Mon multilinguisme permet une communication efficace avec des patients de différents horizons culturels.",
+    "about.languages.intro":
+      "Mon multilinguisme permet une communication efficace avec des patients de différents horizons culturels.",
     "about.languages.greek": "Grec (Maternelle)",
     "about.languages.english": "Anglais (C2 - Niveau Proficiency)",
     "about.languages.french": "Français (C1 - Avancé)",
     "about.languages.romanian": "Roumain (B2 - Intermédiaire Supérieur)",
     "about.philosophy.title": "Philosophie de Soins",
-    "about.philosophy.text": "Ma pratique médicale repose sur trois principes fondamentaux : les soins personnalisés, la science fondée sur des preuves et une approche centrée sur l'humain. Je crois que chaque patiente est unique et a besoin d'un plan de traitement personnalisé qui prend en compte non seulement son état médical, mais aussi ses besoins émotionnels, sociaux et personnels. Je combine ma formation scientifique de centres internationaux d'excellence avec une approche holistique qui place la patiente au centre de chaque décision. Le respect, la communication honnête et la compassion sont les piliers de ma relation avec chaque patiente. Mon objectif est de créer un environnement sûr où les femmes se sentent à l'aise de partager leurs préoccupations et de recevoir le soutien dont elles ont besoin à chaque étape de leur santé reproductive et gynécologique.",
+    "about.philosophy.text":
+      "Ma pratique médicale repose sur trois principes fondamentaux : les soins personnalisés, la science fondée sur des preuves et une approche centrée sur l'humain. Je crois que chaque patiente est unique et a besoin d'un plan de traitement personnalisé qui prend en compte non seulement son état médical, mais aussi ses besoins émotionnels, sociaux et personnels. Je combine ma formation scientifique de centres internationaux d'excellence avec une approche holistique qui place la patiente au centre de chaque décision. Le respect, la communication honnête et la compassion sont les piliers de ma relation avec chaque patiente. Mon objectif est de créer un environnement sûr où les femmes se sentent à l'aise de partager leurs préoccupations et de recevoir le soutien dont elles ont besoin à chaque étape de leur santé reproductive et gynécologique.",
 
     // Services Page
     "services.page.title": "Nos Services",
@@ -982,13 +1080,16 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Hero Carousel
     "heroCarousel.slide1.title": "Dr. Eleftherios Cheirakis – Obstétricien-Gynécologue",
-    "heroCarousel.slide1.subtitle": "Des soins gynécologiques spécialisés, offrant un accompagnement personnalisé avec compassion et professionnalisme.",
+    "heroCarousel.slide1.subtitle":
+      "Des soins gynécologiques spécialisés, offrant un accompagnement personnalisé avec compassion et professionnalisme.",
     "heroCarousel.slide1.button": "Contact",
     "heroCarousel.slide2.title": "Gynécologie",
-    "heroCarousel.slide2.subtitle": "Des soins gynécologiques complets avec examens de routine et traitements spécialisés.",
+    "heroCarousel.slide2.subtitle":
+      "Des soins gynécologiques complets avec examens de routine et traitements spécialisés.",
     "heroCarousel.slide2.button": "En savoir plus",
     "heroCarousel.slide3.title": "Grossesse",
-    "heroCarousel.slide3.subtitle": "À vos côtés dès la conception, vous guidant à chaque étape pour une expérience d'accouchement sûre et confortable.",
+    "heroCarousel.slide3.subtitle":
+      "À vos côtés dès la conception, vous guidant à chaque étape pour une expérience d'accouchement sûre et confortable.",
     "heroCarousel.slide3.button": "En savoir plus",
     "heroCarousel.slide4.title": "Chirurgie Endoscopique",
     "heroCarousel.slide4.subtitle": "Chirurgie haute définition : intervention minimale, résultat maximal.",
@@ -1006,12 +1107,13 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Offices
     "offices.title": "Nos Bureaux",
-    "offices.athens.title": "Athènes: Leof. Vasileos Georgiou B 4, Pireas 185 34",
-    "offices.aegina.title": "Égine: Νοσοκομείου 5, 180 10 Αίγινα",
+    "offices.athens.title": "Athènes: 4 Avenue Vasileos Georgiou B, Le Pirée 185 34",
+    "offices.aegina.title": "Égine: 5 Rue Nosokomeiou, 180 10 Égine",
 
     // Contact CTA
     "contactCta.title": "Prêt à Prendre Rendez-vous?",
-    "contactCta.subtitle": "Contactez-nous dès aujourd'hui pour organiser votre consultation et commencer votre parcours vers la santé et le bien-être avec nous.",
+    "contactCta.subtitle":
+      "Contactez-nous dès aujourd'hui pour organiser votre consultation et commencer votre parcours vers la santé et le bien-être avec nous.",
     "contactCta.button": "Contact",
 
     // Contact
@@ -1024,7 +1126,8 @@ const translations: Record<Language, Record<string, string>> = {
     "contact.send": "Envoyer le Message",
     "contact.info.title": "Informations de Contact",
     "contact.address": "Adresse",
-    "contact.address.value": "Athènes : Leof. Vasileos Georgiou B 4, Pireas 185 34\nÉgine : Nosokomeiou 5, 180 10 Égine",
+    "contact.address.value":
+      "Athènes : Leof. Vasileos Georgiou B 4, Pireas 185 34\nÉgine : Nosokomeiou 5, 180 10 Égine",
     "contact.hours": "Horaires",
     "contact.hours.value": "Lun-Ven: 09:00 - 20:00",
 
