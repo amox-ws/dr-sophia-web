@@ -25,11 +25,19 @@ import spermImg from "@/assets/assisted_reproduction/Intrauterine Insemination.j
 import surgeryImg from '@/assets/surgery.jpeg';
 import birthImg from '@/assets/birth.jpeg';
 
+// Desktop hero images
 import doctor_hero from '@/assets/doctor_hero.jpg';
 import gynecology_hero from '@/assets/gynecology_hero.jpeg';
 import assisted_reproduction_hero from '@/assets/assisted-reproduction_hero.jpg';
 import endoscopic_surgery_hero from '@/assets/endoscopic_surgery_hero.jpg';
 import pregnancy_hero from '@/assets/pregnancy_hero.jpg';
+
+// Mobile hero placeholders (to be replaced later)
+const doctor_hero_mobile = '/placeholder.svg';
+const gynecology_hero_mobile = '/placeholder.svg';
+const assisted_reproduction_hero_mobile = '/placeholder.svg';
+const endoscopic_surgery_hero_mobile = '/placeholder.svg';
+const pregnancy_hero_mobile = '/placeholder.svg';
 
 const Home = () => {
   const { t, language } = useLanguage();
@@ -77,27 +85,32 @@ const Home = () => {
     {
       id: 'slide1',
       link: '/contact',
-      image: doctor_hero, 
+      imageDesktop: doctor_hero,
+      imageMobile: doctor_hero_mobile,
     },
     {
       id: 'slide2',
       link: '/services/gynecology',
-      image: gynecology_hero, 
+      imageDesktop: gynecology_hero,
+      imageMobile: gynecology_hero_mobile,
     },
     {
       id: 'slide3',
       link: '/services/pregnancy',
-      image: pregnancy_hero, 
+      imageDesktop: pregnancy_hero,
+      imageMobile: pregnancy_hero_mobile,
     },
     {
       id: 'slide4',
       link: '/services/endoscopic-surgery',
-      image: endoscopic_surgery_hero, 
+      imageDesktop: endoscopic_surgery_hero,
+      imageMobile: endoscopic_surgery_hero_mobile,
     },
     {
       id: 'slide5',
       link: '/services/assisted-reproduction',
-      image: assisted_reproduction_hero, 
+      imageDesktop: assisted_reproduction_hero,
+      imageMobile: assisted_reproduction_hero_mobile,
     },
   ];
 
@@ -119,11 +132,18 @@ const Home = () => {
               {/* Height calc: 100vh minus header height */}
               <div className="relative h-[calc(100vh-4rem)] md:h-[calc(100vh-5rem)] flex items-center text-white overflow-hidden">
                 
-                {/* Background Image */}
+                {/* Desktop Background Image */}
                 <img
-                  src={slide.image}
+                  src={slide.imageDesktop}
                   alt={t(`heroCarousel.${slide.id}.title`)}
-                  className="absolute inset-0 w-full h-full object-cover object-center filter brightness-[.3]"
+                  className="absolute inset-0 w-full h-full object-cover object-center filter brightness-[.3] hidden md:block"
+                />
+                
+                {/* Mobile Background Image (placeholder) */}
+                <img
+                  src={slide.imageMobile}
+                  alt={t(`heroCarousel.${slide.id}.title`)}
+                  className="absolute inset-0 w-full h-full object-cover object-center filter brightness-[.3] block md:hidden"
                 />
 
                 {/* Decorative glowing elements */}
