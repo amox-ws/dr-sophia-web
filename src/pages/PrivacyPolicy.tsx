@@ -24,7 +24,7 @@ const PrivacyPolicy = () => {
         {
           title: "2. Ποια δεδομένα συλλέγουμε",
           intro: "Μέσω της φόρμας επικοινωνίας συλλέγουμε:",
-          items: ["Ονοματεπώνυμο", "Email", "Τηλέφωνο", "Περιεχόμενο μηνύματος (ενδέχεται να περιλαμβάνει πληροφορίες υγείας)"]
+          items: ["Ονοματεπώνυμο", "Email", "Τηλέφωνο", "Περιεχόμενο μηνύματος"]
         },
         {
           title: "3. Σκοπός επεξεργασίας",
@@ -43,7 +43,7 @@ const PrivacyPolicy = () => {
         {
           title: "6. Τα δικαιώματά σας (GDPR)",
           intro: "Μπορείτε να ζητήσετε:",
-          items: ["πρόσβαση", "διόρθωση", "διαγραφή", "περιορισμό", "φορητότητα", "ανάκληση συγκατάθεσης"],
+          items: ["πρόσβαση", "διόρθωση", "διαγραφή"],
           footer: "Αιτήματα στο: info@cheirakisgyn.gr"
         },
         {
@@ -70,7 +70,7 @@ const PrivacyPolicy = () => {
         },
         {
           title: "2. Data we collect",
-          items: ["Full Name", "Email", "Phone Number", "Message content (may include health information)"]
+          items: ["Full Name", "Email", "Phone Number", "Message content"]
         },
         {
           title: "3. Purpose of processing",
@@ -89,7 +89,7 @@ const PrivacyPolicy = () => {
         {
           title: "6. GDPR rights",
           intro: "You may request:",
-          items: ["access", "correction", "erasure", "restriction", "portability", "withdrawal of consent"],
+          items: ["access", "correction", "erasure"],
           footer: "Requests: info@cheirakisgyn.gr"
         },
         {
@@ -116,7 +116,7 @@ const PrivacyPolicy = () => {
         },
         {
           title: "2. Données collectées",
-          items: ["Nom complet", "Email", "Téléphone", "Message (peut contenir des données de santé)"]
+          items: ["Nom complet", "Email", "Téléphone", "Message"]
         },
         {
           title: "3. Finalité du traitement",
@@ -135,7 +135,7 @@ const PrivacyPolicy = () => {
         {
           title: "6. Droits GDPR",
           intro: "Vous pouvez demander:",
-          items: ["accès", "rectification", "suppression", "limitation", "portabilité", "retrait du consentement"],
+          items: ["accès", "rectification", "suppression"],
           footer: "Demandes: info@cheirakisgyn.gr"
         },
         {

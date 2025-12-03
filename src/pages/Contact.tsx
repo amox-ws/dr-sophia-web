@@ -26,18 +26,18 @@ const Contact = () => {
   const consentText = {
     el: {
       label: "Συμφωνώ με την",
-      policy: "Πολιτική Απορρήτου",
-      and: "και την επεξεργασία των προσωπικών μου δεδομένων."
+      policy: "Πολιτική Απορρήτου.",
+      and: ""
     },
     en: {
       label: "I agree to the",
-      policy: "Privacy Policy",
-      and: "and the processing of my personal data."
+      policy: "Privacy Policy.",
+      and: ""
     },
     fr: {
       label: "J'accepte la",
-      policy: "Politique de Confidentialité",
-      and: "et le traitement de mes données personnelles."
+      policy: "Politique de Confidentialité.",
+      and: ""
     }
   };
 
