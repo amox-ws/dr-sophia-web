@@ -8,6 +8,7 @@ import { LanguageProvider } from "./contexts/LanguageContext";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+import CookieConsentBanner from "./components/CookieConsentBanner";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
@@ -16,6 +17,9 @@ import AssistedReproduction from "./pages/AssistedReproduction";
 import EndoscopicSurgery from "./pages/EndoscopicSurgery";
 import Pregnancy from "./pages/Pregnancy";
 import Contact from "./pages/Contact";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import CookiesPolicy from "./pages/CookiesPolicy";
+import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -39,9 +43,13 @@ const App = () => (
               <Route path="/services/endoscopic-surgery" element={<EndoscopicSurgery />} />
               <Route path="/services/pregnancy" element={<Pregnancy />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/cookies-policy" element={<CookiesPolicy />} />
+              <Route path="/terms" element={<Terms />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
             <Footer />
+            <CookieConsentBanner />
           </BrowserRouter>
         </LanguageProvider>
       </TooltipProvider>
