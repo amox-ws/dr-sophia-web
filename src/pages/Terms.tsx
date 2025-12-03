@@ -6,26 +6,29 @@ const Terms = () => {
 
   const content = {
     el: {
-      title: "Όροι Χρήσης & Ιατρική Αποποίηση Ευθυνών",
+      title: "Όροι Χρήσης - Ιατρική Αποποίηση Ευθυνών",
       seoTitle: "Όροι Χρήσης | Δρ. Ελευθέριος Χειράκης",
-      seoDescription: "Όροι χρήσης και ιατρική αποποίηση ευθυνών για τον ιστότοπο cheirakisgyn.gr του Δρ. Ελευθέριου Χειράκη.",
+      seoDescription:
+        "Όροι χρήσης και ιατρική αποποίηση ευθυνών για τον ιστότοπο cheirakisgyn.gr του Δρ. Ελευθέριου Χειράκη.",
       disclaimer: "Το περιεχόμενο είναι ενημερωτικό και δεν αποτελεί ιατρική διάγνωση.",
-      emergency: "Σε επείγον περιστατικό καλέστε το 166."
+      emergency: "Σε επείγον περιστατικό καλέστε το 166.",
     },
     en: {
-      title: "Terms of Use & Medical Disclaimer",
+      title: "Terms of Use - Medical Disclaimer",
       seoTitle: "Terms of Use | Dr. Eleftherios Cheirakis",
-      seoDescription: "Terms of use and medical disclaimer for the website cheirakisgyn.gr of Dr. Eleftherios Cheirakis.",
+      seoDescription:
+        "Terms of use and medical disclaimer for the website cheirakisgyn.gr of Dr. Eleftherios Cheirakis.",
       disclaimer: "Content is informational only and not medical advice.",
-      emergency: "For emergencies call local emergency services."
+      emergency: "For emergencies call local emergency services.",
     },
     fr: {
-      title: "Conditions d'Utilisation & Avertissement Médical",
+      title: "Conditions d'Utilisation - Avertissement Médical",
       seoTitle: "Conditions d'Utilisation | Dr. Eleftherios Cheirakis",
-      seoDescription: "Conditions d'utilisation et avertissement médical pour le site cheirakisgyn.gr du Dr. Eleftherios Cheirakis.",
+      seoDescription:
+        "Conditions d'utilisation et avertissement médical pour le site cheirakisgyn.gr du Dr. Eleftherios Cheirakis.",
       disclaimer: "Le contenu est informatif et ne constitue pas un avis médical.",
-      emergency: "En cas d'urgence, contactez les services d'urgence."
-    }
+      emergency: "En cas d'urgence, contactez les services d'urgence.",
+    },
   };
 
   const c = content[language];
