@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import StaggeredTextReveal from "@/components/StaggeredTextReveal"; // Import Text Reveal
 
 const Contact = () => {
   const { t } = useLanguage();
@@ -58,11 +59,27 @@ const Contact = () => {
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-gradient-to-br from-[hsl(var(--medical-lightest))] to-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl font-bold mb-6 text-foreground animate-fade-in-up">{t("contact.title")}</h1>
-            <p className="text-xl text-muted-foreground animate-fade-in-up animation-delay-200">
-              {t("contact.subtitle")}
-            </p>
+          <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
+            
+            {/* Title with Staggered Letter Reveal */}
+            <div className="mb-6">
+              <StaggeredTextReveal 
+                text={t("contact.title")}
+                className="text-5xl font-bold text-foreground"
+                stagger={40}
+              />
+            </div>
+
+            {/* Subtitle with Staggered Letter Reveal (Delayed) */}
+            <div className="mb-8">
+              <StaggeredTextReveal 
+                text={t("contact.subtitle")}
+                className="text-xl text-muted-foreground"
+                delay={800}
+                stagger={20}
+              />
+            </div>
+
           </div>
         </div>
       </section>

@@ -3,6 +3,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { GraduationCap, Briefcase, Monitor } from "lucide-react";
 import ContactCTASection from "@/components/ContactCTASection";
+import StaggeredTextReveal from "@/components/StaggeredTextReveal"; // Import Text Reveal
 
 import doctor_hero from "@/assets/doctor_hero.jpg";
 
@@ -10,6 +11,7 @@ const About = () => {
   const { language, t } = useLanguage();
 
   const biographyContent = {
+    // ... (Your biography content remains exactly the same) ...
     el: {
       intro:
         "Ο Ελευθέριος Χειράκης είναι Ιατρός, ειδικευόμενος στη Μαιευτική - Γυναικολογία με εξειδίκευση στην Υποβοηθούμενη Αναπαραγωγή.",
@@ -255,10 +257,15 @@ const About = () => {
 
       {/* Small Hero Section */}
       <section className="pt-28 pb-12 bg-gradient-to-b from-[hsl(210_30%_92%)] to-background">
-        <div className="container mx-auto px-4">
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-[hsl(var(--medical-darkest))]">
-            {heroTitles[language]}
-          </h1>
+        <div className="container mx-auto px-4 text-center">
+          {/* Animated Page Title */}
+          <div className="inline-block">
+            <StaggeredTextReveal 
+              text={heroTitles[language]}
+              className="text-2xl md:text-3xl lg:text-4xl font-bold text-[hsl(var(--medical-darkest))]"
+              stagger={40}
+            />
+          </div>
         </div>
       </section>
 
