@@ -44,11 +44,34 @@ const Home = () => {
   // Animation hooks
   const { ref: doctorRef, isVisible: isDoctorVisible } = useScrollAnimation({ threshold: 0.1 });
   const { ref: btnRef, isVisible: isBtnVisible } = useScrollAnimation({ threshold: 0.1 });
+  const { ref: athensCarouselRef, isVisible: isAthensCarouselVisible } = useScrollAnimation({ threshold: 0.1 });
+  const { ref: athensMapRef, isVisible: isAthensMapVisible } = useScrollAnimation({ threshold: 0.1 });
+  const { ref: aeginaCarouselRef, isVisible: isAeginaCarouselVisible } = useScrollAnimation({ threshold: 0.1 });
+  const { ref: aeginaMapRef, isVisible: isAeginaMapVisible } = useScrollAnimation({ threshold: 0.1 });
   
   const autoplayPlugin = useRef(
     Autoplay({ delay: 5000, stopOnInteraction: false })
   );
   const fadePlugin = Fade();
+  
+  // Office carousel autoplay plugins
+  const athensAutoplay = useRef(Autoplay({ delay: 3000, stopOnInteraction: false }));
+  const aeginaAutoplay = useRef(Autoplay({ delay: 3000, stopOnInteraction: false }));
+  
+  // Office placeholder images (to be replaced later)
+  const athensOfficeImages = [
+    '/placeholder.svg',
+    '/placeholder.svg',
+    '/placeholder.svg',
+    '/placeholder.svg',
+  ];
+  
+  const aeginaOfficeImages = [
+    '/placeholder.svg',
+    '/placeholder.svg',
+    '/placeholder.svg',
+    '/placeholder.svg',
+  ];
 
   const formatTitleWithLineBreak = (title: string, key: string, lang: string): string => {
     if (lang !== "el") return title;
@@ -270,24 +293,53 @@ const Home = () => {
               <h3 className="text-2xl font-bold text-foreground mb-6 text-center">
                 {t('offices.athens.title')}
               </h3>
-              <div className="grid md:grid-cols-2 gap-6 mb-6">
-                <div className="aspect-video bg-muted rounded-lg overflow-hidden shadow-lg">
-                  <img
-                    src="/placeholder.svg"
-                    alt="Athens office - exterior"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="aspect-video bg-muted rounded-lg overflow-hidden shadow-lg">
-                  <img
-                    src="/placeholder.svg"
-                    alt="Athens office - interior"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+              
+              {/* Athens Office Carousel */}
+              <div 
+                ref={athensCarouselRef}
+                className="mb-6"
+                style={{
+                  opacity: isAthensCarouselVisible ? 1 : 0,
+                  transform: isAthensCarouselVisible ? "translateY(0)" : "translateY(50px)",
+                  transition: "opacity 0.8s ease-out, transform 0.8s ease-out"
+                }}
+              >
+                <Carousel
+                  opts={{
+                    align: 'start',
+                    loop: true,
+                  }}
+                  plugins={[athensAutoplay.current]}
+                  className="w-full"
+                >
+                  <CarouselContent className="-ml-2 md:-ml-4">
+                    {athensOfficeImages.map((img, index) => (
+                      <CarouselItem key={index} className="pl-2 md:pl-4 basis-1/2">
+                        <div className="aspect-video bg-muted rounded-lg overflow-hidden shadow-lg">
+                          <img
+                            src={img}
+                            alt={language === 'el' ? `Ιατρείο Αθήνας - Εικόνα ${index + 1}` : language === 'fr' ? `Cabinet d'Athènes - Image ${index + 1}` : `Athens Office - Image ${index + 1}`}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <CarouselPrevious className="left-2 bg-transparent border border-white/40 text-foreground hover:bg-white/20 hover:border-white/60" />
+                  <CarouselNext className="right-2 bg-transparent border border-white/40 text-foreground hover:bg-white/20 hover:border-white/60" />
+                </Carousel>
               </div>
+              
               {/* Athens Map */}
-              <div className="aspect-video md:aspect-[21/9] rounded-lg overflow-hidden shadow-lg">
+              <div 
+                ref={athensMapRef}
+                className="aspect-video md:aspect-[21/9] rounded-lg overflow-hidden shadow-lg"
+                style={{
+                  opacity: isAthensMapVisible ? 1 : 0,
+                  transform: isAthensMapVisible ? "translateY(0)" : "translateY(50px)",
+                  transition: "opacity 0.8s ease-out 0.2s, transform 0.8s ease-out 0.2s"
+                }}
+              >
                 {hasThirdPartyConsent ? (
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3145.842427827482!2d23.64447!3d37.93869!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1bb7b5c1e5555%3A0x5555555555555555!2sLeof.%20Vasileos%20Georgiou%20B%204%2C%20Pireas%20185%2034!5e0!3m2!1sen!2sgr!4v1701500000000!5m2!1sen!2sgr"
@@ -297,7 +349,7 @@ const Home = () => {
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Athens Office Location"
+                    title={language === 'el' ? 'Τοποθεσία Ιατρείου Αθήνας' : language === 'fr' ? "Emplacement du cabinet d'Athènes" : 'Athens Office Location'}
                     className="w-full h-full"
                   />
                 ) : (
@@ -311,34 +363,63 @@ const Home = () => {
               <h3 className="text-2xl font-bold text-foreground mb-6 text-center">
                 {t('offices.aegina.title')}
               </h3>
-              <div className="grid md:grid-cols-2 gap-6 mb-6">
-                <div className="aspect-video bg-muted rounded-lg overflow-hidden shadow-lg">
-                  <img
-                    src="/placeholder.svg"
-                    alt="Aegina office - exterior"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="aspect-video bg-muted rounded-lg overflow-hidden shadow-lg">
-                  <img
-                    src="/placeholder.svg"
-                    alt="Aegina office - interior"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+              
+              {/* Aegina Office Carousel */}
+              <div 
+                ref={aeginaCarouselRef}
+                className="mb-6"
+                style={{
+                  opacity: isAeginaCarouselVisible ? 1 : 0,
+                  transform: isAeginaCarouselVisible ? "translateY(0)" : "translateY(50px)",
+                  transition: "opacity 0.8s ease-out, transform 0.8s ease-out"
+                }}
+              >
+                <Carousel
+                  opts={{
+                    align: 'start',
+                    loop: true,
+                  }}
+                  plugins={[aeginaAutoplay.current]}
+                  className="w-full"
+                >
+                  <CarouselContent className="-ml-2 md:-ml-4">
+                    {aeginaOfficeImages.map((img, index) => (
+                      <CarouselItem key={index} className="pl-2 md:pl-4 basis-1/2">
+                        <div className="aspect-video bg-muted rounded-lg overflow-hidden shadow-lg">
+                          <img
+                            src={img}
+                            alt={language === 'el' ? `Ιατρείο Αίγινας - Εικόνα ${index + 1}` : language === 'fr' ? `Cabinet d'Égine - Image ${index + 1}` : `Aegina Office - Image ${index + 1}`}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <CarouselPrevious className="left-2 bg-transparent border border-white/40 text-foreground hover:bg-white/20 hover:border-white/60" />
+                  <CarouselNext className="right-2 bg-transparent border border-white/40 text-foreground hover:bg-white/20 hover:border-white/60" />
+                </Carousel>
               </div>
-              {/* Aegina Map */}
-              <div className="aspect-video md:aspect-[21/9] rounded-lg overflow-hidden shadow-lg">
+              
+              {/* Aegina Map - Updated with correct coordinates */}
+              <div 
+                ref={aeginaMapRef}
+                className="aspect-video md:aspect-[21/9] rounded-lg overflow-hidden shadow-lg"
+                style={{
+                  opacity: isAeginaMapVisible ? 1 : 0,
+                  transform: isAeginaMapVisible ? "translateY(0)" : "translateY(50px)",
+                  transition: "opacity 0.8s ease-out 0.2s, transform 0.8s ease-out 0.2s"
+                }}
+              >
                 {hasThirdPartyConsent ? (
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3150.123456789!2d23.4289!3d37.7456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1c1234567890%3A0x1234567890abcdef!2sNosokomiou%205%2C%20Aegina%20180%2010!5e0!3m2!1sen!2sgr!4v1701500000000!5m2!1sen!2sgr"
+                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1575.5!2d23.4312767796703!3d37.747553426646896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzfCsDQ0JzUxLjIiTiAyM8KwMjUnNTIuNiJF!5e0!3m2!1sen!2sgr!4v1701500000000!5m2!1sen!2sgr"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Aegina Office Location"
+                    title={language === 'el' ? 'Τοποθεσία Ιατρείου Αίγινας' : language === 'fr' ? "Emplacement du cabinet d'Égine" : 'Aegina Office Location'}
                     className="w-full h-full"
                   />
                 ) : (
