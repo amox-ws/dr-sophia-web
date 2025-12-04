@@ -25,6 +25,7 @@ const EndoscopicSurgery = () => {
     'Hystéroscopie': hysteroscopyImage,
     'Λαπαροσκόπηση': laparoscopyImage,
     'Laparoscopy': laparoscopyImage,
+    'Laparoscopie': laparoscopyImage,
     'Ρομποτική Χειρουργική': roboticSurgeryImage,
     'Robotic Surgery': roboticSurgeryImage,
     'Chirurgie Robotique': roboticSurgeryImage,
