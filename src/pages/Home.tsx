@@ -154,23 +154,22 @@ const Home = () => {
               {/* Height calc: 100vh minus header height */}
               <div className="relative h-[calc(100vh-4rem)] md:h-[calc(100vh-5rem)] flex items-center text-white overflow-hidden">
                 
-                <div className="absolute inset-0 w-full h-full">
-                  <img
-                    src={slide.imageDesktop}
-                    alt={t(`heroCarousel.${slide.id}.title`)}
-                    className="absolute inset-0 w-full h-full object-cover object-center hidden md:block"
-                  />
-                  
-                  <img
-                    src={slide.imageMobile}
-                    alt={t(`heroCarousel.${slide.id}.title`)}
-                    className="absolute inset-0 w-full h-full object-cover object-center block md:hidden"
-                  />
+                {/* Desktop Background Image */}
+                <img
+                  src={slide.imageDesktop}
+                  alt={t(`heroCarousel.${slide.id}.title`)}
+                  className="absolute inset-0 w-full h-full object-cover object-center filter brightness-[.3] hidden md:block"
+                />
+                
+                {/* Mobile Background Image */}
+                <img
+                  src={slide.imageMobile}
+                  alt={t(`heroCarousel.${slide.id}.title`)}
+                  className="absolute inset-0 w-full h-full object-cover object-center filter brightness-[.3] block md:hidden"
+                />
 
-                  <div className="absolute inset-0 bg-black/60" />
-                </div>
-
-                <div className="absolute inset-0 opacity-10 pointer-events-none hidden md:block">
+                {/* Decorative glowing elements */}
+                <div className="absolute inset-0 opacity-10 pointer-events-none">
                   <div className="absolute top-20 right-20 w-72 h-72 bg-white rounded-full blur-3xl"></div>
                   <div className="absolute bottom-20 left-20 w-96 h-96 bg-white rounded-full blur-3xl"></div>
                 </div>
@@ -319,7 +318,7 @@ const Home = () => {
                   <CarouselContent className="-ml-2 md:-ml-4">
                     {athensOfficeImages.map((img, index) => (
                       <CarouselItem key={index} className="pl-2 md:pl-4 basis-1/2">
-                        <div className="aspect-video md:aspect-[21/9] bg-muted rounded-lg overflow-hidden shadow-lg">
+                        <div className="aspect-video bg-muted rounded-lg overflow-hidden shadow-lg">
                           <img
                             src={img}
                             alt={language === 'el' ? `Ιατρείο Αθήνας - Εικόνα ${index + 1}` : language === 'fr' ? `Cabinet d'Athènes - Image ${index + 1}` : `Athens Office - Image ${index + 1}`}
@@ -390,7 +389,7 @@ const Home = () => {
                   <CarouselContent className="-ml-2 md:-ml-4">
                     {aeginaOfficeImages.map((img, index) => (
                       <CarouselItem key={index} className="pl-2 md:pl-4 basis-1/2">
-                        <div className="aspect-video md:aspect-[21/9] bg-muted rounded-lg overflow-hidden shadow-lg">
+                        <div className="aspect-video bg-muted rounded-lg overflow-hidden shadow-lg">
                           <img
                             src={img}
                             alt={language === 'el' ? `Ιατρείο Αίγινας - Εικόνα ${index + 1}` : language === 'fr' ? `Cabinet d'Égine - Image ${index + 1}` : `Aegina Office - Image ${index + 1}`}
