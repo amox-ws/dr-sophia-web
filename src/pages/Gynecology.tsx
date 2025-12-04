@@ -6,13 +6,13 @@ import StaggeredTextReveal from '@/components/StaggeredTextReveal'; // Import Te
 
 // 🖼️ Imports εικόνων από τον φάκελο assets/gynecology
 import adenomyosisImage from '@/assets/gynecology/Adenomyosis.jpeg';
-import deepEndometriosisImage from '@/assets/gynecology/Deep Infiltrating Endometriosis.jpg';
+import deepEndometriosisImage from '@/assets/gynecology/Deep_Infiltrating_Endometriosis.jpg';
 import dysmenorrheaImage from '@/assets/gynecology/Dysmenorrhea.jpeg';
-import endometriomaImage from '@/assets/gynecology/Endometrioma – Endometriotic Cysts.jpg';
+import endometriomaImage from '@/assets/gynecology/Endometrioma_Endometriotic_Cysts.jpg';
 import endometriosisImage from '@/assets/gynecology/Endometriosis.jpg';
 import menopauseImage from '@/assets/gynecology/Menopause.jpeg';
-import pcosImage from '@/assets/gynecology/Polycystic Ovary Syndrome.jpeg';
-import fibroidsImage from '@/assets/gynecology/Uterine Fibroids.jpeg';
+import pcosImage from '@/assets/gynecology/Polycystic_Ovary_Syndrome.jpeg';
+import fibroidsImage from '@/assets/gynecology/Uterine_Fibroids.jpeg';
 
 const Gynecology = () => {
   const { language } = useLanguage();

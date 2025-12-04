@@ -21,7 +21,7 @@ import MapPlaceholder from '@/components/MapPlaceholder';
 
 // 🩺 Import service images
 import mitraImg from '@/assets/mitra.jpeg';
-import spermImg from "@/assets/assisted_reproduction/Intrauterine Insemination.jpeg";
+import spermImg from "@/assets/assisted_reproduction/Intrauterine_Insemination.jpeg";
 import surgeryImg from '@/assets/surgery.jpeg';
 import birthImg from '@/assets/birth.jpeg';
 

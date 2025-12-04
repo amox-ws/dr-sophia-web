@@ -6,13 +6,13 @@ import StaggeredTextReveal from '@/components/StaggeredTextReveal'; // Import Te
 import ContactCTASection from '@/components/ContactCTASection';
 
 // 🖼️ Imports for services
-import eggSpermDonationImage from '@/assets/assisted_reproduction/Egg & Sperm Donation.jpeg';
-import eggCryopreservationImage from '@/assets/assisted_reproduction/egg cryopreservation.jpeg';
-import fertilityEvaluationImage from '@/assets/assisted_reproduction/Fertility Evaluation.jpeg';
-import iuiImage from '@/assets/assisted_reproduction/Intrauterine Insemination.jpeg';
+import eggSpermDonationImage from '@/assets/assisted_reproduction/Egg_Sperm_Donation.jpeg';
+import eggCryopreservationImage from '@/assets/assisted_reproduction/egg_cryopreservation.jpeg';
+import fertilityEvaluationImage from '@/assets/assisted_reproduction/Fertility_Evaluation.jpeg';
+import iuiImage from '@/assets/assisted_reproduction/Intrauterine_Insemination.jpeg';
 import ivfImage from '@/assets/assisted_reproduction/InVitroFertilization.jpeg';
-import miniIvfImage from '@/assets/assisted_reproduction/mini-ivf.jpeg';
-import pgtImage from '@/assets/assisted_reproduction/Preimplantation Genetic Testing.jpeg';
+import miniIvfImage from '@/assets/assisted_reproduction/mini_ivf.jpeg';
+import pgtImage from '@/assets/assisted_reproduction/Preimplantation_Genetic_Testing.jpeg';
 import surrogacyImage from '@/assets/assisted_reproduction/Surrogacy.jpeg';
 
 const AssistedReproduction = () => {
