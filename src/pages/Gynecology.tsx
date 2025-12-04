@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { getServiceById, type Language } from '@/data/servicesData';
-import { useScrollAnimation } from '@/hooks/useScrollAnimation'; // Import Animation Hook
-import StaggeredTextReveal from '@/components/StaggeredTextReveal'; // Import Text Reveal
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import StaggeredTextReveal from '@/components/StaggeredTextReveal';
+import ContactCTASection from '@/components/ContactCTASection';
 
 // 🖼️ Imports εικόνων από τον φάκελο assets/gynecology
 import adenomyosisImage from '@/assets/gynecology/Adenomyosis.jpeg';
@@ -136,16 +137,11 @@ const Gynecology = () => {
             })}
           </div>
 
-          <div className="mt-16 text-center">
-            <a 
-              href="/contact" 
-              className="inline-block px-8 py-4 bg-[hsl(var(--medical-medium))] text-white rounded-xl font-semibold hover:bg-[hsl(var(--medical-medium-dark))] transition"
-            >
-              {language === 'el' ? 'Κλείστε Ραντεβού Τώρα' : language === 'en' ? 'Book Appointment Now' : 'Prendre Rendez-vous'}
-            </a>
-          </div>
         </div>
       </section>
+
+      {/* Contact CTA Section */}
+      <ContactCTASection />
     </main>
   );
 };
