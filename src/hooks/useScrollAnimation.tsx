@@ -15,20 +15,6 @@ export const useScrollAnimation = (options: UseScrollAnimationOptions = {}) => {
     const element = ref.current;
     if (!element) return;
 
-    let rafId: number;
-    let timeoutId: ReturnType<typeof setTimeout>;
-
-    // Defer layout reads to avoid forced reflow
-    rafId = requestAnimationFrame(() => {
-      const rect = element.getBoundingClientRect();
-      const isAlreadyVisible = rect.top < window.innerHeight && rect.bottom >= 0;
-      
-      if (isAlreadyVisible) {
-        timeoutId = setTimeout(() => setIsVisible(true), 100);
-        if (triggerOnce) return;
-      }
-    });
-
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -46,8 +32,6 @@ export const useScrollAnimation = (options: UseScrollAnimationOptions = {}) => {
     observer.observe(element);
 
     return () => {
-      cancelAnimationFrame(rafId);
-      clearTimeout(timeoutId);
       observer.disconnect();
     };
   }, [threshold, triggerOnce, rootMargin]);
