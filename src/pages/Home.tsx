@@ -160,6 +160,7 @@ const Home = () => {
                     src={slide.imageDesktop}
                     alt={t(`heroCarousel.${slide.id}.title`)}
                     className="absolute inset-0 w-full h-full object-cover object-center hidden md:block"
+                    fetchPriority={slide.id === 'slide1' ? 'high' : 'auto'}
                   />
                   
                   {/* Mobile Background Image */}
@@ -167,6 +168,7 @@ const Home = () => {
                     src={slide.imageMobile}
                     alt={t(`heroCarousel.${slide.id}.title`)}
                     className="absolute inset-0 w-full h-full object-cover object-center block md:hidden"
+                    fetchPriority={slide.id === 'slide1' ? 'high' : 'auto'}
                   />
 
                   {/* Dark Overlay (Replaces brightness filter) */}
