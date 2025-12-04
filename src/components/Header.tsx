@@ -172,7 +172,6 @@ const Header = () => {
               variant="ghost"
               size="sm"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label={isMobileMenuOpen ? t('nav.closeMenu') : t('nav.openMenu')}
             >
               {isMobileMenuOpen ? (
                 <X className="h-6 w-6" />

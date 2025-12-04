@@ -18,8 +18,6 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.services": "Υπηρεσίες",
     "nav.allServices": "Όλες οι Υπηρεσίες",
     "nav.contact": "Επικοινωνία",
-    "nav.openMenu": "Άνοιγμα μενού",
-    "nav.closeMenu": "Κλείσιμο μενού",
 
     // Hero
     "hero.title": "Εξειδικευμένη Φροντίδα στη Γυναικολογία",
@@ -399,8 +397,6 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.services": "Services",
     "nav.allServices": "All Services",
     "nav.contact": "Contact",
-    "nav.openMenu": "Open menu",
-    "nav.closeMenu": "Close menu",
 
     // Hero
     "hero.title": "Specialized Care in Gynecology",
@@ -773,8 +769,6 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.services": "Services",
     "nav.allServices": "Tous les Services",
     "nav.contact": "Contact",
-    "nav.openMenu": "Ouvrir le menu",
-    "nav.closeMenu": "Fermer le menu",
 
     // Hero
     "hero.title": "Soins Spécialisés en Gynécologie",

@@ -1,4 +1,3 @@
-import { lazy, Suspense } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -11,19 +10,17 @@ import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import CookieConsentBanner from "./components/CookieConsentBanner";
 import Home from "./pages/Home";
-
-// Lazy load non-critical routes for code splitting
-const About = lazy(() => import("./pages/About"));
-const Services = lazy(() => import("./pages/Services"));
-const Gynecology = lazy(() => import("./pages/Gynecology"));
-const AssistedReproduction = lazy(() => import("./pages/AssistedReproduction"));
-const EndoscopicSurgery = lazy(() => import("./pages/EndoscopicSurgery"));
-const Pregnancy = lazy(() => import("./pages/Pregnancy"));
-const Contact = lazy(() => import("./pages/Contact"));
-const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
-const CookiesPolicy = lazy(() => import("./pages/CookiesPolicy"));
-const Terms = lazy(() => import("./pages/Terms"));
-const NotFound = lazy(() => import("./pages/NotFound"));
+import About from "./pages/About";
+import Services from "./pages/Services";
+import Gynecology from "./pages/Gynecology";
+import AssistedReproduction from "./pages/AssistedReproduction";
+import EndoscopicSurgery from "./pages/EndoscopicSurgery";
+import Pregnancy from "./pages/Pregnancy";
+import Contact from "./pages/Contact";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import CookiesPolicy from "./pages/CookiesPolicy";
+import Terms from "./pages/Terms";
+import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
@@ -37,22 +34,20 @@ const App = () => (
           <BrowserRouter>
             <ScrollToTop />
             <Header />
-            <Suspense fallback={<div className="min-h-screen" />}>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/services" element={<Services />} />
-                <Route path="/services/gynecology" element={<Gynecology />} />
-                <Route path="/services/assisted-reproduction" element={<AssistedReproduction />} />
-                <Route path="/services/endoscopic-surgery" element={<EndoscopicSurgery />} />
-                <Route path="/services/pregnancy" element={<Pregnancy />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-                <Route path="/cookies-policy" element={<CookiesPolicy />} />
-                <Route path="/terms" element={<Terms />} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </Suspense>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/services/gynecology" element={<Gynecology />} />
+              <Route path="/services/assisted-reproduction" element={<AssistedReproduction />} />
+              <Route path="/services/endoscopic-surgery" element={<EndoscopicSurgery />} />
+              <Route path="/services/pregnancy" element={<Pregnancy />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/cookies-policy" element={<CookiesPolicy />} />
+              <Route path="/terms" element={<Terms />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
             <Footer />
             <CookieConsentBanner />
           </BrowserRouter>

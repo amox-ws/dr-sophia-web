@@ -25,7 +25,8 @@ import spermImg from "@/assets/assisted_reproduction/Intrauterine_Insemination.j
 import surgeryImg from '@/assets/surgery.jpeg';
 import birthImg from '@/assets/birth.jpeg';
 
-// Desktop hero images (doctor_hero uses public folder for LCP optimization)
+// Desktop hero images
+import doctor_hero from '@/assets/doctor_hero.jpg';
 import gynecology_hero from '@/assets/gynecology_hero.jpeg';
 import gynecology_hero_mobile from '@/assets/gynecology_hero_mobile.jpeg';
 import assisted_reproduction_hero from '@/assets/assisted-reproduction_hero.jpg';
@@ -58,6 +59,7 @@ const Home = () => {
   const athensAutoplay = useRef(Autoplay({ delay: 3000, stopOnInteraction: false }));
   const aeginaAutoplay = useRef(Autoplay({ delay: 3000, stopOnInteraction: false }));
   
+  // Office Images Arrays (Placeholders)
   const athensOfficeImages = [
     '/placeholder.svg',
     '/placeholder.svg',
@@ -105,8 +107,8 @@ const Home = () => {
     {
       id: 'slide1',
       link: '/contact',
-      imageDesktop: '/images/doctor_hero.jpg',
-      imageMobile: '/images/doctor_hero.jpg',
+      imageDesktop: doctor_hero,
+      imageMobile: doctor_hero,
     },
     {
       id: 'slide2',
@@ -152,29 +154,19 @@ const Home = () => {
               {/* Height calc: 100vh minus header height */}
               <div className="relative h-[calc(100vh-4rem)] md:h-[calc(100vh-5rem)] flex items-center text-white overflow-hidden">
                 
-
-                <div className="absolute inset-0 w-full h-full">
-                  {/* Desktop Background Image */}
-                  <img
-                    src={slide.imageDesktop}
-                    alt={t(`heroCarousel.${slide.id}.title`)}
-                    className="absolute inset-0 w-full h-full object-cover object-center hidden md:block"
-                    fetchPriority={slide.id === 'slide1' ? 'high' : 'auto'}
-                    loading={slide.id === 'slide1' ? 'eager' : 'lazy'}
-                  />
-                  
-                  {/* Mobile Background Image */}
-                  <img
-                    src={slide.imageMobile}
-                    alt={t(`heroCarousel.${slide.id}.title`)}
-                    className="absolute inset-0 w-full h-full object-cover object-center block md:hidden"
-                    fetchPriority={slide.id === 'slide1' ? 'high' : 'auto'}
-                    loading={slide.id === 'slide1' ? 'eager' : 'lazy'}
-                  />
-
-                  {/* Dark Overlay (Replaces brightness filter) */}
-                  <div className="absolute inset-0 bg-black/70" />
-                </div>
+                {/* Desktop Background Image */}
+                <img
+                  src={slide.imageDesktop}
+                  alt={t(`heroCarousel.${slide.id}.title`)}
+                  className="absolute inset-0 w-full h-full object-cover object-center filter brightness-[.3] hidden md:block"
+                />
+                
+                {/* Mobile Background Image */}
+                <img
+                  src={slide.imageMobile}
+                  alt={t(`heroCarousel.${slide.id}.title`)}
+                  className="absolute inset-0 w-full h-full object-cover object-center filter brightness-[.3] block md:hidden"
+                />
 
                 {/* Decorative glowing elements */}
                 <div className="absolute inset-0 opacity-10 pointer-events-none">
@@ -233,10 +225,9 @@ const Home = () => {
                 <div className="max-w-md mx-auto">
                   <div className="aspect-square rounded-full overflow-hidden bg-gradient-to-br from-[hsl(var(--medical-medium))] to-[hsl(var(--medical-medium-dark))] shadow-2xl">
                     <img
-                      src="/images/doctor_hero.jpg"
+                      src= {doctor_hero}
                       alt={t('doctor.imageAlt')}
                       className="w-full h-full object-cover"
-                      loading="lazy"
                     />
                   </div>
                 </div>
@@ -310,7 +301,9 @@ const Home = () => {
                 className="mb-6"
                 style={{
                   opacity: isAthensCarouselVisible ? 1 : 0,
+                  // Start down and small (0.9 scale), move up and grow to 1
                   transform: isAthensCarouselVisible ? "translateY(0) scale(1)" : "translateY(100px) scale(0.9)",
+                  // Bouncy transition for the "pop" effect
                   transition: "opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)"
                 }}
               >
@@ -330,7 +323,6 @@ const Home = () => {
                             src={img}
                             alt={language === 'el' ? `Ιατρείο Αθήνας - Εικόνα ${index + 1}` : language === 'fr' ? `Cabinet d'Athènes - Image ${index + 1}` : `Athens Office - Image ${index + 1}`}
                             className="w-full h-full object-cover"
-                            loading="lazy"
                           />
                         </div>
                       </CarouselItem>
@@ -348,6 +340,7 @@ const Home = () => {
                 style={{
                   opacity: isAthensMapVisible ? 1 : 0,
                   transform: isAthensMapVisible ? "translateY(0) scale(1)" : "translateY(100px) scale(0.9)",
+                  // 200ms delay to come after the carousel
                   transition: "opacity 0.8s ease-out 0.2s, transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s"
                 }}
               >
@@ -401,7 +394,6 @@ const Home = () => {
                             src={img}
                             alt={language === 'el' ? `Ιατρείο Αίγινας - Εικόνα ${index + 1}` : language === 'fr' ? `Cabinet d'Égine - Image ${index + 1}` : `Aegina Office - Image ${index + 1}`}
                             className="w-full h-full object-cover"
-                            loading="lazy"
                           />
                         </div>
                       </CarouselItem>
