@@ -232,7 +232,7 @@ export const servicesData: Service[] = [
         }
       },
       {
-        title: { el: "Τοκετός", en: "Childbirth", fr: "Accouchement" },
+        title: { el: "Τοκετός", en: "Delivery", fr: "Accouchement" },
         desc: {
           el: "Φυσιολογικός τοκετός ή καισαρική ανάλογα με τις ανάγκες.",
           en: "Vaginal birth or caesarean section, depending on medical needs.",
