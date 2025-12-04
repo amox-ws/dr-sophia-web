@@ -154,22 +154,23 @@ const Home = () => {
               {/* Height calc: 100vh minus header height */}
               <div className="relative h-[calc(100vh-4rem)] md:h-[calc(100vh-5rem)] flex items-center text-white overflow-hidden">
                 
-                {/* Desktop Background Image */}
-                <img
-                  src={slide.imageDesktop}
-                  alt={t(`heroCarousel.${slide.id}.title`)}
-                  className="absolute inset-0 w-full h-full object-cover object-center filter brightness-[.3] hidden md:block"
-                />
-                
-                {/* Mobile Background Image */}
-                <img
-                  src={slide.imageMobile}
-                  alt={t(`heroCarousel.${slide.id}.title`)}
-                  className="absolute inset-0 w-full h-full object-cover object-center filter brightness-[.3] block md:hidden"
-                />
+                <div className="absolute inset-0 w-full h-full">
+                  <img
+                    src={slide.imageDesktop}
+                    alt={t(`heroCarousel.${slide.id}.title`)}
+                    className="absolute inset-0 w-full h-full object-cover object-center hidden md:block"
+                  />
+                  
+                  <img
+                    src={slide.imageMobile}
+                    alt={t(`heroCarousel.${slide.id}.title`)}
+                    className="absolute inset-0 w-full h-full object-cover object-center block md:hidden"
+                  />
 
-                {/* Decorative glowing elements */}
-                <div className="absolute inset-0 opacity-10 pointer-events-none">
+                  <div className="absolute inset-0 bg-black/60" />
+                </div>
+
+                <div className="absolute inset-0 opacity-10 pointer-events-none hidden md:block">
                   <div className="absolute top-20 right-20 w-72 h-72 bg-white rounded-full blur-3xl"></div>
                   <div className="absolute bottom-20 left-20 w-96 h-96 bg-white rounded-full blur-3xl"></div>
                 </div>
