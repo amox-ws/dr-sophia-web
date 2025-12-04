@@ -59,7 +59,6 @@ const Home = () => {
   const athensAutoplay = useRef(Autoplay({ delay: 3000, stopOnInteraction: false }));
   const aeginaAutoplay = useRef(Autoplay({ delay: 3000, stopOnInteraction: false }));
   
-  // Office Images Arrays (Placeholders)
   const athensOfficeImages = [
     '/placeholder.svg',
     '/placeholder.svg',
@@ -154,19 +153,25 @@ const Home = () => {
               {/* Height calc: 100vh minus header height */}
               <div className="relative h-[calc(100vh-4rem)] md:h-[calc(100vh-5rem)] flex items-center text-white overflow-hidden">
                 
-                {/* Desktop Background Image */}
-                <img
-                  src={slide.imageDesktop}
-                  alt={t(`heroCarousel.${slide.id}.title`)}
-                  className="absolute inset-0 w-full h-full object-cover object-center filter brightness-[.3] hidden md:block"
-                />
-                
-                {/* Mobile Background Image */}
-                <img
-                  src={slide.imageMobile}
-                  alt={t(`heroCarousel.${slide.id}.title`)}
-                  className="absolute inset-0 w-full h-full object-cover object-center filter brightness-[.3] block md:hidden"
-                />
+
+                <div className="absolute inset-0 w-full h-full">
+                  {/* Desktop Background Image */}
+                  <img
+                    src={slide.imageDesktop}
+                    alt={t(`heroCarousel.${slide.id}.title`)}
+                    className="absolute inset-0 w-full h-full object-cover object-center hidden md:block"
+                  />
+                  
+                  {/* Mobile Background Image */}
+                  <img
+                    src={slide.imageMobile}
+                    alt={t(`heroCarousel.${slide.id}.title`)}
+                    className="absolute inset-0 w-full h-full object-cover object-center block md:hidden"
+                  />
+
+                  {/* Dark Overlay (Replaces brightness filter) */}
+                  <div className="absolute inset-0 bg-black/70" />
+                </div>
 
                 {/* Decorative glowing elements */}
                 <div className="absolute inset-0 opacity-10 pointer-events-none">
@@ -301,9 +306,7 @@ const Home = () => {
                 className="mb-6"
                 style={{
                   opacity: isAthensCarouselVisible ? 1 : 0,
-                  // Start down and small (0.9 scale), move up and grow to 1
                   transform: isAthensCarouselVisible ? "translateY(0) scale(1)" : "translateY(100px) scale(0.9)",
-                  // Bouncy transition for the "pop" effect
                   transition: "opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)"
                 }}
               >
@@ -340,7 +343,6 @@ const Home = () => {
                 style={{
                   opacity: isAthensMapVisible ? 1 : 0,
                   transform: isAthensMapVisible ? "translateY(0) scale(1)" : "translateY(100px) scale(0.9)",
-                  // 200ms delay to come after the carousel
                   transition: "opacity 0.8s ease-out 0.2s, transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s"
                 }}
               >
