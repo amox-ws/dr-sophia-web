@@ -315,10 +315,10 @@ const Home = () => {
                   plugins={[athensAutoplay.current]}
                   className="w-full"
                 >
-                  <CarouselContent className="-ml-2 md:-ml-4">
+                  <CarouselContent>
                     {athensOfficeImages.map((img, index) => (
-                      <CarouselItem key={index} className="pl-2 md:pl-4 basis-1/2">
-                        <div className="aspect-video bg-muted rounded-lg overflow-hidden shadow-lg">
+                      <CarouselItem key={index} className="basis-full">
+                        <div className="aspect-video md:aspect-[21/9] bg-muted rounded-lg overflow-hidden shadow-lg">
                           <img
                             src={img}
                             alt={language === 'el' ? `Ιατρείο Αθήνας - Εικόνα ${index + 1}` : language === 'fr' ? `Cabinet d'Athènes - Image ${index + 1}` : `Athens Office - Image ${index + 1}`}
@@ -386,10 +386,10 @@ const Home = () => {
                   plugins={[aeginaAutoplay.current]}
                   className="w-full"
                 >
-                  <CarouselContent className="-ml-2 md:-ml-4">
+                  <CarouselContent>
                     {aeginaOfficeImages.map((img, index) => (
-                      <CarouselItem key={index} className="pl-2 md:pl-4 basis-1/2">
-                        <div className="aspect-video bg-muted rounded-lg overflow-hidden shadow-lg">
+                      <CarouselItem key={index} className="basis-full">
+                        <div className="aspect-video md:aspect-[21/9] bg-muted rounded-lg overflow-hidden shadow-lg">
                           <img
                             src={img}
                             alt={language === 'el' ? `Ιατρείο Αίγινας - Εικόνα ${index + 1}` : language === 'fr' ? `Cabinet d'Égine - Image ${index + 1}` : `Aegina Office - Image ${index + 1}`}
