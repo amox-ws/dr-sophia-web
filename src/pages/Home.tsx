@@ -1,6 +1,5 @@
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import {
@@ -26,8 +25,7 @@ import spermImg from "@/assets/assisted_reproduction/Intrauterine_Insemination.j
 import surgeryImg from '@/assets/surgery.jpeg';
 import birthImg from '@/assets/birth.jpeg';
 
-// Desktop hero images
-import doctor_hero from '@/assets/doctor_hero.jpg';
+// Desktop hero images (doctor_hero uses public folder for LCP optimization)
 import gynecology_hero from '@/assets/gynecology_hero.jpeg';
 import gynecology_hero_mobile from '@/assets/gynecology_hero_mobile.jpeg';
 import assisted_reproduction_hero from '@/assets/assisted-reproduction_hero.jpg';
@@ -107,8 +105,8 @@ const Home = () => {
     {
       id: 'slide1',
       link: '/contact',
-      imageDesktop: doctor_hero,
-      imageMobile: doctor_hero,
+      imageDesktop: '/images/doctor_hero.jpg',
+      imageMobile: '/images/doctor_hero.jpg',
     },
     {
       id: 'slide2',
@@ -138,11 +136,6 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Preload LCP hero image for faster loading */}
-      <Helmet>
-        <link rel="preload" as="image" href={doctor_hero} fetchPriority="high" />
-      </Helmet>
-      
       {/* 🌟 Hero Carousel Section */}
       <section className="relative w-full mt-16 md:mt-20">
         <Carousel
@@ -238,7 +231,7 @@ const Home = () => {
                 <div className="max-w-md mx-auto">
                   <div className="aspect-square rounded-full overflow-hidden bg-gradient-to-br from-[hsl(var(--medical-medium))] to-[hsl(var(--medical-medium-dark))] shadow-2xl">
                     <img
-                      src= {doctor_hero}
+                      src="/images/doctor_hero.jpg"
                       alt={t('doctor.imageAlt')}
                       className="w-full h-full object-cover"
                     />
