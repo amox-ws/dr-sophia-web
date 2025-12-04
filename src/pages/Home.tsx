@@ -160,6 +160,7 @@ const Home = () => {
                     alt={t(`heroCarousel.${slide.id}.title`)}
                     className="absolute inset-0 w-full h-full object-cover object-center hidden md:block"
                     fetchPriority={slide.id === 'slide1' ? 'high' : 'auto'}
+                    loading={slide.id === 'slide1' ? 'eager' : 'lazy'}
                   />
                   
                   {/* Mobile Background Image */}
@@ -168,6 +169,7 @@ const Home = () => {
                     alt={t(`heroCarousel.${slide.id}.title`)}
                     className="absolute inset-0 w-full h-full object-cover object-center block md:hidden"
                     fetchPriority={slide.id === 'slide1' ? 'high' : 'auto'}
+                    loading={slide.id === 'slide1' ? 'eager' : 'lazy'}
                   />
 
                   {/* Dark Overlay (Replaces brightness filter) */}
@@ -234,6 +236,7 @@ const Home = () => {
                       src="/images/doctor_hero.jpg"
                       alt={t('doctor.imageAlt')}
                       className="w-full h-full object-cover"
+                      loading="lazy"
                     />
                   </div>
                 </div>
@@ -327,6 +330,7 @@ const Home = () => {
                             src={img}
                             alt={language === 'el' ? `Ιατρείο Αθήνας - Εικόνα ${index + 1}` : language === 'fr' ? `Cabinet d'Athènes - Image ${index + 1}` : `Athens Office - Image ${index + 1}`}
                             className="w-full h-full object-cover"
+                            loading="lazy"
                           />
                         </div>
                       </CarouselItem>
@@ -397,6 +401,7 @@ const Home = () => {
                             src={img}
                             alt={language === 'el' ? `Ιατρείο Αίγινας - Εικόνα ${index + 1}` : language === 'fr' ? `Cabinet d'Égine - Image ${index + 1}` : `Aegina Office - Image ${index + 1}`}
                             className="w-full h-full object-cover"
+                            loading="lazy"
                           />
                         </div>
                       </CarouselItem>
