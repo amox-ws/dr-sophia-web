@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import {
@@ -137,6 +138,11 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
+      {/* Preload LCP hero image for faster loading */}
+      <Helmet>
+        <link rel="preload" as="image" href={doctor_hero} fetchPriority="high" />
+      </Helmet>
+      
       {/* 🌟 Hero Carousel Section */}
       <section className="relative w-full mt-16 md:mt-20">
         <Carousel
