@@ -10,7 +10,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { Globe, Menu, X, ChevronRight, ChevronDown } from 'lucide-react';
 import { servicesData } from '@/data/servicesData';
-import logoImage from '@/assets/logo.jpg';
+import logoImage from '@/assets/logo.png';
 
 const languageAbbreviations: Record<Language, string> = {
   el: 'ΕΛ',
@@ -152,7 +152,7 @@ const Header = () => {
             <img 
               src={logoImage} 
               alt="Cheirakis Gynecology" 
-              className="h-12 w-auto"
+              className="h-16 w-auto"
             />
           </Link>
 
