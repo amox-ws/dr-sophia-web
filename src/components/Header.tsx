@@ -30,6 +30,7 @@ const Header = () => {
   const [hoveredCategory, setHoveredCategory] = useState<string | null>(null);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [expandedMobileCategory, setExpandedMobileCategory] = useState<string | null>(null);
+  const [isServicesMobileOpen, setIsServicesMobileOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
   const location = useLocation();
 
@@ -46,6 +47,7 @@ const Header = () => {
   useEffect(() => {
     setIsMobileMenuOpen(false);
     setExpandedMobileCategory(null);
+    setIsServicesMobileOpen(false);
   }, [location.pathname]);
 
   const navLinks = [
@@ -237,7 +239,7 @@ const Header = () => {
             {/* Services Accordion for Mobile */}
             <div className="border-t border-border pt-2 mt-2">
               <button
-                onClick={() => setExpandedMobileCategory(expandedMobileCategory === 'services' ? null : 'services')}
+                onClick={() => setIsServicesMobileOpen(!isServicesMobileOpen)}
                 className={`w-full flex items-center justify-between px-4 py-2 text-sm font-medium transition-colors ${
                   location.pathname.startsWith('/services')
                     ? 'text-primary'
@@ -245,16 +247,16 @@ const Header = () => {
                 }`}
               >
                 <span>{t('nav.services')}</span>
-                <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${expandedMobileCategory === 'services' ? 'rotate-180' : ''}`} />
+                <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isServicesMobileOpen ? 'rotate-180' : ''}`} />
               </button>
 
-              {expandedMobileCategory === 'services' && (
+              {isServicesMobileOpen && (
                 <div className="pl-4 mt-1 space-y-1">
                   {servicesData.map((service) => (
                     <div key={service.id}>
                       <button
                         onClick={() => setExpandedMobileCategory(
-                          expandedMobileCategory === service.id ? 'services' : service.id
+                          expandedMobileCategory === service.id ? null : service.id
                         )}
                         className="w-full flex items-center justify-between px-4 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors"
                       >
