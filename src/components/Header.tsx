@@ -152,7 +152,7 @@ const Header = () => {
             <img 
               src={logoImage} 
               alt="Cheirakis Gynecology" 
-              className="h-20 w-auto"
+              className="h-20 w-auto mix-blend-multiply"
             />
           </Link>
 
