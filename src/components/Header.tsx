@@ -1,27 +1,20 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useLanguage, Language } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from '@/components/ui/navigation-menu';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { Globe, Menu, X } from 'lucide-react';
+import { Globe, Menu, X, ChevronRight, ChevronDown } from 'lucide-react';
+import { servicesData } from '@/data/servicesData';
 
-const languageFlags: Record<Language, string> = {
-  el: '🇬🇷',
-  en: '🇬🇧',
-  fr: '🇫🇷',
+const languageAbbreviations: Record<Language, string> = {
+  el: 'EL',
+  en: 'EN',
+  fr: 'FR',
 };
 
 const languageNames: Record<Language, string> = {
@@ -33,9 +26,11 @@ const languageNames: Record<Language, string> = {
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [hoveredCategory, setHoveredCategory] = useState<string | null>(null);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [expandedMobileCategory, setExpandedMobileCategory] = useState<string | null>(null);
   const { language, setLanguage, t } = useLanguage();
   const location = useLocation();
-  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,19 +41,25 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close mobile menu on route change
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+    setExpandedMobileCategory(null);
+  }, [location.pathname]);
+
   const navLinks = [
     { to: '/', label: t('nav.home') },
     { to: '/about', label: t('nav.about') },
     { to: '/contact', label: t('nav.contact') },
   ];
 
-  const servicesLinks = [
-    { to: '/services', label: t('nav.allServices') },
-    { to: '/services/gynecology', label: t('services.gynecology.title') },
-    { to: '/services/assisted-reproduction', label: t('services.assistedReproduction.title') },
-    { to: '/services/endoscopic-surgery', label: t('services.endoscopicSurgery.title') },
-    { to: '/services/pregnancy', label: t('services.pregnancy.title') },
-  ];
+  // Map service IDs to their routes
+  const serviceRoutes: Record<string, string> = {
+    'gynecology': '/services/gynecology',
+    'assisted-reproduction': '/services/assisted-reproduction',
+    'endoscopic-surgery': '/services/endoscopic-surgery',
+    'pregnancy': '/services/pregnancy',
+  };
 
   return (
     <header
@@ -66,15 +67,8 @@ const Header = () => {
     >
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="text-2xl font-semibold text-primary">
-              Dr. Cheirakis
-            </div>
-          </Link>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          {/* Left Side - Main Navigation (Desktop) */}
+          <div className="hidden md:flex items-center space-x-6">
             {navLinks.map((link) => (
               <Link
                 key={link.to}
@@ -89,56 +83,94 @@ const Header = () => {
               </Link>
             ))}
 
-            {/* Services Navigation Menu */}
-            <NavigationMenu>
-              <NavigationMenuList>
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger 
-                    onClick={() => navigate('/services')}
-                    className={`text-sm font-medium nav-link-animated bg-transparent hover:bg-transparent data-[state=open]:bg-transparent data-[active]:bg-transparent focus:bg-transparent hover:text-foreground focus:text-foreground cursor-pointer ${
-                      location.pathname.startsWith('/services')
-                        ? 'text-primary active'
-                        : 'text-foreground'
-                    }`}
-                  >
-                    {t('nav.services')}
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid w-[200px] gap-1 p-2 bg-background border border-border rounded-md shadow-lg">
-                      {servicesLinks.slice(1).map((link) => (
-                        <li key={link.to}>
-                          <NavigationMenuLink asChild>
-                            <Link
-                              to={link.to}
-                              className="block select-none rounded-sm px-3 py-2 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent/10 text-foreground"
-                            >
-                              {link.label}
-                            </Link>
-                          </NavigationMenuLink>
-                        </li>
-                      ))}
-                    </ul>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenu>
+            {/* Services with Multi-Level Mega Menu */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setIsServicesOpen(true)}
+              onMouseLeave={() => {
+                setIsServicesOpen(false);
+                setHoveredCategory(null);
+              }}
+            >
+              <Link
+                to="/services"
+                className={`text-sm font-medium transition-colors nav-link-animated flex items-center gap-1 ${
+                  location.pathname.startsWith('/services')
+                    ? 'text-primary active'
+                    : 'text-foreground'
+                }`}
+              >
+                {t('nav.services')}
+                <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`} />
+              </Link>
 
-            {/* Language Switcher */}
+              {/* Level 1 Dropdown - Service Categories */}
+              {isServicesOpen && (
+                <div className="absolute left-0 top-full pt-2">
+                  <div className="bg-background border border-border rounded-md shadow-lg min-w-[220px]">
+                    {servicesData.map((service) => (
+                      <div
+                        key={service.id}
+                        className="relative"
+                        onMouseEnter={() => setHoveredCategory(service.id)}
+                      >
+                        <Link
+                          to={serviceRoutes[service.id]}
+                          className="flex items-center justify-between px-4 py-3 text-sm text-foreground hover:bg-accent/10 transition-colors"
+                        >
+                          <span>{service.title[language]}</span>
+                          <ChevronRight className="h-4 w-4 text-muted-foreground" />
+                        </Link>
+
+                        {/* Level 2 Dropdown - Subcategories (appears to the right) */}
+                        {hoveredCategory === service.id && (
+                          <div className="absolute left-full top-0 ml-0">
+                            <div className="bg-background border border-border rounded-md shadow-lg min-w-[280px] max-h-[400px] overflow-y-auto">
+                              {service.items.map((item, index) => (
+                                <Link
+                                  key={index}
+                                  to={serviceRoutes[service.id]}
+                                  className="block px-4 py-2.5 text-sm text-foreground hover:bg-accent/10 transition-colors border-b border-border/30 last:border-b-0"
+                                >
+                                  {item.title[language]}
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Center - Logo */}
+          <Link to="/" className="absolute left-1/2 transform -translate-x-1/2">
+            <div className="text-2xl font-semibold text-primary">
+              {/* Placeholder for logo image - user will upload */}
+              <span className="text-primary font-bold tracking-tight">LOGO</span>
+            </div>
+          </Link>
+
+          {/* Right Side - Language Switcher (Desktop) */}
+          <div className="hidden md:flex items-center">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" size="sm" className="gap-2">
-                <Globe className="h-4 w-4" />
-                  <span>{languageFlags[language]}</span>
+                  <Globe className="h-4 w-4" />
+                  <span className="font-medium">{languageAbbreviations[language]}</span>
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="bg-background">
-                {(Object.keys(languageFlags) as Language[]).map((lang) => (
+                {(Object.keys(languageAbbreviations) as Language[]).map((lang) => (
                   <DropdownMenuItem
                     key={lang}
                     onClick={() => setLanguage(lang)}
                     className="cursor-pointer"
                   >
-                    <span className="mr-2">{languageFlags[lang]}</span>
+                    <span className="font-medium mr-2">{languageAbbreviations[lang]}</span>
                     {languageNames[lang]}
                   </DropdownMenuItem>
                 ))}
@@ -146,22 +178,22 @@ const Header = () => {
             </DropdownMenu>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile - Language Switcher + Menu Button */}
           <div className="md:hidden flex items-center gap-2">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" size="sm">
-                  {languageFlags[language]}
+                  <span className="font-medium">{languageAbbreviations[language]}</span>
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="bg-background">
-                {(Object.keys(languageFlags) as Language[]).map((lang) => (
+                {(Object.keys(languageAbbreviations) as Language[]).map((lang) => (
                   <DropdownMenuItem
                     key={lang}
                     onClick={() => setLanguage(lang)}
                     className="cursor-pointer"
                   >
-                    <span className="mr-2">{languageFlags[lang]}</span>
+                    <span className="font-medium mr-2">{languageAbbreviations[lang]}</span>
                     {languageNames[lang]}
                   </DropdownMenuItem>
                 ))}
@@ -184,7 +216,7 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 py-4 space-y-4 bg-background/95 backdrop-blur-md rounded-lg shadow-lg">
+          <div className="md:hidden mt-4 py-4 space-y-2 bg-background/95 backdrop-blur-md rounded-lg shadow-lg">
             {navLinks.map((link) => (
               <Link
                 key={link.to}
@@ -200,34 +232,53 @@ const Header = () => {
               </Link>
             ))}
             
-            <Link
-              to="/services"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className={`block px-4 py-2 text-sm font-medium transition-colors nav-link-animated ${
-                location.pathname.startsWith('/services')
-                  ? 'text-primary active'
-                  : 'text-foreground'
-              }`}
-            >
-              {t('nav.services')}
-            </Link>
-            
-            <div className="px-4 pt-2 border-t border-border">
-              <p className="text-xs font-semibold text-muted-foreground mb-2">{t('nav.services')}</p>
-              {servicesLinks.slice(1).map((link) => (
-                <Link
-                  key={link.to}
-                  to={link.to}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className={`block px-2 py-2 text-sm transition-colors ${
-                    location.pathname === link.to
-                      ? 'text-primary'
-                      : 'text-foreground'
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              ))}
+            {/* Services Accordion for Mobile */}
+            <div className="border-t border-border pt-2 mt-2">
+              <button
+                onClick={() => setExpandedMobileCategory(expandedMobileCategory === 'services' ? null : 'services')}
+                className={`w-full flex items-center justify-between px-4 py-2 text-sm font-medium transition-colors ${
+                  location.pathname.startsWith('/services')
+                    ? 'text-primary'
+                    : 'text-foreground'
+                }`}
+              >
+                <span>{t('nav.services')}</span>
+                <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${expandedMobileCategory === 'services' ? 'rotate-180' : ''}`} />
+              </button>
+
+              {expandedMobileCategory === 'services' && (
+                <div className="pl-4 mt-1 space-y-1">
+                  {servicesData.map((service) => (
+                    <div key={service.id}>
+                      <button
+                        onClick={() => setExpandedMobileCategory(
+                          expandedMobileCategory === service.id ? 'services' : service.id
+                        )}
+                        className="w-full flex items-center justify-between px-4 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors"
+                      >
+                        <span>{service.title[language]}</span>
+                        <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${expandedMobileCategory === service.id ? 'rotate-180' : ''}`} />
+                      </button>
+
+                      {/* Subcategories */}
+                      {expandedMobileCategory === service.id && (
+                        <div className="pl-4 space-y-1 bg-accent/5 rounded-md py-2 mx-2">
+                          {service.items.map((item, index) => (
+                            <Link
+                              key={index}
+                              to={serviceRoutes[service.id]}
+                              onClick={() => setIsMobileMenuOpen(false)}
+                              className="block px-4 py-1.5 text-sm text-muted-foreground hover:text-primary transition-colors"
+                            >
+                              {item.title[language]}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         )}
