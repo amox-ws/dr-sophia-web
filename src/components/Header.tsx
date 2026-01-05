@@ -147,13 +147,13 @@ const Header = () => {
             </div>
           </div>
 
-          {/* Center - Logo */}
-          <Link to="/" className="absolute left-1/2 transform -translate-x-1/2">
-            <img 
-              src={logoImage} 
-              alt="Cheirakis Gynecology" 
-              className="h-20 w-auto mix-blend-multiply"
-            />
+{/* Center - Logo */}
+        <Link to="/" className="absolute left-1/2 transform -translate-x-1/2 bg-background/80 rounded-lg px-3 py-1">
+          <img 
+            src={logoImage} 
+            alt="Cheirakis Gynecology" 
+            className="h-20 w-auto mix-blend-multiply"
+          />
           </Link>
 
           {/* Right Side - Language Switcher (Desktop) */}
